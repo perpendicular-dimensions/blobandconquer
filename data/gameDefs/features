@@ -1,0 +1,63 @@
+// Definition file for features in the game
+
+Feature {
+
+	type = FEATURE_SPAWNER;
+	color = 0.0 0.0 0.0 1.0;
+	segments = 8;
+	radius = 1;
+	height = 1;
+
+};
+
+Feature {
+
+	type = FEATURE_TELEPORTER;
+	color = 0.25 0.25 0.25 1.0;
+	segments = 8;
+	radius = 10;
+	height = 50;
+
+};
+
+Feature {
+
+	type = FEATURE_SAVE_POINT;
+	color = 0.5 0.5 1.0 1.0;
+	segments = 8;
+	radius = 10;
+	height = 50;
+
+};
+
+Feature {
+
+	type = FEATURE_EXIT;
+	color = 1.0 0 0.0 1.0;
+	segments = 8;
+	radius = 10;
+	height = 50;
+
+};
+
+Feature {
+
+	type = FEATURE_INFORMATION;
+	color = 1.0 1.0 0.0 1.0;
+	segments = 6;
+	radius = 4;
+	height = 10;
+
+};
+
+Feature {
+
+	type = FEATURE_GRAPPLE_POINT;
+	color = 0.0 1.0 0.0 0.5;
+	segments = 16;
+	radius = 16;
+	height = 2;
+
+};
+
+@END@

@@ -1,0 +1,364 @@
+Weapon {
+
+	name = Small Pistol;
+	type = WEP_PISTOL;
+	clipSize = 9999;
+	reloadTime = 60;
+	damage = 1;
+	unlimited = 1;
+	damageType = DAMAGE_CONVENTENIAL;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/gun.blend.raw;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	texture1 = textures/game/pistolTexture.png;
+	blobColor = 1.0 1.0 1.0 1.0;
+	bioMechColor = -1.0 -1.0 -1.0 -1.0;
+
+};
+
+Weapon {
+
+	name = Shotgun;
+	type = WEP_SHOTGUN;
+	firingSound = SND_RIFLE;
+	clipSize = 20;
+	reloadTime = 100;
+	damage = 8;
+	damageType = DAMAGE_CONVENTENIAL;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/rifle.blend.raw;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	texture1 = textures/game/rifle.png;
+	blobColor = 1.0 1.0 1.0 1.0;
+	bioMechColor = -1.0 -1.0 -1.0 -1.0;
+
+};
+
+Weapon {
+
+	name = Uzi;
+	type = WEP_UZI;
+	firingSound = SND_UZI;
+	clipSize = 100;
+	reloadTime = 8;
+	damage = 1;
+	damageType = DAMAGE_CONVENTENIAL;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/uzi.blend.raw;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	texture1 = textures/game/uzi.png;
+	blobColor = 1.0 1.0 1.0 1.0;
+	bioMechColor = -1.0 -1.0 -1.0 -1.0;
+
+};
+
+Weapon {
+
+	name = Plasma Pistol;
+	type = WEP_PLASMA_PISTOL;
+	firingSound = SND_PLASMA;
+	clipSize = 36;
+	reloadTime = 33;
+	damage = 5;
+	damageType = DAMAGE_ENERGY;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/plasmapistol.blend.raw;
+	texture1 = textures/game/plasmaPistol.png;
+	trailType = TRAIL_SMALL_PLASMA;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 2;
+	blobColor = 0.5 1.0 0.0 1.0;
+	bioMechColor = 0.0 1.0 0.5 1.0;
+
+};
+
+Weapon {
+
+	name = Grenades;
+	type = WEP_GRENADE;
+	firingSound = SND_THROW;
+	clipSize = 8;
+	reloadTime = 100;
+	damage = 10;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_BOUNCES+EF_EXPLODES;
+	model1 = gfx/rw2/grenade.blend.raw;
+	texture1 = textures/game/grenadeTexture.png;
+	bbMins = -2 -2 -5;
+	bbMaxs = 2 2 5;
+
+};
+
+Weapon {
+
+	name = Plasma Rifle;
+	type = WEP_PLASMA_RIFLE;
+	firingSound = SND_HEAVY_PLASMA;
+	clipSize = 100;
+	reloadTime = 8;
+	damage = 3;
+	damageType = DAMAGE_ENERGY;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/plasmarifle.blend.raw;
+	texture1 = textures/game/plasmaRifle.png;
+	trailType = TRAIL_SMALL_PLASMA;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 2;
+	blobColor = 0.5 1.0 0.0 1.0;
+	bioMechColor = 0.0 1.0 0.5 1.0;
+
+};
+
+Weapon {
+
+	name = Grenade Launcher;
+	type = WEP_GRENADE_LAUNCHER;
+	firingSound = SND_GRENADE_LAUNCHER;
+	clipSize = 10;
+	reloadTime = 50;
+	damage = 20;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_EXPLODES;
+	model1 = gfx/rw2/rocketlauncher.blend.raw;
+	texture1 = textures/game/grenadeLauncher.png;
+	trailType = TRAIL_SMOKE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 1.5;
+
+};
+
+Weapon {
+
+	name = Cluster Launcher;
+	type = WEP_CLUSTER_LAUNCHER;
+	firingSound = SND_GRENADE_LAUNCHER;
+	clipSize = 5;
+	reloadTime = 100;
+	damage = 15;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_EXPLODES;
+	model1 = gfx/rw2/rocketlauncher.blend.raw;
+	texture1 = textures/game/grenadeLauncher.png;
+	trailType = TRAIL_SMOKE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 1.5;
+
+};
+
+Weapon {
+
+	name = RPG Launcher;
+	type = WEP_ROCKET_LAUNCHER;
+	firingSound = SND_ROCKET_LAUNCHER;
+	clipSize = 5;
+	reloadTime = 100;
+	damage = 25;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_EXPLODES+EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/rocketlauncher.blend.raw;
+	texture1 = textures/game/rocketLauncher.png;
+	trailType = TRAIL_FIRE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+// Used by SpiderBlobs
+
+Weapon {
+
+	name = Web;
+	type = WEP_WEB;
+	firingSound = SND_ICE_GUN;
+	clipSize = 255;
+	reloadTime = 12;
+	damage = 0;
+	unlimited = 1;
+	damageType = DAMAGE_SPECIAL;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	trailType = TRAIL_NONE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 8;
+
+};
+
+// Only available in boss missions....
+
+Weapon {
+
+	name = Ice Gun;
+	type = WEP_ICE_GUN;
+	firingSound = SND_ICE_GUN;
+	clipSize = 255;
+	reloadTime = 12;
+	damage = 0;
+	unlimited = 1;
+	damageType = DAMAGE_SPECIAL;
+	flags = EF_WEIGHTLESS;
+	model1 = gfx/rw2/icegun.blend.raw;
+	texture1 = textures/game/iceGun.png;
+	trailType = TRAIL_ICE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 0;
+	blobColor = 0.0 0.0 1.0 1.0;
+	bioMechColor = 0.0 1.0 1.0 1.0;
+
+};
+
+Weapon {
+
+	name = Flamethrower;
+	type = WEP_FLAMETHROWER;
+	firingSound = SND_FLAMETHROWER;
+	clipSize = 255;
+	reloadTime = 4;
+	damage = 0;
+	unlimited = 1;
+	damageType = DAMAGE_SPECIAL;
+	flags = EF_WEIGHTLESS;
+	model1 = gfx/rw2/flamethrower.blend.raw;
+	texture1 = textures/game/flameThrower.png;
+	trailType = TRAIL_FLAMETHROWER;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 0;
+	blobColor = 1.0 0.0 0.0 1.0;
+	bioMechColor = 1.0 0.0 0.0 1.0;
+
+};
+
+Weapon {
+
+	name = Desimilator;
+	type = WEP_DESIMILATOR;
+	firingSound = SND_DESIMILATOR;
+	clipSize = 500;
+	reloadTime = 5;
+	damage = 0;
+	unlimited = 1;
+	damageType = DAMAGE_SPECIAL;
+	flags = EF_WEIGHTLESS;
+	model1 = gfx/rw2/desimilator.blend.raw;
+	texture1 = textures/game/desimilator.png;
+	trailType = TRAIL_MULTI;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 0;
+	blobColor = 1.0 0.0 1.0 1.0;
+	bioMechColor = 1.0 0.0 1.0 1.0;
+
+};
+
+// noone can have this weapon directly
+
+Weapon {
+
+	name = NULL;
+	type = WEP_BOMBLET;
+	clipSize = 0;
+	reloadTime = 200;
+	damage = 10;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_EXPLODES;
+	model1 = gfx/primitive/weapon.primitive;
+	trailType = TRAIL_SMALL_SMOKE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 0.75;
+
+};
+
+// Only enemies can have these weapons
+
+Weapon {
+
+	name = NULL;
+	type = WEP_MINI_GRENADES;
+	firingSound = SND_THROW;
+	clipSize = 8;
+	reloadTime = 25;
+	damage = 4;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_BOUNCES+EF_EXPLODES;
+	model1 = gfx/rw2/grenade.blend.raw;
+	texture1 = textures/game/grenade.png;
+	bbMins = -2 -2 -5;
+	bbMaxs = 2 2 5;
+	scale = 0.75;
+
+};
+
+Weapon {
+
+	name = NULL;
+	type = WEP_MINI_ROCKET;
+	firingSound = SND_ROCKET_LAUNCHER;
+	clipSize = 10;
+	reloadTime = 150;
+	damage = 20;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_EXPLODES+EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/primitive/weapon.primitive;
+	trailType = TRAIL_FIRE;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	scale = 0.5;
+
+};
+
+Weapon {
+
+	name = NULL;
+	type = WEP_MINI_MINE;
+	clipSize = 0;
+	reloadTime = 25;
+	damage = 10;
+	damageType = DAMAGE_EXPLOSION;
+	flags = EF_EXPLODES+EF_STATIC;
+	model1 = gfx/primitive/weapon.primitive;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Weapon {
+
+	name = NULL;
+	type = WEP_GRAPPLING_HOOK;
+	clipSize = 0;
+	reloadTime = 0;
+	damage = 0;
+	damageType = DAMAGE_SPECIAL;
+	flags = EF_WEIGHTLESS+EF_STATIC;
+	model1 = gfx/rw2/hookfired.blend.raw;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Weapon {
+
+	name = NULL;
+	type = WEP_HOMING_ENERGY;
+	clipSize = 0;
+	reloadTime = 0;
+	damage = 0;
+	damageType = DAMAGE_SPECIAL;
+	model1 = gfx/rw2/hookfired.blend.raw;
+	bbMins = -1 -1 -1;
+	bbMaxs = 1 1 1;
+	trailType = TRAIL_ENERGY;
+	flags = EF_WEIGHTLESS;
+
+};
+
+@END@

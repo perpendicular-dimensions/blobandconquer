@@ -1,0 +1,292 @@
+Mission {
+
+	missionName = Biomech Assimilator;
+
+	bsp = data/bsp/desimilator.bsp;
+	
+	music = music/Liquid Crystal.xm;
+	
+	fogColor = 0.05 0.05 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/day2.jpg;
+	skySphereSize = 1;
+	
+	enemyLevel = 3;
+	
+	enemySpawnList = NME_GRENADE_BLOB|NME_MACHINEGUN_BLOB|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB|NME_MACHINEGUN_BLOB|NME_MACHINEGUN_DROID|NME_LIGHT_PLASMA_BLOB;
+	spawnSize = 5;
+	minSpawnTime = 6000;
+	maxSpawnTime = 9000;
+	
+	exitToMission = AUTO;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+	
+	ambientEffects = sound/ambience/mech/commplus.ogg|sound/ambience/mech/data_1.ogg|sound/ambience/mech/dial.ogg|sound/ambience/mech/mech1.ogg|sound/ambience/mech/mech2.ogg|sound/ambience/mech/mech3.ogg;
+};
+
+// ============ Desimilator ============
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Obtain the Desimilator;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+// ============ Teletags ============
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Obtain 100 Teletags;
+	status = OBJ_INCOMPLETE;
+	targetValue = 34;
+	active = 1;
+
+};
+
+// ============ Desimilate ============
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Desimilate at least 96% of the Blobs;
+	status = OBJ_INCOMPLETE;
+	targetValue = 96;
+	active = 1;
+
+};
+
+// ============ Rescue ============
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Rescue at least 96% of the Blobs;
+	status = OBJ_INCOMPLETE;
+	targetValue = 96;
+	active = 1;
+
+};
+
+// ============ Protect MIAs ============
+
+Objective {
+
+	id = 5;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Do not lose more than 4% of the Blobs;
+	status = OBJ_INCOMPLETE;
+	targetValue = 5;
+	active = 1;
+
+};
+
+// ============ Teletags ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Desimilator;
+	objectiveId = 1;
+
+};
+
+// ============ Teletags ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = teletag;
+	objectiveId = 2;
+
+};
+
+// ============ Desimilate Blobs ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENEMY_DESIMILATED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_ENEMY;
+	objectiveId = 3;
+
+};
+
+// ============ MIAs ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_BLOB_RESCUED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = MIA;
+	objectiveId = 4;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = MIA;
+	objectiveId = 5;
+};
+
+// ============ Assimilator Defence Guns ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	
+	name = securityGunsLocation;
+	targetName = assimilatorSecurityGuns;
+
+};
+
+// ============ Left Wing Shield ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_USE_CAMERA;
+	name = leftWingShieldGenerator;
+	targetName = desimilatorLeftWingCamera;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = desimilatorLeftWingCamera;
+	targetName = desimilatorLeftWingShield;
+};
+
+// ============ Right Wing Level 2 Defense ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = rightWingLevel2Location;
+	targetName = rightWingLevel2Spawner;
+
+};
+
+// ============ Assimilator Level 1 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = assimilatorLevel1;
+	targetName = assimilatorLevel1Spawner;
+
+};
+
+// ============ Assimilator Level 2 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = assimilatorLevel2;
+	targetName = assimilatorLevel2Spawner;
+
+};
+
+// ============ Assimilator Level 3 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = assimilatorLevel3;
+	targetName = assimilatorLevel3Spawner;
+
+};
+
+// ============ Assimilator Level 4 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = assimilatorLevel4;
+	targetName = assimilatorLevel4Spawner;
+
+};
+
+// ============ Assimilator Level 5 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = assimilatorLevel5;
+	targetName = assimilatorLevel5Spawner;
+
+};
+
+@END@

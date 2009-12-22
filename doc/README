@@ -1,0 +1,61 @@
+Blob Wars : Blob and Conquer V0.4
+=================================
+
+This is the third release of Blob and Conquer.
+
+Note that the manual is incorrect in places since it lists up coming features.
+
+
+Compiling
+---------
+
+untar the archive and change in to the directory
+run make to build the game
+run with ./blobAndConquer
+
+
+Installation
+------------
+
+Blob and Conquer does not need to be installed at this time.
+
+
+
+Playing
+-------
+
+You can use the mouse and keyboard to play the game (see the manual for default controls).
+
+The game has been developed using a PS2 joypad so mouse and keyboard controls might be a little
+tricky at this stage.
+
+This release contains all of the games main missions. Boss battles are not included in this release
+but will make it in to the game before V1.0
+
+The final mission cannot be completed. Upon finishing the final objective gameplay will simply continue.
+
+
+Changes
+-------
+
+* Added decals (for blood splats, etc.)
+* Fixed collision detection routine to remove random crashes
+* Added extra configuration options
+* Fixed Enemy Base 2, part 3 so it does not loop around on itself on completion
+* Fixed other collision detection issues
+* Added in music for time limits
+* Added in more music
+* Added in item supply crates
+* Blobs can no longer use switches that require special items
+* Added some more sound effects
+* Possible fixes for 64 bit and non x86 chips (needs to be road tested by players)
+* Lots of misc little fixes
+
+
+Bugs
+----
+
+Patches to fix bugs are welcome. Patches to alter the gameplay (such as changing weapon strengths, etc) will be rejected.
+
+Stephen Sweeney
+stephen.j.sweeney@gmail.com

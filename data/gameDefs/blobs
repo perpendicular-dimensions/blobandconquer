@@ -1,0 +1,100 @@
+// Definition file for enemies in the game
+
+Blob {
+
+	type = BLOB_BOB;
+	model1 = gfx/primitive/bob.primitive;
+	texture1 = textures/game/goodBlob.png;
+	hp = 25;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_TEEKA;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlob.png;
+	hp = 25;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_SOLDIER;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlob.png;
+	hp = 25;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_MIA;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlobInjured.png;
+	hp = 10;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_ENGINEER;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlob.png;
+	hp = 25;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_DEMOLITION;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlob.png;
+	hp = 25;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_HACKER;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlob.png;
+	hp = 25;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Blob {
+
+	type = BLOB_ASSIMILATING;
+	model1 = gfx/primitive/blob.primitive;
+	texture1 = textures/game/goodBlobInjured.png;
+	hp = 1;
+	weapon = WEP_PISTOL;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	flags = EF_WEIGHTLESS;
+
+};
+
+@END@

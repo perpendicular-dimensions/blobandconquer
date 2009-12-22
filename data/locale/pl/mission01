@@ -1,0 +1,6 @@
+AUTO = Obcy przygotowali zasadzkę! Musisz się przedostać i znaleźć drogę do domu!
+I001 = To jest punkt zapisu gry. Użycie go wymaga wejścia do kolumny światła i wciśnięcia przycisku AKCJI, aby zapisać stan gry. Niektóre punkty zapisu gry muszą zostać aktywowane przed użyciem.
+I002 = Zabierz ze sobą dodatkowe bronie. Pistolet nie ma limitu strzałów, ale jest dosyć słaby. Wszystkie inne bronie posiadają limit amunicji. Amunicję można zbierać z różnych miejsc oraz odbierać wrogom przez ich pokonanie.
+I003 = Wrogowie nie widzą cię, gdy stoisz za ścianami lub innymi przeszkodami. Masz w tym miejscu przewagę nad nimi.
+I004 = Obcy zablokowali drogę do bazy! Ciągle jednak możesz przedrzeć się jaskiniami.
+END

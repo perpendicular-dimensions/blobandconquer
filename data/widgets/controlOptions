@@ -1,0 +1,552 @@
+Grid {
+
+	name = ControlConfigGrid;
+	x = 0;
+	y = 0;
+	width = 700;
+	height = 500;
+	cellSpacing = 3;
+	rows = 25;
+	cols = 20;
+	valign = 1;
+	halign = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 1;
+	
+	text = Left;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = left;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 3;
+	
+	text = Right;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = right;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 3;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 5;
+	
+	text = Forward;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = forward;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 5;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 7;
+	
+	text = Backward;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = back;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 7;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 9;
+	
+	text = Jump;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = jump;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 9;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 11;
+	
+	text = Fire;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = fire;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 11;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 13;
+	
+	text = Action;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = action;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 13;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 1;
+	
+	text = Quick Grenade;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = grenade;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 3;
+	
+	text = Cycle Weapon;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = cycleWeapon;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 3;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 5;
+	
+	text = Auto / Manual Aim;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = lockTarget;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 5;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 7;
+	
+	text = Cycle Target;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = cycleTarget;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 7;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 9;
+	
+	text = Rotate Camera Left;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = rotateLeft;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 9;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 11;
+	
+	text = Rotate Camera Right;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = rotateRight;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 11;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 15;
+	
+	text = Status;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = status;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 5;
+	y = 15;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 11;
+	y = 13;
+	
+	text = Pause;
+
+};
+
+Widget {
+	
+	widgetType = INPUT;
+	grid = ControlConfigGrid;
+	name = pause;
+	groupName = controlConfig;
+	enabled = 1;
+	
+	x = 17;
+	y = 13;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 20;
+	
+	text = Mouse Sensitivity;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ControlConfigGrid;
+	name = mouseSensitivity;
+	groupName = controlConfig;
+	enabled = 1;
+	visible = 1;
+	
+	x = 5;
+	y = 20;
+	
+	colSpan = 14;
+	rowSpan = 1;
+	
+	step = 10;
+	min = 0;
+	max = 999;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ControlConfigGrid;
+	name = label;
+	groupName = controlConfig;
+	
+	x = 1;
+	y = 18;
+	
+	text = Analog Deadzone;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ControlConfigGrid;
+	name = analogDeadZone;
+	groupName = controlConfig;
+	enabled = 1;
+	visible = 1;
+	
+	x = 5;
+	y = 18;
+	
+	colSpan = 14;
+	rowSpan = 1;
+	
+	step = 100;
+	min = 0;
+	max = 32768;
+
+};
+
+Widget {
+	
+	grid = ControlConfigGrid;
+	widgetType = BUTTON;
+	name = Done;
+	label = OK;
+	groupName = controlConfig;
+	enabled = 1;
+	visible = 0;
+	x = 1;
+	y = 23;
+	colSpan = 3;
+	
+	valign = 1;
+	
+	backgroundColor = 0 100 0;
+
+};
+
+Widget {
+	
+	grid = ControlConfigGrid;
+	widgetType = BUTTON;
+	name = Reset;
+	label = Reset;
+	groupName = controlConfig;
+	enabled = 1;
+	visible = 0;
+	
+	x = 9;
+	y = 23;
+	
+	colSpan = 3;
+	
+	valign = 1;
+	
+	backgroundColor = 0 0 100;
+
+};
+
+Widget {
+	
+	grid = ControlConfigGrid;
+	widgetType = BUTTON;
+	name = Cancel;
+	label = Cancel;
+	groupName = controlConfig;
+	enabled = 1;
+	visible = 0;
+	
+	x = 16;
+	y = 23;
+	
+	colSpan = 3;
+	
+	valign = 1;
+	
+	backgroundColor = 100 0 0;
+
+};
+
+@END@

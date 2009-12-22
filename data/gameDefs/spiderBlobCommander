@@ -1,0 +1,17 @@
+Boss {
+
+	id = 0;
+	model1 = gfx/md2/spiderBlob.md2;
+	texture1 = textures/game/spiderBlobCommander.png;
+	health = 3000;
+	maxHealth = 3000;
+	shield = 250;
+	maxShield = 250;
+	bbMins = -18 -8 -5;
+	bbMaxs = 18 8 5;
+	gunPosition1 = -7 -24 -2.5;
+	gunPosition2 = 2.5 -24 -2.5;
+
+};
+
+@END@

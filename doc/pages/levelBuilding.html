@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET type="text/css" HREF="stylesheet.css">
+</HEAD>
+<BODY BACKGROUND="images/briefing.png">
+
+<TABLE STYLE="width: 100%">
+<TR>
+<TD STYLE="width: 50%; text-align: LEFT;"><A HREF="localisation.html">&lt;= Localisation</A></TD>
+<TD STYLE="width: 50%; text-align: RIGHT;"><A HREF="about.html">About =&gt;</A></TD>
+</TR>
+</TABLE>
+
+<P><DIV CLASS="line"></DIV></P>
+
+<CENTER><IMG SRC="../images/title.png"></CENTER>
+
+<H3>Level Building</H3>
+
+<H4>Setting Up Radiant</H4>
+
+<P>Follow the steps below to set up GTK Radiant for editing Blob And Conquer</P>
+
+<OL>
+<LI>Install GTK Radiant (we recommend 1.4)</LI>
+<LI>Unarchive Blob and Conquer to any location in your home directory</LI>
+<LI>Edit the file blobAndConquer.game (in the scripts directory of Blob and Conquer) and do the following,</LI>
+	<UL>
+		<LI>Update <SPAN STYLE="font-family:fixed; color:yellow">gametools</SPAN> to reflect the correct location of Radiant</LI>
+		<LI>Update <SPAN STYLE="font-family:fixed; color:yellow">enginepath</SPAN> to reflect the correct location of Blob and Conquer</LI>
+	</UL>
+<LI>Copy blobAndConquer.game to /path-to-radiant/games/</LI>
+<LI>Run radiant and select Blob and Conquer</LI>
+</OL>
+
+<P>If you experience problems check your paths and settings in the blobAndConquer.game file</P>
+
+<H4>Creating Levels</H4>
+
+<P>Creating levels requires knowledge of using GTKRadiant. Teaching the use of Radiant is beyond the scope of this
+manual, however there are plenty of tutorial floating around on the internet. Things to remember - You are not making
+a Quake level, so Quake features are not supported - Things like jump pads, crushers, etc are not supported in Blob and Conquer.
+</P>
+
+<P>At the very least when creating a level you will need an <SPAN STYLE="font-family:fixed; color:yellow">info_player_start</SPAN> 
+somewhere in your map so that the player can start somewhere. You should also have a <SPAN STYLE="font-family:fixed; color:yellow">
+FEATURE_EXIT</SPAN> somewhere so that the player
+can finish the level. By default exits will return to the title screen.
+A grid size of 8 is recommended when editting levels. For scale size, Bob is 6 x 6 x 6 (so he's
+not all that big).</P>
+
+<H4>Shaders</H4>
+
+<P>Blob and Conquer does not support the Quake 3 shader language.</P>
+
+<H4>Compiling Levels</H4>
+
+<P>It is recommended you use the supplied shell scripts to compile your levels. This will ensure that Radiant
+builds the level correctly. The script are found in the scripts directory of the Blob and Conquer source. You will
+need to edit the scripts' variable so they reflect the path you have installed Blob and Conquer in your home
+directory (or whereever else you may have put it). There are two main scripts,</P>
+
+<TABLE STYLE="background-color:#000077" CELLSPACING="1" CELLPADDING="5">
+<TR STYLE="background-color:#000000"><TD><B>buildBSP.sh</B></TD><TD>Fully builds the BSP. May time a long time depending on how big your map is.</TD></TR>
+<TR STYLE="background-color:#000000"><TD><B>leakCheck.sh</B></TD><TD>Performs a very fast meta build of the BSP to test for leaks. We found this useful ourselves.</TD></TR>
+</TABLE>
+
+<H4>Running Levels</H4>
+
+<P>Before you can use a level you have to create a mission file. At it's very basic level a mission file contains the name of the BSP map file
+to use. A basic mission file looks like this,</P>
+
+<PRE>
+Mission {
+
+	bsp = data/bsp/somemap.bsp;
+	
+	music = music/Dark Club.s3m;
+
+};
+</PRE>
+
+<P>Once this file is created add it to the data/missions/ directory. You can then play the map by using the command,</P>
+
+<PRE STYLE="color:#00FF00">
+./blobAndConquer -mission &lt;name of your mission&gt;
+</PRE>
+
+<P>For additional command line options see the Command Line options section</P>
+
+<H3>Editting Mission and Entity Meta Data</H3>
+
+<H4>Mission</H4>
+
+<TABLE STYLE="background-color:#000077" CELLSPACING="1" CELLPADDING="5">
+	<TR STYLE="background-color:#000000"><TD>bsp</TD><TD>Path to the BSP file to load.</TD></TR>
+	<TR STYLE="background-color:#000000"><TD>music</TD><TD>Music to load. Must be OGG, XM, S3M or MOD format.</TD></TR>
+	<TR STYLE="background-color:#000000"><TD>localeFile</TD><TD>Path to locale file for this map.</TD></TR>
+	<TR STYLE="background-color:#000000"><TD>enemySpawnList</TD><TD>Pipe (|) seperated list of enemies that can be spawned in.</TD></TR>
+	<TR STYLE="background-color:#000000"><TD>spawnSize</TD><TD>Maximum number of enemies to spawn in (will pick a random number between 1 and spawnSize)</TD></TR>
+	<TR STYLE="background-color:#000000"><TD>minSpawnTime</TD><TD>Minimum spawn interval in 100ths of a second.</TD></TR>
+	<TR STYLE="background-color:#000000"><TD>maxSpawnTime</TD><TD>Maximum spawn interval in 100ths of a second.</TD></TR>
+</TABLE>
+
+<H3>Objectives and Triggers</H3>
+
+<P>Todo</P>
+
+<P><DIV CLASS="line"></DIV></P>
+
+<TABLE STYLE="width: 100%">
+<TR>
+<TD STYLE="width: 50%; text-align: LEFT;"><A HREF="localisation.html">&lt;= Localisation</A></TD>
+<TD STYLE="width: 50%; text-align: RIGHT;"><A HREF="about.html">About =&gt;</A></TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

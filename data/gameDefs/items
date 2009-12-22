@@ -1,0 +1,153 @@
+// Defintions file for Items
+
+Item {
+
+	name = Cherry;
+	type = ITM_CHERRY;
+	itemType = IT_MEDICAL;
+	itemPower = 3;
+	model1 = gfx/rw2/cherry.blend.raw;
+	texture1 = textures/game/cherry.png;
+	bbMins = -3 -3 -1.5;
+	bbMaxs = 3 3 1.5;
+
+};
+
+Item {
+
+	name = Medipack;
+	type = ITM_MEDIPACK;
+	itemType = IT_MEDICAL;
+	itemPower = 15;
+	model1 = gfx/primitive/medipack.primitive;
+	texture1 = textures/game/medipack.png;
+	bbMins = -2 -2 -2;
+	bbMaxs = 2 2 2;
+
+};
+
+// ********************** Special Items *****************
+
+Item {
+
+	name = Keycard;
+	type = ITM_KEYCARD;
+	itemType = IT_SPECIAL;
+	itemPower = 0;
+	model1 = gfx/primitive/keycard.primitive;
+	texture1 = textures/game/keycard.png;
+	bbMins = -4 -4 -4;
+	bbMaxs = 4 4 4;
+
+};
+
+Item {
+
+	name = Battery;
+	type = ITM_BATTERY;
+	itemType = IT_SPECIAL;
+	itemPower = 0;
+	model1 = gfx/primitive/item.primitive;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Item {
+
+	name = ID Card;
+	type = ITM_IDCARD;
+	itemType = IT_SPECIAL;
+	itemPower = 0;
+	model1 = gfx/primitive/item.primitive;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Item {
+
+	name = C4;
+	type = ITM_C4;
+	itemType = IT_SPECIAL;
+	itemPower = 0;
+	texture1 = textures/game/c4.png;
+	model1 = gfx/primitive/c4.primitive;
+	bbMins = -4 -4 -4;
+	bbMaxs = 4 4 4;
+
+};
+
+Item {
+
+	name = Teletag;
+	type = ITM_TELETAG;
+	itemType = IT_SPECIAL;
+	itemPower = 3;
+	model1 = gfx/rw2/teletag.blend.raw;
+	texture1 = textures/game/teletag.png;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	collatable = 1;
+
+};
+
+Item {
+
+	name = Grappling Hook;
+	type = ITM_GRAPPLE_HOOK;
+	itemType = IT_SPECIAL;
+	itemPower = 1;
+	model1 = gfx/rw2/hook.blend.raw;
+	texture1 = textures/game/hook.png;
+	bbMins = -3 -3 -6;
+	bbMaxs = 3 3 6;
+	collatable = 1;
+
+};
+
+// ********************** Powerups *****************
+
+
+Item {
+	
+	name = Shield Belt;
+	type = ITM_SHIELD_BELT;
+	itemType = IT_POWER_UP;
+	itemPower = 0;
+	model1 = gfx/rw2/shieldbelt.blend.raw;
+	texture1 = textures/game/shieldBelt.png;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Item {
+	
+	name = Teeka Weapon;
+	type = ITM_TEEKA_WEAPON;
+	itemType = IT_POWER_UP;
+	itemPower = 0;
+	model1 = gfx/primitive/c4.primitive;
+	texture1 = textures/game/teekaWeapon.png;
+	bbMins = -4 -4 -4;
+	bbMaxs = 4 4 4;
+
+};
+
+// *********************** Misc ***********************
+
+Item {
+	
+	name = Sticky C4;
+	type = ITM_STICKY_C4;
+	itemType = IT_MISC;
+	itemPower = 0;
+	model1 = gfx/rw2/stickyc4.blend.raw;
+	texture1 = textures/game/stickyc4.png;
+	bbMins = -2 -2 -2;
+	bbMaxs = 2 2 2;
+
+};
+
+@END@

@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET type="text/css" HREF="stylesheet.css">
+</HEAD>
+<BODY BACKGROUND="images/briefing.png">
+
+<TABLE STYLE="width: 100%">
+<TR>
+<TD STYLE="width: 50%; text-align: LEFT;"><A HREF="trouble.html">&lt;= Trouble Shooting</A></TD>
+<TD STYLE="width: 50%; text-align: RIGHT;"><A HREF="levelBuilding.html">Level Building =&gt;</A></TD>
+</TR>
+</TABLE>
+
+<P><DIV CLASS="line"></DIV></P>
+
+<CENTER><IMG SRC="../images/title.png"></CENTER>
+
+<H3>Localisation</H3>
+
+<H4>Introduction</H4>
+
+<P>Blob and Conquer supports a fairly primitive localisation system. If you wish to translate B&amp;C in to
+another language then the information below will be useful to you. Blob and Conquer usually starts up using
+the default system language and will fall back to English for this parts of the game which haven't been
+translated.</P>
+
+<H4>Files and Format</H4>
+
+<P>Localisation files live in the data/locale directory of the source and then under a two letter
+named directory that contains the locale data. For example,</P>
+
+<PRE>
+data/locale/
+	en/
+	fr/
+	es/
+	it/
+</PRE>
+
+<P>Blob And Conquer does not inspect the directories under the locale directory and instead relies on
+a file called <SPAN STYLE="font-family:monospace">index</SPAN> which contains the supported language information. 
+It is a simple file that contains key-value pairs for the language and the symbol. Adding a new supported
+language is simply a case of adding in the language key and the language name.</P>
+
+<P>The formatting of the locale files is as below (taken from the <I>battle</I> file)</P>
+
+<TABLE STYLE="font-family:monospace" CELLSPACING="1" CELLPADDING="5" WIDTH="100%">
+<TR><TD WIDTH="20%">HINT_SAVE</TD><TD>Press ACTION to Save Game</TD></TR>
+<TR><TD>HINT_INFO</TD><TD>Press ACTION to get Information</TD></TR>
+<TR><TD>INFO_PICKED_UP</TD><TD>Picked up %s</TD></TR>
+<TR><TD>ITEM_REQUIRED</TD><TD>%s required</TD></TR>
+</TABLE>
+
+<P>The first column represents the key for the localisation string. The second column represents the translated string.</P>
+
+<P>Translating is simply a case of adding in the appropriate key-value pairs for the language you desire. So, for example,
+if you wanted to add in some French values you would add in a line as such,</P>
+
+<TABLE STYLE="font-family:monospace" CELLSPACING="1" CELLPADDING="5" WIDTH="100%">
+<TR><TD WIDTH="20%">HINT_SAVE</TD><TD>&lt;Translated French String&gt;</TD></TR>
+</TABLE>
+
+<P>When running the game in French the game will load up the string for HINT_SAVE and display this instead of the
+English string.</P>
+
+<P><B STYLE="color:#BBBBFF">NOTE: All lines must end with a semi colon! Also multi line strings are not supported (ie - all
+your text for that key-value pair must be on the same line). The game will give you little warning of issues with this. Again,
+(as it appears in the file)</B></P>
+
+<PRE>
+HINT_USE_SWITCH Press ACTION to activate switch;
+</PRE>
+
+<P><B STYLE="color:#BBBBFF">Note the semi colon at the end of the line.</B></P>
+
+<P><DIV CLASS="line"></DIV></P>
+
+<TABLE STYLE="width: 100%">
+<TR>
+<TD STYLE="width: 50%; text-align: LEFT;"><A HREF="trouble.html">&lt;= Trouble Shooting</A></TD>
+<TD STYLE="width: 50%; text-align: RIGHT;"><A HREF="levelBuilding.html">Level Building =&gt;</A></TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

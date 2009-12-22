@@ -1,0 +1,31 @@
+Boss {
+
+	id = 0;
+	model1 = gfx/rw2/eyedroidcommander.blend.raw;
+	texture1 = textures/game/eyedroidcommander.png;
+	health = 200;
+	shield = 150;
+	bbMins = -12 -6 -8;
+	bbMaxs = 12 6 8;
+	flags = EF_WEIGHTLESS+EF_IMMORTAL;
+	gunPosition1 = -8 -10 0;
+	gunPosition2 = 8 -10 0;
+
+};
+
+Boss {
+
+	id = 1;
+	model1 = gfx/rw2/cannonbase.blend.raw;
+	texture1 = textures/game/cannonBase.png;
+	model2 = gfx/rw2/cannontop.blend.raw;
+	texture2 = textures/game/cannonTop1.png;
+	health = 25;
+	maxHealth = 25;
+	bbMins = -8 -8 -5;
+	bbMaxs = 8 8 5;
+	gunPosition1 = 0 -22 8.5;
+
+};
+
+@END@

@@ -1,0 +1,27 @@
+Mission {
+
+	bsp = data/bsp/finalBattle.bsp;
+	
+	music = music/Scene Music.xm;
+	
+	fogColor = 0.0 0.0 0.0;
+	fogMin = 1000;
+	fogMax = 5500;
+	fogDensity = 1.0;
+	
+	skySphere = textures/game/starsky2.png;
+	skySphereSize = 10;
+	
+	enemyLevel = 5;
+	
+	exitToMission = AUTO;
+	
+	bossDefFile = data/gameDefs/cryptBoss;
+	
+	supplyCrateList = WEP_SHOTGUN|WEP_PLASMA_RIFLE|WEP_ROCKET_LAUNCHER;
+	
+	startCutscene = data/cutscenes/scripts/finalStart;
+	endCutscene = data/cutscenes/scripts/finalEnd;
+};
+
+@END@

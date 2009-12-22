@@ -1,0 +1,6 @@
+I001 = Spark Plug is a mechanic. He can hotwire certain pieces of BioMech machinary and override their normal functions. Give him the USE order when near machinery.
+I002 = Sylvester is a demolition expert. He can plant bombs on certain structures. Give him the USE order when close to a bomb plate.
+I003 = This is a mechanic switch. Give Spark Plug the USE order it to make him hotwire it.
+I004 = This is a demolition plate. Give Sylvester (the demolition Blob) a USE order to make him plant a bomb.
+I005 = This switch should open that door down there. But if you can't find one you'll have to find another way through...
+END

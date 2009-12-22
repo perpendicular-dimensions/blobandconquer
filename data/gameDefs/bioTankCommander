@@ -1,0 +1,98 @@
+Boss {
+
+	id = 0;
+	model1 = gfx/rw2/tankbase.blend.raw;
+	texture1 = textures/game/tankbase1.png;
+	model2 = gfx/rw2/tanktop1.blend.raw;
+	texture2 = textures/game/tanktop1.png;
+	health = 2500;
+	maxHealth = 2500;
+	shield = 200;
+	maxShield = 200;
+	bbMins = -16 -20 -6;
+	bbMaxs = 16 20 6;
+	flags = EF_HAS_TURRET;
+	gunPosition1 = -4 -55 16;
+	gunPosition2 = 4 -55 16;
+
+};
+
+Boss {
+
+	id = 1;
+	model1 = gfx/rw2/tankbase.blend.raw;
+	texture1 = textures/game/tankbase3.png;
+	model2 = gfx/rw2/tanktop2.blend.raw;
+	texture2 = textures/game/tanktop2.png;
+	health = 100;
+	maxHealth = 100;
+	shield = 25;
+	maxShield = 25;
+	bbMins = -16 -20 -6;
+	bbMaxs = 16 20 6;
+	flags = EF_HAS_TURRET;
+	gunPosition1 = 0 -27 8;
+
+};
+
+Boss {
+
+	id = 2;
+	model1 = gfx/rw2/tankbase.blend.raw;
+	texture1 = textures/game/tankbase2.png;
+	model2 = gfx/rw2/tanktop2.blend.raw;
+	texture2 = textures/game/tanktop3.png;
+	health = 100;
+	maxHealth = 100;
+	shield = 25;
+	maxShield = 25;
+	bbMins = -16 -20 -6;
+	bbMaxs = 16 20 6;
+	flags = EF_HAS_TURRET;
+	gunPosition1 = 0 -27 8;
+
+};
+
+Boss {
+
+	id = 3;
+	model1 = gfx/rw2/tanktop1.blend.raw;
+	texture1 = textures/game/tanktop1.png;
+	minHP = 0;
+	maxHP = 0;
+	bbMins = -8 -8 -8;
+	bbMaxs = 8 8 8;
+	weapon = WEP_PISTOL;
+	flags = EF_IMMORTAL+EF_DYING+EF_ONFIRE;
+
+};
+
+Boss {
+
+	id = 4;
+	model1 = gfx/rw2/tanktop2.blend.raw;
+	texture1 = textures/game/tanktop2.png;
+	minHP = 0;
+	maxHP = 0;
+	bbMins = -8 -8 -8;
+	bbMaxs = 8 8 8;
+	weapon = WEP_PISTOL;
+	flags = EF_IMMORTAL+EF_DYING+EF_ONFIRE;
+
+};
+
+Boss {
+
+	id = 5;
+	model1 = gfx/rw2/tanktop2.blend.raw;
+	texture1 = textures/game/tanktop3.png;
+	minHP = 0;
+	maxHP = 0;
+	bbMins = -8 -8 -8;
+	bbMaxs = 8 8 8;
+	weapon = WEP_PISTOL;
+	flags = EF_IMMORTAL+EF_DYING+EF_ONFIRE;
+
+};
+
+@END@

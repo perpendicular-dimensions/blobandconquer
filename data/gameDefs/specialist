@@ -1,0 +1,90 @@
+Boss {
+
+	id = 0;
+	model1 = gfx/primitive/cryptBoss.primitive;
+	texture1 = textures/mech/rustedmetal07.jpg;
+	health = 300;
+	maxHealth = 300;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	flags = EF_WEIGHTLESS+EF_ALWAYS_FACE;
+
+};
+
+Boss {
+
+	id = 1;
+	model1 = gfx/primitive/energyBall.primitive;
+	texture1 = textures/game/arrow.png;
+	health = 250;
+	maxHealth = 250;
+	bbMins = -2 -2 -2;
+	bbMaxs = 2 2 2;
+	flags = EF_WEIGHTLESS;
+
+};
+
+Boss {
+
+	id = 2;
+	model1 = gfx/primitive/energyBall.primitive;
+	texture1 = textures/game/grenade.png;
+	health = 250;
+	maxHealth = 250;
+	bbMins = -2 -2 -2;
+	bbMaxs = 2 2 2;
+	flags = EF_WEIGHTLESS;
+
+};
+
+Boss {
+
+	id = 3;
+	model1 = gfx/primitive/energyBall.primitive;
+	texture1 = textures/game/bullet.png;
+	health = 250;
+	maxHealth = 250;
+	bbMins = -2 -2 -2;
+	bbMaxs = 2 2 2;
+	flags = EF_WEIGHTLESS;
+
+};
+
+Boss {
+
+	id = 4;
+	model1 = gfx/primitive/energyBall.primitive;
+	texture1 = textures/game/machineGunDroid.png;
+	health = 250;
+	maxHealth = 250;
+	bbMins = -2 -2 -2;
+	bbMaxs = 2 2 2;
+	flags = EF_WEIGHTLESS;
+
+};
+
+Boss {
+
+	id = 5;
+	model1 = gfx/primitive/bob.primitive;
+	texture1 = textures/game/iceBlock.jpg;
+	health = 1350;
+	maxHealth = 1350;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+Boss {
+
+	id = 6;
+	model1 = gfx/primitive/bob.primitive;
+	texture1 = textures/liquid/lava01.jpg;
+	health = 1350;
+	maxHealth = 1350;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+
+};
+
+@END@

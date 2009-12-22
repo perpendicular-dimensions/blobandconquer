@@ -1,0 +1,153 @@
+Mission {
+
+	missionName = Flooded Tunnel 1;
+
+	bsp = data/bsp/floodedTunnel.bsp;
+	
+	music = music/Sodom of Evil.xm;
+	
+	fogColor = 0.0 0.0 0.0;
+	
+	fogMin = 1000;
+	
+	fogMax = 1500;
+	
+	fogDensity = 0.35;
+	
+	skySphere = textures/game/overcast.png;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_PISTOL_DROID|NME_GRENADE_BLOB|NME_MACHINEGUN_DROID;
+	spawnSize = 10;
+	minSpawnTime = 2000;
+	maxSpawnTime = 3000;
+	
+	ambientEffects = sound/ambience/flooded/drips1.ogg|sound/ambience/flooded/drips2.ogg|sound/ambience/flooded/drips3.ogg|sound/ambience/flooded/drips4.ogg|sound/ambience/flooded/drips5.ogg;
+	
+	exitToMission = AUTO;
+};
+
+// ============ Exit Keys ============
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Open tunnel exit;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+	
+	completionTrigger = unlockExitDoor;
+};
+
+// ============ Thin Bridge Enemy Spawners ============
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = thinBridge1;
+	targetName = thinBridge1Spawner;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = thinBridge2;
+	targetName = thinBridge2Spawner;
+
+};
+
+// ============ Maze Door 2 Spawner ============
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = mazeDoor2;
+	targetName = mazeDoor2Spawner;
+
+};
+
+// ============ Exit Key Spawners ============
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = Exit Key 1;
+	targetName = exitKey1Spawner;
+
+};
+
+// ============ Exit Key Spawners ============
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = Exit Key 2;
+	targetName = exitKey2Spawner;
+
+};
+
+// ============ Exit Key Triggers ============
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = exitDoor2;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = exitDoor1;
+	objectiveId = 1;
+
+};
+
+// ============ Exit Door Trigger ============
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = unlockExitDoor;
+	targetName = exitDoor;
+
+};
+
+@END@

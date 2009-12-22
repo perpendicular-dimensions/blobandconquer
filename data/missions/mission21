@@ -1,0 +1,215 @@
+Mission {
+
+	missionName = Unknown;
+
+	bsp = data/bsp/caves3.bsp;
+	
+	music = music/Dragon Cave.xm;
+	
+	fogColor = 0.05 0.05 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	
+	enemyLevel = 3;
+	
+	exitToMission = AUTO;
+	
+	ambientEffects = sound/ambience/ruins/soulWail1.ogg|sound/ambience/ruins/soulWail2.ogg|sound/ambience/ruins/wolfHowl.ogg;
+	
+	startCutscene = data/cutscenes/scripts/unknownStart;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Open east passage door;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Open passage to Flooded Tunnel;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// =============== Close West Door =============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = westPassageRockDoor1;
+	targetName = westPassageRockDoor1;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+
+};
+
+// ================= Pick up C4 ================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+
+	name = westCaveC4;
+	targetName = darkBlobSpawner1;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+// ================== Main location spawners ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner2_1;
+	targetName = darkBlobSpawner2;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner2_2;
+	targetName = darkBlobSpawner2;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner3_1;
+	targetName = darkBlobSpawner3;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner3_2;
+	targetName = darkBlobSpawner3;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner4;
+	targetName = darkBlobSpawner4;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = mainEastWalkway;
+	targetName = darkBlobSpawner5;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner6;
+	targetName = darkBlobSpawner6;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = darkBlobSpawner7;
+	targetName = darkBlobSpawner7;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+
+};
+
+// ============== Main East Door Trigger ==============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	name = mainEastDoor;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	
+	objectiveId = 1;
+
+};
+
+// ============== Flooded Tunnel access ==============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	name = mainExitDoor;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	
+	objectiveId = 2;
+
+};
+
+@END@

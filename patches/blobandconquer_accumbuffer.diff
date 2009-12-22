@@ -1,0 +1,231 @@
+--- blobandconquer-1.05.orig/data/widgets/additional
++++ blobandconquer-1.05/data/widgets/additional
+@@ -133,6 +133,40 @@
+ 
+ Widget {
+ 	
++	widgetType = LABEL;
++	grid = AdditionalGrid;
++	name = label;
++	groupName = additional;
++	
++	x = 1;
++	y = 11;
++	
++	text = Limit Frames per Second;
++
++};
++
++Widget {
++
++        widgetType = SLIDER;
++	grid = AdditionalGrid;
++        name = FPSlimit;
++        groupName = additional;
++        enabled = 1;
++        visible = 1;
++
++        x = 14;
++        y = 11;
++
++        colSpan = 12;
++        rowSpan = 1;
++
++        min = 5;
++        max = 100;
++
++};
++
++Widget {
++	
+ 	grid = ConfigurationGrid;
+ 	widgetType = BUTTON;
+ 	name = Done;
+--- blobandconquer-1.05.orig/src/init.cpp
++++ blobandconquer-1.05/src/init.cpp
+@@ -413,6 +413,11 @@
+ 	}
+ 	
+ 	SDL_GL_SetAttribute(SDL_GL_SWAP_CONTROL, 1);
++	SDL_GL_SetAttribute(SDL_GL_SWAP_CONTROL, 1);
++
++	SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE, 1);
++	SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE, 1);
++	SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE, 1);
+ 	
+ 	loadConfig();
+ 	
+--- blobandconquer-1.05.orig/src/hud/options.cpp
++++ blobandconquer-1.05/src/hud/options.cpp
+@@ -432,6 +432,7 @@
+ 
+ void doAdditionalOptions()
+ {
++	extern int maxfps;
+ 	uiManager->onlyShowGroup("additional");
+ 	
+ 	Grid *grid = uiManager->getGrid("AdditionalGrid");
+@@ -442,6 +443,7 @@
+ 	ComboBox *shadows = (ComboBox*)uiManager->getWidget("Shadows", "additional");
+ 	ComboBox *decals = (ComboBox*)uiManager->getWidget("Decals", "additional");
+ 	CheckBox *swap = (CheckBox*)uiManager->getWidget("SwapAxis", "additional");
++	Slider *fpslimit = (Slider*)uiManager->getWidget("FPSlimit", "additional");
+ 	
+ 	Button *done = (Button*)uiManager->getWidget("Done", "additional");
+ 	
+@@ -472,6 +474,8 @@
+ 	
+ 	swap->checked = engine->swapSecondStickAxis;
+ 	
++	fpslimit->value = maxfps;
++
+ 	engine->resetTimeDifference();
+ 	
+ 	while (!finished)
+@@ -508,6 +512,7 @@
+ 	game->decalPolicy = decals->selectedItem;
+ 	game->shadowPolicy = shadows->selectedItem;
+ 	engine->swapSecondStickAxis = swap->checked;
++	maxfps = fpslimit->value;
+ 	
+ 	blood->clear();
+ 	decals->clear();
+--- blobandconquer-1.05.orig/src/cplusplus/CGraphics.cpp
++++ blobandconquer-1.05/src/cplusplus/CGraphics.cpp
+@@ -24,6 +24,9 @@
+ #include <SDL/SDL_syswm.h>
+ #endif
+ 
++int acc = 0;
++int maxfps = 60;
++
+ Graphics::Graphics()
+ {
+ 	fontIndex = 0;
+@@ -58,8 +61,8 @@
+ 	screenMode[3].w = 1280;
+ 	screenMode[3].h = 1024;
+ 	
+-	screenMode[4].w = 1900;
+-	screenMode[4].h = 1200;
++	screenMode[4].w = 1680;
++	screenMode[4].h = 1050;
+ 	
+ 	animTimer = 0;
+ 	
+@@ -133,6 +136,24 @@
+ 		glLoadIdentity();
+ 		
+ 		gluPerspective(45.0f, (GLfloat) screen->w / (GLfloat) screen->h, 0.1f, 9000.0f);
++		
++		// AA using the accumulation buffer
++
++		static GLfloat dx[100] = {-0.5, 0.5, -0.5, 0.5, 0, -0.5, 0.5, 0, 0, 0}; 
++		static GLfloat dy[100] = {-0.5, 0.5, 0.5, -0.5, 0, 0, 0, -0.5, 0.5, 0};
++
++		if(!dx[9]) {
++			for(int i = 9; i < 100; i++) {
++				dx[i] = drand48() - 1.0;
++				dy[i] = drand48() - 1.0;
++			}
++		}
++
++		GLfloat m[16];
++		glGetFloatv(GL_PROJECTION_MATRIX, m);
++		m[8] = dx[acc % 100]/(GLfloat)screen->w;
++		m[9] = dy[acc % 100]/(GLfloat)screen->h;
++		glLoadMatrixf(m);
+ 	
+ 		glMatrixMode(GL_MODELVIEW);
+ 		glLoadIdentity();
+@@ -247,9 +268,12 @@
+ 	debug(("Graphics::setResolution() - Done\n"));
+ }
+ 
++static int swapframes = 0;
++
+ void Graphics::resetFPSCount()
+ {
+ 	frames = 0;
++	swapframes = 0;
+ 	time = 0.0;
+ 	fps = "N/A";
+ }
+@@ -267,12 +291,13 @@
+ 			
+ 	if (time <= 0)
+ 	{
+-		fps.setText("%d fps", frames);
++		fps.setText("%d * %3.1f fps", swapframes, (float)frames / swapframes);
+ 		time = 100;
+ 		frames = 0;
++		swapframes = 0;
+ 	}
+ 	
+-	drawString(screen->w - 5, y, TXT_RIGHT, GLColor::white, true, "%s", fps.getText());
++	drawString(screen->w - 11, y, TXT_RIGHT, GLColor::white, true, "%s", fps.getText());
+ }
+ 
+ void Graphics::showLoadingProgress(const char *status)
+@@ -333,8 +358,30 @@
+ 
+ void Graphics::updateScreen()
+ {
+-	SDL_GL_SwapBuffers();
+-	SDL_Delay(1);
++	static const int maxacc = 256;
++	bool flush = false;
++	static uint32_t lastflush = 0;
++	uint32_t now = SDL_GetTicks();
++
++	acc++;
++
++	// Decide to flush accumulation buffer if another frame would make us miss the next vblank.
++	if(now - lastflush >= 1000 / maxfps || acc >= maxacc)
++		flush = true;
++
++	// Accumulate this frame unless it's the first frame and we're flushing.
++	if(!flush || acc > 1)
++		glAccum(acc > 1 ? GL_ACCUM : GL_LOAD, 1.0f / maxacc);
++
++	if(flush) {
++		if(acc > 1)
++			glAccum(GL_RETURN, (float)maxacc / (float)acc);
++		acc = 0;
++		lastflush = now;
++		swapframes++;
++		SDL_GL_SwapBuffers();
++	}
++	//SDL_Delay(1);
+ 
+ 	if ((engine->keyState[SDLK_F10]) || ((engine->keyState[SDLK_RETURN]) && (engine->keyState[SDLK_LALT])))
+ 	{
+@@ -587,7 +634,7 @@
+ 	glBindTexture(GL_TEXTURE_2D, glTexture);
+ 	
+ 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, tmp->pixels);
+-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
++	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+ 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+ 	gluBuild2DMipmaps(GL_TEXTURE_2D, 3, tmp->w, tmp->h, GL_RGBA, GL_UNSIGNED_BYTE, tmp->pixels);
+ 	
+@@ -611,7 +658,7 @@
+ 	
+ 	glGenTextures(1, &glTexture);
+ 	glBindTexture(GL_TEXTURE_2D, glTexture);
+-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
++	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+ 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+ 	
+ 	Texture *texture = new Texture();
+--- blobandconquer-1.05.orig/src/cplusplus/CEngine.cpp
++++ blobandconquer-1.05/src/cplusplus/CEngine.cpp
+@@ -45,7 +45,7 @@
+ 	
+ 	joystickIndex = 0;
+ 	
+-	showFPS = false;
++	showFPS = true;
+ 	showPosition = false;
+ 	
+ 	memset(lastKeyEvents, 0, 35);

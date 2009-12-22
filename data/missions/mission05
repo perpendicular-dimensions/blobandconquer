@@ -1,0 +1,126 @@
+Mission {
+
+	missionName = Sewers;
+
+	bsp = data/bsp/sewers1.bsp;
+	
+	music = music/Advancement.xm;
+	
+	fogColor = 0.0 0.0 0.0;
+	fogMin = 1000;
+	fogMax = 2000;
+	fogDensity = 0.35;
+	
+	skySphere = textures/game/overcast.png;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_MACHINEGUN_BLOB|NME_SHOTGUN_BLOB|NME_PISTOL_DROID|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB;
+	spawnSize = 4;
+	minSpawnTime = 2000;
+	maxSpawnTime = 6000;
+	
+	ambientEffects = sound/ambience/flooded/drips1.ogg|sound/ambience/flooded/drips2.ogg|sound/ambience/flooded/drips3.ogg|sound/ambience/flooded/drips4.ogg|sound/ambience/flooded/drips5.ogg;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Find your way through the sewers;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Find some C4;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Blast through crumbling walls;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_SECONDARY;
+	description = Find a better grenade launcher;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// =================== Main Exit ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = exitPoint;
+	objectiveId = 1;
+
+};
+
+// ==================== C4 ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = c4;
+	objectiveId = 2;
+
+};
+
+// ==================== Weak Walls ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = weakWall;
+	objectiveId = 3;
+
+};
+
+// ==================== Grenade Launcher ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = grenadeLauncher;
+	objectiveId = 4;
+
+};
+
+@END@

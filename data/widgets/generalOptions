@@ -1,0 +1,353 @@
+Grid {
+
+	name = ConfigurationGrid;
+	x = 0;
+	y = 0;
+	width = 700;
+	height = 500;
+	cellSpacing = 3;
+	rows = 28;
+	cols = 35;
+	valign = 1;
+	halign = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 1;
+	
+	text = Resolution;
+
+};
+
+Widget {
+	
+	widgetType = COMBOBOX;
+	grid = ConfigurationGrid;
+	name = Resolution;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	colSpan = 8;
+	
+	x = 12;
+	y = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 3;
+	
+	text = Fullscreen;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = ConfigurationGrid;
+	name = FullScreen;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 3;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 5;
+	
+	text = Grab Mouse;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = ConfigurationGrid;
+	name = GrabMouse;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 5;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 7;
+	
+	text = Sound Volume;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ConfigurationGrid;
+	name = SoundVolume;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 7;
+	
+	colSpan = 12;
+	rowSpan = 1;
+	
+	min = 0;
+	max = 128;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 9;
+	
+	text = Music Volume;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ConfigurationGrid;
+	name = MusicVolume;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 9;
+	
+	colSpan = 12;
+	rowSpan = 1;
+	
+	min = 0;
+	max = 128;
+
+};
+
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 11;
+	
+	text = Ambient Volume;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ConfigurationGrid;
+	name = AmbientVolume;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 11;
+	
+	colSpan = 12;
+	rowSpan = 1;
+	
+	min = 0;
+	max = 128;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 13;
+	
+	text = Environment Volume;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ConfigurationGrid;
+	name = EnvironmentVolume;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 13;
+	
+	colSpan = 12;
+	rowSpan = 1;
+	
+	min = 0;
+	max = 128;
+
+};
+
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = ConfigurationGrid;
+	name = label;
+	groupName = configPanel;
+	
+	x = 1;
+	y = 15;
+	
+	text = Brightness;
+
+};
+
+Widget {
+	
+	widgetType = SLIDER;
+	grid = ConfigurationGrid;
+	name = Brightness;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	
+	x = 12;
+	y = 15;
+	
+	colSpan = 12;
+	rowSpan = 1;
+	
+	min = 0;
+	max = 150;
+
+};
+
+Widget {
+	
+	grid = ConfigurationGrid;
+	widgetType = BUTTON;
+	name = ControlConfig;
+	label = Configure Controls...;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	x = 1;
+	y = 18;
+	
+	colSpan = 8;
+	
+	valign = 1;
+	
+	backgroundColor = 0 0 100;
+
+};
+
+Widget {
+	
+	grid = ConfigurationGrid;
+	widgetType = BUTTON;
+	name = Extra;
+	label = Additional Options...;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 1;
+	x = 1;
+	y = 20;
+	
+	colSpan = 8;
+	
+	valign = 1;
+	
+	backgroundColor = 0 0 100;
+
+};
+
+Widget {
+	
+	grid = ConfigurationGrid;
+	widgetType = BUTTON;
+	name = Cheats;
+	label = Cheats;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 0;
+	x = 1;
+	y = 22;
+	
+	colSpan = 8;
+	
+	valign = 1;
+	
+	backgroundColor = 0 0 100;
+
+};
+
+Widget {
+	
+	grid = ConfigurationGrid;
+	widgetType = BUTTON;
+	name = Done;
+	label = OK;
+	groupName = configPanel;
+	enabled = 1;
+	visible = 0;
+	x = 1;
+	y = 27;
+	colSpan = 4;
+	
+	valign = 1;
+	
+	backgroundColor = 0 100 0;
+
+};
+
+@END@

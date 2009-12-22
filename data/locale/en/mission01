@@ -1,0 +1,6 @@
+AUTO = The BioMechs have set up an ambush! You'll need to clear the ambush and then find a way back home!
+I001 = This is a Save Point. To use it step inside the light column and press ACTION to save. Some Save Points will have to be activated before they can be used.
+I002 = Make sure you pick up additional weapons. The pistol is unlimited but fairly weak. All other weapons have ammo limits. Ammo can be gained from pickups and by defeating enemies.
+I003 = Enemies cannot see you if you are standing behind walls or other obstacles. You can see this to your advantage when in combat situations.
+I004 = The BioMechs have sealed off your way home! You can still get home through the caves though.
+END

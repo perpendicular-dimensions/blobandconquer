@@ -1,0 +1,10 @@
+// Body
+Box {
+
+	position = 0 0 0;
+	size = 8 0.05 8;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+@END@

@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+<LINK REL=STYLESHEET type="text/css" HREF="stylesheet.css">
+</HEAD>
+<BODY BACKGROUND="images/briefing.png">
+
+<TABLE STYLE="width: 100%">
+<TR>
+<TD STYLE="width: 50%; text-align: LEFT;"><A HREF="story.html">&lt;= Introduction and Story</A></TD>
+<TD STYLE="width: 50%; text-align: RIGHT;"><A HREF="playing.html">Basic Gameplay =&gt;</A></TD>
+</TR>
+</TABLE>
+
+<P><DIV CLASS="line"></DIV></P>
+
+<CENTER><IMG SRC="../images/title.png"></CENTER>
+
+<H3>Requirements</H3>
+
+<P>Blob Wars : Blob And Conquer requires the following,</P>
+<UL>
+	<LI><A HREF="http://www.libsdl.org">SDL</A></LI>
+	<LI><A HREF="http://www.libsdl.org/projects/SDL_image">SDL Image</A></LI>
+	<LI><A HREF="http://www.libsdl.org/projects/SDL_mixer">SDL Mixer</A></LI>
+	<LI><A HREF="http://www.libsdl.org/projects/SDL_ttf">SDL TTF</A></LI>
+	<LI><A HREF="http://www.zlib.org">Zlib</A></LI>
+	<LI><A HREF="http://www.opengl.org">OpenGL</A></LI>
+</UL>
+
+<P>
+<PRE>
+Screen Resolution : Miniumum 800 x 600 (up to 1280 x 1024 supported)
+Processor         : Unknown
+Color Depth       : 24 bit or greater
+Harddrive         : 85  MB
+Graphics          : Hardware Accelerated 3D with OpenGL support
+Texture Memory    : Unknown
+Controls          : Keyboard and Mouse / Joystick
+</PRE>
+
+<P>Most Linux users will find that the required SDL libraries came with their system and are 
+probably already installed. If not, click the name of the library above to go to the relevant 
+homepage. OpenGL drivers are generally provided by your graphics card's vendor (for example
+ATI or Nvidia). These can be downloaded from your vendor's homepage. Blob and Conquer does not
+support software OpenGL and it is <B>NOT</B> recommended that you attempt to play the game
+with no hardware acceleration.</P>
+
+<A NAME="installation"></A><H3>Installation</H3>
+
+<P><I>(Note - These instruction refer to Linux / Unix environments. Other operating 
+systems may vary)</I></P>
+
+<P>There are two main methods of installation available - Installing using a binary RPM and
+compiling the game from source.</P>
+
+<H4>Installing using an RPM</H4>
+
+<P>This is the easiest and most likely the preferred method of installation for most users.
+Depending on your desktop environment (eg - KDE, Gnome) you may be able to install the game by
+double clicking on the RPM file icon and following the onscreen instructions. You can also
+install the game by using the command line (remember to change the filename to match the name 
+of the package you are installing),</P>
+
+<P CLASS="terminal">rpm -U blobAndConquer-x.x-x.i586.rpm</P>
+
+<P>Provided you have all the required libraries installed the game should install without problems.
+Be aware that in order to perform the above command you will be required to have root user access.</P>
+
+<H4>Installation from Source</H4>
+
+<P>If you choose this method you will need to build the game from source. This will require all the appropriate
+development libraries (see Requirements) and some knowledge of building an application using the source code.
+Open a terminal and use the following commands to extract, compile and install the game (again remember to change the
+filename to match the name of the download),</P>
+
+<P CLASS="terminal">
+tar xzf blobAndConquer-x.x-x.tar.gz<BR>
+cd blobAndConquer-x.x-x<BR>
+make<BR>
+make install<FONT COLOR="#FFFFFF">*</FONT><BR>
+</P>
+
+<P>Depending on the speed of your computer (and other factors that may limit the compiler time), you
+may have to wait a few minutes for the initial "make" command to complete whilst the game's source
+code is compiled. Once this has [successfully] completed you can run the "make install" command. If
+whilst running either of these steps the process aborts check the error message to see if you are
+missing any development files or check the Trouble Shooting section for more help.</P>
+
+<I>* - Root access is required to perform this step</I>
+
+<A NAME="running"></A><H3>Running the Game</H3>
+
+<P>Both and KDE and Gnome desktop environments (and maybe others) should have a new menu entry
+called Blob And Conquer. This can be found under Games / Tactics & Strategy (or there abouts). You
+can also run the game from a terminal prompt by typing,</P>
+
+<P CLASS="terminal">
+blobAndConquer
+</P>
+
+<P>Additional commands for running the game are available when running the game from the command
+prompt. See the section on Additonal Command Line Options for more details.</P>
+
+<H3>Root Access</H3>
+
+<P>In order to install the game using either of the above methods you be required to have root access
+rights to the machine. You can temporarily switch the the root user by typing,</P>
+
+<P CLASS="terminal">
+su
+</P>
+
+<P>and providing the root password. You will then be able to install the game. Remember to exit from
+the root user mode by typing,</P>
+
+<P CLASS="terminal">
+exit
+</P>
+
+<P>It is <B>NOT</B> recommended you be the root user for any longer than you need be.</P>
+
+<H3>Misc Installation Information</H3>
+
+<P>The game is installed using the following directory structure. If you experience problems
+getting the game to run, please check your paths are correct.</P>
+
+<P STYLE="font-family: monospace">
+/usr/games/blobAndConquer<BR>
+/usr/share/games/parallelrealities/blobAndConquer.pak<BR>
+/usr/share/doc/blobAndConquer/*<BR>
+</P>
+
+<P>Saved games and configuration data are saved to,</P>
+
+<P STYLE="font-family: monospace">
+{USER_HOME}/.parallelrealities/blobAndConquer/<BR>
+</P>
+
+<P><DIV CLASS="line"></DIV></P>
+
+<TABLE STYLE="width: 100%">
+<TR>
+<TD STYLE="width: 50%; text-align: LEFT;"><A HREF="story.html">&lt;= Introduction and Story</A></TD>
+<TD STYLE="width: 50%; text-align: RIGHT;"><A HREF="playing.html">Basic Gameplay =&gt;</A></TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

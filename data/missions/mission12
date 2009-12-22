@@ -1,0 +1,78 @@
+CustomItem {
+
+	name = AI Kernel Module;
+	
+	model1 = gfx/primitive/item.primitive;
+	
+	texture1 = textures/game/AIUnit.png;
+	
+	bbMins = -4 -4 -4;
+	
+	bbMaxs = 4 4 4;
+	
+	customCarriable = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+
+	action = TRIGGER_ACTION_FUNCTION_POINTER;
+	name = BossWall;
+	targetName = BossWall;
+};
+
+
+Mission {
+
+	bsp = data/bsp/bossBattle2.bsp;
+	
+	music = music/The Siege.xm;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 2500;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/day2.jpg;
+	skySphereSize = 1;
+	
+	bossDefFile = data/gameDefs/bioTankCommander;
+	
+	enemyLevel = 3;
+	
+	startCutscene = data/cutscenes/scripts/bossBattle2Start;
+	
+	ambientEffects = sound/ambience/grasslands/birdsong.ogg|sound/ambience/grasslands/cardinal.ogg|sound/ambience/grasslands/falsebird.ogg|sound/ambience/grasslands/lapwing.ogg|sound/ambience/grasslands/robin.ogg;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy Beta Biotank;
+	status = OBJ_INCOMPLETE;
+	active = 0;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = BioMech Tank V3.0 (Beta);
+	objectiveId = 1;
+
+};
+
+@END@

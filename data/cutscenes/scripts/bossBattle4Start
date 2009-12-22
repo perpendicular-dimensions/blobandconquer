@@ -1,0 +1,191 @@
+LOAD_NARRATIVE bossBattle4Start;
+
+ENTITY_POSITION_AT "Bob" "BobScriptStart";
+ENTITY_POSITION_AT "Teeka" "TeekaScriptStart";
+
+ENTITY_POSITION_AT "Blaze" "BlazeScriptStart";
+ENTITY_POSITION_AT "Frost" "FrostScriptStart";
+
+CAMERA_POSITION_AT "BlobCheckPoint";
+CAMERA_FOLLOW "Bob";
+CAMERA_MOVE_TO "CameraLocation1" 0.25;
+
+ENTITY_MOVE_TO "Bob" "BlobCheckPoint" 1;
+ENTITY_MOVE_TO "Teeka" "BlobCheckPoint" 1;
+
+WAIT 200;
+
+CAMERA_MOVE_TO "CameraLocation1" 0.1;
+
+WAIT 200;
+
+CAMERA_STOP;
+
+WAIT 200;
+
+CAMERA_MOVE_TO "Galdov" 0.1;
+
+ENTITY_STOP "Bob";
+ENTITY_STOP "Teeka";
+
+WAIT 50;
+
+ENTITY_LOOK_AT "Bob" "Galdov";
+ENTITY_LOOK_AT "Teeka" "Galdov";
+
+WAIT 25;
+
+ENTITY_JUMP "Teeka" 0.75;
+
+WAIT 100;
+
+ENTITY_LOOK_AT "Galdov" "Bob";
+ENTITY_LOOK_AT "FakeBlaze" "Bob";
+ENTITY_LOOK_AT "FakeFrost" "Bob";
+
+CAMERA_FOLLOW "@NONE@";
+CAMERA_LOOK_AT "Galdov";
+CAMERA_MOVE_TO "Galdov" 0.1;
+
+SHOW_NARRATIVE 400;
+
+WAIT 100;
+
+SHOW_NARRATIVE 700;
+
+WAIT 100;
+
+CAMERA_STOP;
+CAMERA_POSITION_AT "CameraLocation2";
+CAMERA_MOVE_TO "CameraLocation1" 0.1;
+CAMERA_FOLLOW "Galdov";
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+CAMERA_STOP;
+CAMERA_POSITION_AT "CameraLocation4";
+CAMERA_MOVE_TO "CameraLocation1" 0.1;
+CAMERA_FOLLOW "Galdov";
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+CAMERA_STOP;
+CAMERA_POSITION_AT "CameraLocation3";
+CAMERA_MOVE_TO "CameraLocation1" 0.1;
+CAMERA_FOLLOW "Bob";
+
+SHOW_NARRATIVE 1000;
+
+WAIT 100;
+
+CAMERA_STOP;
+CAMERA_FOLLOW "@NONE@";
+CAMERA_POSITION_AT "BlobCheckPoint";
+CAMERA_MOVE_TO "Galdov" 0.1;
+CAMERA_LOOK_AT "Galdov";
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+CAMERA_STOP;
+CAMERA_FOLLOW "@NONE@";
+CAMERA_LOOK_AT "Galdov";
+CAMERA_POSITION_AT "CameraLocation4";
+
+SHOW_NARRATIVE 400;
+
+WAIT 100
+
+CAMERA_MOVE_TO "CameraLocation5" 0.5;
+
+WAIT 350;
+
+CAMERA_STOP;
+
+ENTITY_LOOK_AT "Galdov" "FakeFrost";
+BEAM "Galdov" "FakeFrost";
+ENTITY_REMOVE "FakeFrost";
+ENTITY_POSITION_AT "Frost" "FrostStart";
+ENTITY_LOOK_AT "Frost" "Bob";
+
+WAIT 100;
+
+ENTITY_LOOK_AT "Galdov" "FakeBlaze";
+BEAM "Galdov" "FakeBlaze";
+ENTITY_REMOVE "FakeBlaze";
+ENTITY_POSITION_AT "Blaze" "BlazeStart";
+ENTITY_LOOK_AT "Blaze" "Bob";
+
+WAIT 100;
+
+ENTITY_LOOK_AT "Galdov" "Bob";
+
+WAIT 100;
+
+CAMERA_POSITION_AT "CameraLocation5";
+CAMERA_MOVE_TO "CameraLocation3" 0.1;
+CAMERA_FOLLOW "Bob";
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+CAMERA_STOP;
+CAMERA_FOLLOW "@NONE@";
+CAMERA_LOOK_AT "Galdov";
+CAMERA_POSITION_AT "CameraLocation4";
+CAMERA_MOVE_TO "CameraLocation5" 0.25;
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+ENTITY_VANISH "War" "FakeLocation";
+ENTITY_REMOVE "War";
+
+WAIT 25;
+
+ENTITY_VANISH "Famine" "FakeLocation";
+ENTITY_REMOVE "Famine";
+
+WAIT 25;
+
+ENTITY_VANISH "Death" "FakeLocation";
+ENTITY_REMOVE "Death";
+
+WAIT 25;
+
+ENTITY_VANISH "Conquest" "FakeLocation";
+ENTITY_REMOVE "Conquest";
+
+WAIT 75;
+
+ENTITY_VANISH "Galdov" "FakeLocation";
+ENTITY_REMOVE "Galdov";
+
+WAIT 200;
+
+SKIP;
+
+ENTITY_REMOVE "War";
+ENTITY_REMOVE "Famine";
+ENTITY_REMOVE "Death";
+ENTITY_REMOVE "Conquest";
+ENTITY_REMOVE "Galdov";
+ENTITY_REMOVE "FakeBlaze";
+ENTITY_REMOVE "FakeFrost";
+ENTITY_POSITION_AT "Blaze" "BlazeStart";
+ENTITY_POSITION_AT "Frost" "FrostStart";
+ENTITY_POSITION_AT "Bob" "BobStart";
+ENTITY_POSITION_AT "Teeka" "TeekaStart";
+
+@END@

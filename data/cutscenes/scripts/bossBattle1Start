@@ -1,0 +1,25 @@
+LOAD_NARRATIVE bossBattle1Start;
+
+CAMERA_POSITION_AT "CameraLocation1";
+CAMERA_LOOK_AT "Bob";
+CAMERA_MOVE_TO "Bob" 0.25;
+
+BLOBS_MOVE_TO "ConflictPoint" 0.25;
+
+WAIT 100;
+
+SHOW_NARRATIVE 500;
+
+WAIT 100;
+
+CAMERA_POSITION_AT "CameraLocation2";
+CAMERA_LOOK_AT "CameraLocation3";
+CAMERA_MOVE_TO "Bob" 0.5;
+
+BIOMECHS_MOVE_TO "ConflictPoint" 0.25;
+
+SHOW_NARRATIVE 625;
+
+WAIT 100;
+
+@END@

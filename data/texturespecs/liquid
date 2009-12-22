@@ -1,0 +1,76 @@
+textures/liquid/slime {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.5;
+	
+	blended = 1;
+	
+	warp = 1;
+
+};
+
+textures/liquid/water2 {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.5;
+	
+	blended = 1;
+	
+	warp = 1;
+
+};
+
+textures/liquid/lava01 {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.45;
+	lightMinLevel = 0.0;
+	lightMaxLevel = 1.0;
+	lightSpeed = 0;
+	
+	blended = 1;
+	
+	warp = 1;
+
+};
+
+textures/liquid/lava02 {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.45;
+	lightMinLevel = 0.0;
+	lightMaxLevel = 1.0;
+	lightSpeed = 0;
+	
+	blended = 1;
+	
+	warp = 1;
+
+};
+
+textures/liquid/waste01 {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.45;
+	lightMinLevel = 0.0;
+	lightMaxLevel = 1.0;
+	lightSpeed = 0;
+	
+	blended = 1;
+	
+	warp = 1;
+
+};
+
+textures/liquid/cryptpool {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.5;
+	
+	blended = 1;
+	
+	warp = 1;
+
+};
+
+@END@

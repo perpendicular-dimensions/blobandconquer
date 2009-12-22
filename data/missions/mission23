@@ -1,0 +1,53 @@
+Mission {
+
+	bsp = data/bsp/ambush.bsp;
+	
+	music = music/A Bear Called Otso.xm;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 7500;
+	fogDensity = 0.25;
+	
+	enemyLevel = 4;
+	
+	skySphere = textures/game/dawn.jpg;
+	skySphereSize = 1;
+	
+	exitToMission = AUTO;
+	
+	startCutscene = data/cutscenes/scripts/ambushStart;
+	endCutscene = data/cutscenes/scripts/ambushEnd;
+	
+	bossDefFile = data/gameDefs/cryptBoss;
+};
+
+// =================== Objectives =================
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Fight Galdov;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// =================== Triggers =======================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Galdov;
+	objectiveId = 1;
+
+};
+
+@END@

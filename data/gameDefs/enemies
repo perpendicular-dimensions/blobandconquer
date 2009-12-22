@@ -1,0 +1,341 @@
+// Definition file for enemies in the game
+
+Enemy {
+
+	type = NME_PISTOL_BLOB;
+	model1 = gfx/primitive/bioMechBlob.primitive;
+	texture1 = textures/game/pistolBlob.png;
+	minHP = 2;
+	maxHP = 4;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_PISTOL;
+
+};
+
+Enemy {
+
+	type = NME_GRENADE_BLOB;
+	model1 = gfx/primitive/bioMechBlob.primitive;
+	texture1 = textures/game/grenadeBlob.png;
+	minHP = 2;
+	maxHP = 4;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_GRENADE;
+
+};
+
+Enemy {
+
+	type = NME_MACHINEGUN_BLOB;
+	model1 = gfx/primitive/bioMechBlob.primitive;
+	texture1 = textures/game/machineGunBlob.png;
+	minHP = 2;
+	maxHP = 4;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_UZI;
+
+};
+
+Enemy {
+
+	type = NME_SHOTGUN_BLOB;
+	model1 = gfx/primitive/bioMechBlob.primitive;
+	texture1 = textures/game/machineGunBlob.png;
+	minHP = 2;
+	maxHP = 4;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_SHOTGUN;
+
+};
+
+Enemy {
+
+	type = NME_LIGHT_PLASMA_BLOB;
+	model1 = gfx/primitive/bioMechBlob.primitive;
+	texture1 = textures/game/laserBlob.png;
+	minHP = 6;
+	maxHP = 12;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_PLASMA_PISTOL;
+
+};
+
+// Aqua Blobs should be very easy to kill
+Enemy {
+
+	type = NME_AQUA_BLOB;
+	model1 = gfx/primitive/bioMechBlob.primitive;
+	texture1 = textures/game/aquaBlob.png;
+	minHP = 1;
+	maxHP = 2;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_PISTOL;
+	flags = EF_SWIMS;
+
+};
+
+Enemy {
+
+	type = NME_DARK_BLOB;
+	model1 = gfx/primitive/darkBlob.primitive;
+	texture1 = textures/game/blackDroid.png;
+	minHP = 15;
+	maxHP = 25;
+	bbMins = -3 -3 -3;
+	bbMaxs = 3 3 3;
+	weapon = WEP_PISTOL;
+	flags = EF_ALWAYS_FACE;
+
+};
+
+// ================ Eye Droids =================
+
+Enemy {
+
+	type = NME_PISTOL_DROID;
+	model1 = gfx/primitive/eyedroid.primitive;
+	texture1 = textures/game/pistolDroid.png;
+	minHP = 2;
+	maxHP = 4;
+	bbMins = -3 -3 -6;
+	bbMaxs = 3 3 6;
+	weapon = WEP_PISTOL;
+	flags = EF_WEIGHTLESS+EF_EXPLODES;
+
+};
+
+Enemy {
+
+	type = NME_GRENADE_DROID;
+	model1 = gfx/primitive/eyedroid.primitive;
+	texture1 = textures/game/grenadeDroid.png;
+	minHP = 15;
+	maxHP = 20;
+	bbMins = -3 -3 -6;
+	bbMaxs = 3 3 6;
+	weapon = WEP_MINI_GRENADES;
+	flags = EF_WEIGHTLESS+EF_EXPLODES;
+
+};
+
+Enemy {
+
+	type = NME_MACHINEGUN_DROID;
+	model1 = gfx/primitive/eyedroid.primitive;
+	texture1 = textures/game/machineGunDroid.png;
+	minHP = 4;
+	maxHP = 8;
+	bbMins = -3 -3 -6;
+	bbMaxs = 3 3 6;
+	weapon = WEP_UZI;
+	flags = EF_WEIGHTLESS+EF_EXPLODES;
+
+};
+
+Enemy {
+
+	type = NME_SHOTGUN_DROID;
+	model1 = gfx/primitive/eyedroid.primitive;
+	texture1 = textures/game/shotGunDroid.png;
+	minHP = 15;
+	maxHP = 20;
+	bbMins = -3 -3 -6;
+	bbMaxs = 3 3 6;
+	weapon = WEP_SHOTGUN;
+	flags = EF_WEIGHTLESS+EF_EXPLODES;
+
+};
+
+// =========== Sentry Guns ============
+
+Enemy {
+
+	type = NME_UZI_SENTRY_GUN;
+	model1 = gfx/rw2/cannonbase.blend.raw;
+	texture1 = textures/game/cannonBase.png;
+	model2 = gfx/rw2/cannontop.blend.raw;
+	texture2 = textures/game/cannonTop1.png;
+	minHP = 45;
+	maxHP = 45;
+	bbMins = -8 -8 -5;
+	bbMaxs = 8 8 5;
+	weapon = WEP_UZI;
+	flags = EF_EXPLODES+EF_STATIC+EF_ALWAYS_FACE;
+	gunPosition1 = 0 -22 8.5;
+
+};
+
+Enemy {
+
+	type = NME_PLASMA_SENTRY_GUN;
+	model1 = gfx/rw2/cannonbase.blend.raw;
+	texture1 = textures/game/cannonBase.png;
+	model2 = gfx/rw2/cannontop.blend.raw;
+	texture2 = textures/game/cannonTop1.png;
+	minHP = 45;
+	maxHP = 45;
+	bbMins = -8 -8 -5;
+	bbMaxs = 8 8 5;
+	weapon = WEP_PLASMA_RIFLE;
+	flags = EF_EXPLODES+EF_STATIC+EF_ALWAYS_FACE;
+	gunPosition1 = 0 -22 8.5;
+
+};
+
+Enemy {
+
+	type = NME_ROCKET_SENTRY_GUN;
+	model1 = gfx/rw2/cannonbase.blend.raw;
+	texture1 = textures/game/cannonBase.png;
+	model2 = gfx/rw2/cannontop.blend.raw;
+	texture2 = textures/game/cannonTop1.png;
+	minHP = 100;
+	maxHP = 100;
+	bbMins = -8 -8 -5;
+	bbMaxs = 8 8 5;
+	weapon = WEP_MINI_ROCKET;
+	flags = EF_EXPLODES+EF_STATIC+EF_ALWAYS_FACE;
+	gunPosition1 = 0 -22 8.5;
+
+};
+
+Enemy {
+
+	type = NME_MORTOR_SENTRY_GUN;
+	model1 = gfx/rw2/cannonbase.blend.raw;
+	texture1 = textures/game/cannonBase.png;
+	model2 = gfx/rw2/cannontop.blend.raw;
+	texture2 = textures/game/cannonTop1.png;
+	minHP = 100;
+	maxHP = 100;
+	bbMins = -8 -8 -5;
+	bbMaxs = 8 8 5;
+	weapon = WEP_CLUSTER_LAUNCHER;
+	flags = EF_EXPLODES+EF_STATIC+EF_ALWAYS_FACE;
+	gunPosition1 = 0 -22 8.5;
+
+};
+
+// =========== Spider Blobs ===========
+		
+Enemy {
+
+	type = NME_MACHINEGUN_SPIDERBLOB;
+	model1 = gfx/md2/spiderBlob.md2;
+	texture1 = textures/game/machineGunSpiderBlob.png;
+	minHP = 75;
+	maxHP = 75;
+	bbMins = -18 -8 -5;
+	bbMaxs = 18 8 5;
+	weapon = WEP_UZI;
+	flags = EF_EXPLODES+EF_STATIC;
+	gunPosition1 = 1 -7 -1;
+	gunPosition2 = -3 -7 -1;
+
+};
+
+Enemy {
+
+	type = NME_SHOTGUN_SPIDERBLOB;
+	model1 = gfx/md2/spiderBlob.md2;
+	texture1 = textures/game/shotgunSpiderBlob.png;
+	minHP = 75;
+	maxHP = 75;
+	bbMins = -18 -8 -5;
+	bbMaxs = 18 8 5;
+	weapon = WEP_SHOTGUN;
+	flags = EF_EXPLODES+EF_STATIC;
+	gunPosition1 = 1 -7 -1;
+	gunPosition2 = -3 -7 -1;
+
+};
+
+Enemy {
+
+	type = NME_PLASMA_SPIDERBLOB;
+	model1 = gfx/md2/spiderBlob.md2;
+	texture1 = textures/game/plasmaSpiderBlob.png;
+	minHP = 75;
+	maxHP = 75;
+	bbMins = -18 -8 -5;
+	bbMaxs = 18 8 5;
+	weapon = WEP_PLASMA_PISTOL;
+	flags = EF_EXPLODES+EF_STATIC;
+	gunPosition1 = 1 -7 -1;
+	gunPosition2 = -3 -7 -1;
+
+};
+
+// ========= SpiderBlob Commander Only =============
+
+Enemy {
+
+	type = NME_BABY_SPIDERBLOB;
+	model1 = gfx/md2/spiderBlob.md2;
+	texture1 = textures/game/babySpiderBlob.png;
+	minHP = 4;
+	maxHP = 4;
+	bbMins = -18 -8 -5;
+	bbMaxs = 18 8 5;
+	weapon = WEP_PISTOL;
+	flags = EF_EXPLODES;
+
+};
+
+// =============== Top of Cannon ===================
+		
+Enemy {
+
+	type = NME_DEAD_SENTRYGUN;
+	model1 = gfx/rw2/cannontop.blend.raw;
+	texture1 = textures/game/cannonTop1.png;
+	minHP = 0;
+	maxHP = 0;
+	bbMins = -8 -8 -8;
+	bbMaxs = 8 8 8;
+	weapon = WEP_PISTOL;
+	flags = EF_IMMORTAL+EF_DYING+EF_ONFIRE;
+
+};
+
+// ============== Tanks in Tank Bay ==================
+
+Enemy {
+
+	type = NME_TANKBAY_TANK_1;
+	model1 = gfx/rw2/tankbase.blend.raw;
+	texture1 = textures/game/tankbase3.png;
+	model2 = gfx/rw2/tanktop2.blend.raw;
+	texture2 = textures/game/tanktop2.png;
+	minHP = 999999;
+	maxHP = 999999;
+	bbMins = -16 -20 -6;
+	bbMaxs = 16 20 6;
+	weapon = WEP_PISTOL;
+	flags = EF_IMMORTAL+EF_EXPLODES+EF_STATIC+EF_NOTARGET;
+
+};
+
+Enemy {
+
+	type = NME_TANKBAY_TANK_2;
+	model1 = gfx/rw2/tankbase.blend.raw;
+	texture1 = textures/game/tankbase2.png;
+	model2 = gfx/rw2/tanktop2.blend.raw;
+	texture2 = textures/game/tanktop3.png;
+	minHP = 999999;
+	maxHP = 999999;
+	bbMins = -16 -20 -6;
+	bbMaxs = 16 20 6;
+	weapon = WEP_PISTOL;
+	flags = EF_IMMORTAL+EF_EXPLODES+EF_STATIC+EF_NOTARGET;
+
+};
+
+@END@

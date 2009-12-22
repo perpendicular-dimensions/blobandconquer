@@ -1,0 +1,364 @@
+Mission {
+
+	missionName = Enemy Base 2 Courtyard;
+
+	bsp = data/bsp/enemyBase2_1.bsp;
+	
+	music = music/Temple.xm;
+	
+	fogColor = 0.05 0.05 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	skySphereSize = 1;
+	
+	enemyLevel = 3;
+	
+	enemySpawnList = NME_GRENADE_BLOB|NME_PISTOL_BLOB|NME_PISTOL_DROID;
+	spawnSize = 0;
+	minSpawnTime = 6000;
+	maxSpawnTime = 9000;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	exitToMission = AUTO;
+};
+
+// ============ Shield Generators ============
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy all Shield Generators;
+	status = OBJ_INCOMPLETE;
+	targetValue = 4;
+	active = 1;
+	completionTrigger = teleportInAnderson;
+
+};
+
+// ============ MIAs ============
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Rescue MIAs;
+	status = OBJ_INCOMPLETE;
+	targetValue = 12;
+	active = 1;
+	completionTrigger = spawnJailEnemies;
+
+};
+
+// ============ All Enemies ============
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy all enemies;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+// ============ Base Interior ============
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Gain access to enemy base interior;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+	completionTrigger = teleportOutAnderson;
+
+};
+
+// ============ Protect MIAs ============
+
+Objective {
+
+	id = 5;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect all MIAs;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============ Protect Anderson ============
+
+Objective {
+
+	id = 6;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Anderson;
+	status = OBJ_INCOMPLETE;
+	active = 0;
+
+};
+
+
+// ============ Shield Generator 1 ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = shieldGenerator1;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = shieldGenerator1;
+	targetName = shieldGenerator1Spawner;
+
+};
+
+// ============ Shield Generator 2 ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = shieldGenerator2;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = shieldGenerator2;
+	targetName = shieldGenerator2Spawner;
+
+};
+
+// ============ Shield Generator 3 ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = shieldGenerator3;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = shieldGenerator3;
+	targetName = shieldGenerator3Spawner;
+
+};
+
+// ============ Shield Generator 4 ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = shieldGenerator4;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = shieldGenerator4;
+	targetName = shieldGenerator4Spawner;
+
+};
+
+// ============ MIAs ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_BLOB_RESCUED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = MIA;
+	objectiveId = 2;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = MIA;
+	objectiveId = 5;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = spawnJailEnemies;
+	targetName = jailSpawner;
+
+};
+
+// ============ Lift Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = walkwayMainLift;
+	targetName = walkwayMainLiftSpawner;
+
+};
+
+// ============ All Enemies ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ALL_ENEMIES_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_ENEMY;
+	objectiveId = 3;
+
+};
+
+// ============ Base Main Door ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = baseMainDoor;
+	objectiveId = 4;
+
+};
+
+// ============ Anderson ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_USE_CAMERA;
+	name = teleportInAnderson;
+	targetName = hackerCamera;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = hackerCamera;
+	targetName = hackerSpawner;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_OBJECTIVE;
+	name = hackerCamera;
+	objectiveId = 6;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	name = teleportOutAnderson;
+	targetName = Anderson;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Anderson;
+	objectiveId = 6;
+};
+
+// ============ Lift Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = walkwayMainLift;
+	targetName = walkwayMainLiftSpawner;
+
+};
+
+@END@

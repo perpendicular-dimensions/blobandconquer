@@ -1,0 +1,168 @@
+Mission {
+
+	missionName = Biomech Tower;
+
+	bsp = data/bsp/biomechTower3.bsp;
+	
+	music = music/Neutral Zone.xm;
+	
+	fogColor = 0.0 0.0 0.0;
+	fogMin = 1000;
+	fogMax = 5500;
+	fogDensity = 1.0;
+	
+	skySphere = textures/game/starsky2.png;
+	skySphereSize = 10;
+	
+	enemyLevel = 5;
+	
+	exitToMission = AUTO;
+	
+	startCutscene = data/cutscenes/scripts/innerTowerStart;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+	
+	ambientEffects = sound/ambience/mech/commplus.ogg|sound/ambience/mech/data_1.ogg|sound/ambience/mech/dial.ogg|sound/ambience/mech/mech1.ogg|sound/ambience/mech/mech2.ogg|sound/ambience/mech/mech3.ogg;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Get to 1st Floor;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Get to 2nd Floor;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Get to 3rd Floor;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Gain access to Tower Roof;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// =========== 1st Floor ==============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = 1stFloor;
+	objectiveId = 1;
+
+};
+
+// =========== 2nd Floor ==============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = 2ndFloor;
+	objectiveId = 2;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = secondFloorWalkwayTraps;
+	targetName = secondFloorWalkwayTraps;
+
+};
+
+// =========== 3rd Floor ==============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = 3rdFloor;
+	objectiveId = 3;
+
+};
+
+// =========== Roof ====================
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_EXIT_MISSION;
+	name = roof1;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_EXIT_MISSION;
+	name = roof2;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_EXIT_MISSION;
+	name = roof3;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_EXIT_MISSION;
+	name = roof4;
+
+};
+
+@END@

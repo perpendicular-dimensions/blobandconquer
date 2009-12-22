@@ -1,0 +1,47 @@
+LOAD_NARRATIVE bossBattle2Start;
+
+ENTITY_POSITION_AT "Bob" "BobCutStart";
+ENTITY_POSITION_AT "Teeka" "TeekaCutStart";
+
+CAMERA_POSITION_AT "CameraLocation1";
+CAMERA_LOOK_AT "Teeka";
+
+ENTITY_LOOK_RANDOM "Teeka";
+
+WAIT 100;
+
+SHOW_NARRATIVE 600;
+
+ENTITY_MOVE_TO "Bob" "MeetLocation" 0.5;
+
+WAIT 200;
+
+ENTITY_LOOK_AT "Teeka" "StartLocation";
+
+WAIT 400;
+
+ENTITY_STOP "Bob";
+
+ENTITY_LOOK_AT "Bob" "Teeka";
+
+WAIT 100;
+
+ENTITY_LOOK_AT "Teeka" "Bob";
+
+WAIT 50;
+
+ENTITY_JUMP "Teeka" 0.75;
+
+WAIT 100;
+
+ENTITY_MOVE_TO "Bob" "StartLocation" 0.5;
+ENTITY_MOVE_TO "Teeka" "StartLocation" 0.5;
+
+WAIT 300;
+
+SKIP;
+
+ENTITY_POSITION_AT "Bob" "BobStart";
+ENTITY_POSITION_AT "Teeka" "TeekaStart";
+
+@END@

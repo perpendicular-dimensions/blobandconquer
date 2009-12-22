@@ -1,0 +1,58 @@
+Mission {
+
+	missionName = Biomech Supply Base Rear Exit;
+
+	bsp = data/bsp/enemyBase1_3.bsp;
+	
+	music = music/Warlord Theme.s3m;
+	
+	fogColor = 0 0 0;
+	fogMin = 0;
+	fogMax = 3000;
+	fogDensity = 0.5;
+	
+	skySphere = textures/game/day2.jpg;
+	skySphereSize = 1;
+	
+	enemyLevel = 2;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_MACHINEGUN_BLOB|NME_SHOTGUN_BLOB|NME_PISTOL_DROID|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB;
+	spawnSize = 1;
+	minSpawnTime = 300;
+	maxSpawnTime = 500;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	timeLimit = 300;
+	
+	startCutscene = data/cutscenes/scripts/supplyExit;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Escape before bombs detonate;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ========================= Tower Entrance ================
+
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = exitPoint;
+	objectiveId = 1;
+
+};
+
+@END@

@@ -1,0 +1,22 @@
+Mission {
+
+	bsp = data/bsp/bossTest.bsp;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+	
+	fogColor = 0.0 0.0 0.0;
+	
+	fogMin = 1000;
+	
+	fogMax = 9000;
+	
+	fogDensity = 0.35;
+	
+	skySphere = textures/game/dawn.jpg;
+	
+	enemyLevel = 3;
+	
+	exitToMission = @AUTO@;
+};
+
+@END@

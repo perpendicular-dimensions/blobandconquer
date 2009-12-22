@@ -1,0 +1,98 @@
+Grid {
+
+	name = LoadSaveGrid;
+	x = 0;
+	y = 0;
+	width = 640;
+	height = 480;
+	cellSpacing = 3;
+	rows = 17;
+	cols = 3;
+	valign = 1;
+	halign = 1;
+
+};
+
+Widget {
+
+	widgetType = LISTVIEW;
+	grid = LoadSaveGrid;
+	name = SaveList;
+	groupName = LoadSave;
+	enabled = 1;
+	visible = 1;
+	x = 0;
+	y = 0;
+	
+	colSpan = 3;
+	rowSpan = 16;
+	
+	backgroundColor = 0 0 0;
+
+};
+
+Widget {
+
+	grid = LoadSaveGrid;
+	widgetType = BUTTON;
+	name = Load;
+	label = Load;
+	groupName = LoadSave;
+	enabled = 1;
+	visible = 1;
+	x = 0;
+	y = 16;
+	
+	backgroundColor = 0 100 0;
+
+};
+
+Widget {
+
+	grid = LoadSaveGrid;
+	widgetType = BUTTON;
+	name = Save;
+	label = Save;
+	groupName = LoadSave;
+	enabled = 1;
+	visible = 1;
+	x = 0;
+	y = 16;
+	
+	backgroundColor = 0 100 0;
+
+};
+
+Widget {
+
+	grid = LoadSaveGrid;
+	widgetType = BUTTON;
+	name = Delete;
+	label = Delete;
+	groupName = LoadSave;
+	enabled = 1;
+	visible = 1;
+	x = 1;
+	y = 16;
+	
+	backgroundColor = 0 50 100;
+
+};
+
+Widget {
+
+	grid = LoadSaveGrid;
+	widgetType = BUTTON;
+	name = Cancel;
+	label = Cancel;
+	groupName = LoadSave;
+	enabled = 1;
+	visible = 1;
+	x = 2;
+	y = 16;
+	
+	backgroundColor = 100 0 0;
+
+};
+
+@END@

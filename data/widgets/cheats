@@ -1,0 +1,409 @@
+Grid {
+
+	name = CheatGrid;
+	x = 0;
+	y = 0;
+	width = 700;
+	height = 500;
+	cellSpacing = 3;
+	rows = 30;
+	cols = 35;
+	valign = 1;
+	halign = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 1;
+	
+	text = Unlimited Health;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Health;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 3;
+	
+	text = Unlimited Shield;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Shield;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 3;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 5;
+	
+	text = Unlimited Ammo;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Ammo;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 5;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 7;
+	
+	text = Unlimited Oxygen;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Oxygen;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 7;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 9;
+	
+	text = Blind Enemies;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Blind;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 9;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 11;
+	
+	text = Unlimited Ally Health;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = NPC;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 11;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 13;
+	
+	text = No clipping (F/V, Up/Down);
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Clip;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 13;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 15;
+	
+	text = Never be stunned;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Stun;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 15;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 17;
+	
+	text = Teeka Weapon;
+
+};
+
+Widget {
+	
+	widgetType = COMBOBOX;
+	grid = CheatGrid;
+	name = TeekaWeapon;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 17;
+	
+	colSpan = 12;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 19;
+	
+	text = Special items not needed;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Items;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 19;
+	
+	colSpan = 12;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 21;
+	
+	text = Save anywhere (F2);
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = SaveGame;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 21;
+	
+	colSpan = 12;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 23;
+	
+	text = Desimilate any enemy;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Time;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 25;
+	
+	colSpan = 12;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = CheatGrid;
+	name = label;
+	groupName = cheats;
+	
+	x = 1;
+	y = 25;
+	
+	text = Unlimited Time;
+
+};
+
+Widget {
+	
+	widgetType = CHECKBOX;
+	grid = CheatGrid;
+	name = Desimilate;
+	groupName = cheats;
+	enabled = 1;
+	visible = 1;
+	
+	x = 14;
+	y = 23;
+	
+	colSpan = 12;
+
+};
+
+Widget {
+	
+	grid = ConfigurationGrid;
+	widgetType = BUTTON;
+	name = Done;
+	label = OK;
+	groupName = additional;
+	enabled = 1;
+	visible = 0;
+	x = 1;
+	y = 27;
+	colSpan = 4;
+	
+	valign = 1;
+	
+	backgroundColor = 0 100 0;
+
+};
+
+@END@

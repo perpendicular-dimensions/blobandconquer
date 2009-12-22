@@ -1,0 +1,15 @@
+Pointer 		gfx/rw2/pointer.blend.raw
+Bullet			gfx/rw2/bullet.blend.raw
+Debris1			gfx/rw2/debris1.blend.raw
+Debris2			gfx/rw2/debris2.blend.raw
+Debris3			gfx/rw2/debris3.blend.raw
+Debris4			gfx/rw2/debris4.blend.raw
+Debris5			gfx/rw2/debris5.blend.raw
+Switch			gfx/rw2/switch.blend.raw
+HackerSwitch	gfx/rw2/hackerswitch.blend.raw
+Webbing			gfx/rw2/webbing.blend.raw
+Rocket			gfx/rw2/rocket.blend.raw
+Thrown			gfx/rw2/throwngrenade.blend.raw
+Hook			gfx/rw2/hookfired.blend.raw
+AltSwitch		gfx/primitive/altSwitch.primitive
+@END@

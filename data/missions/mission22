@@ -1,0 +1,59 @@
+Mission {
+
+	missionName = Flooded Tunnel 2;
+
+	bsp = data/bsp/floodedTunnel2.bsp;
+	
+	music = music/Advancement.xm;
+	
+	fogColor = 0.0 0.0 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/dawn.jpg;
+	skySphereSize = 1;
+	
+	enemyLevel = 3;
+	
+	enemySpawnList = NME_SHOTGUN_DROID;
+	spawnSize = 2;
+	minSpawnTime = 5500;
+	maxSpawnTime = 6000;
+	
+	exitToMission = AUTO;
+	
+	ambientEffects = sound/ambience/ruins/soulWail1.ogg|sound/ambience/ruins/soulWail2.ogg|sound/ambience/ruins/wolfHowl.ogg;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+};
+
+// ============ Objectives ==========================
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Escape back to base;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============== Main East Door Trigger ==============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+
+	name = grasslandsExit;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	
+	objectiveId = 1;
+
+};
+
+@END@

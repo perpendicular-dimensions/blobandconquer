@@ -1,0 +1,61 @@
+// Eyedroid Model
+
+// Body
+Sphere {
+
+	position = 0 0 0;
+	radius = 3;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+// Bobble
+Sphere {
+
+	position = -5.25 0 6;
+	radius = 1.25;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+// Bobble
+Sphere {
+
+	position = 5.25 0 6;
+	radius = 1.25;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+// Stalk
+Sphere {
+
+	position = -10 0 5;
+	radius = 4;
+	scale = 0.1 0.1 1.0;
+	color = 1.0 1.0 1.0 1.0;
+	rotate = -35 0 1.0 0.0;
+
+};
+
+// Stalk
+Sphere {
+
+	position = 10 0 5;
+	radius = 4;
+	scale = 0.1 0.1 1.0;
+	color = 1.0 1.0 1.0 1.0;
+	rotate = 35 0 1.0 0.0;
+
+};
+
+// Eye
+Sphere {
+
+	position = 0 -2.4 0;
+	radius = 1;
+	color = 1.0 0.0 0.0 1.0;
+
+};
+
+@END@

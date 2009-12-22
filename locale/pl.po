@@ -1,0 +1,1540 @@
+# translation of pl.po to Polish
+# Stephen Sweeney <stephen.j.sweeney@gmail.com>, 2008.
+# Marcin Kocur <marcin2006@gmail.com>, 2009.
+# Blob Wars : Blob and Conquer Base POT File
+# Copyright (C) 2008
+# This file is distributed under the same license as the Blob And Conquer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: pl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-17 22:06+0100\n"
+"PO-Revision-Date: 2009-10-13 21:58+0200\n"
+"Last-Translator: Marcin Kocur <marcin2006@gmail.com>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/title.cpp:184
+msgid "data/misc/en/credits"
+msgstr "data/misc/pl/credits"
+
+#: src/entities/doors.cpp:68
+msgid "Door is Locked"
+msgstr "Drzwi są zamknięte"
+
+#: src/entities/bullets.cpp:152 src/entities/bullets.cpp:202
+#: src/entities/blobs.cpp:1654 src/hud/status.cpp:256
+#: src/combat/explosions.cpp:54
+msgid "Total Damage Taken"
+msgstr "Całkowita liczba poniesionych obrażeń"
+
+#: src/entities/bullets.cpp:170
+msgid "CAUTION - SHIELD BELT DESTROYED!"
+msgstr "UWAGA - PAS OCHRONNY ZNISZCZONY!"
+
+#: src/entities/bullets.cpp:183 src/hud/status.cpp:237
+#: src/combat/explosions.cpp:76
+msgid "Enemies Killed"
+msgstr "Zabitych wrogów"
+
+#: src/entities/bullets.cpp:187
+msgid "Enemies Killed By Teeka"
+msgstr "Zabitych wrogów - Teeka"
+
+#: src/entities/bullets.cpp:192 src/combat/explosions.cpp:85
+msgid "Enemies Killed By Friendly Fire"
+msgstr "Zabitych wrogów przez własny ogień"
+
+#: src/entities/bullets.cpp:198 src/entities/bullets.cpp:1359
+#: src/hud/status.cpp:247
+msgid "Bullets Hit"
+msgstr "Celnych strzałów"
+
+#: src/entities/bullets.cpp:314 src/entities/bullets.cpp:409
+#: src/hud/status.cpp:248
+msgid "Bullets Missed"
+msgstr "Niecelnych strzałów"
+
+#: src/entities/bullets.cpp:654
+msgid "YOU'RE ON FIRE!!! FIND SOME WATER!!!"
+msgstr "PALISZ SIĘ!!! ZNAJDŹ WODĘ!!!"
+
+#: src/entities/structures.cpp:689 src/entities/structures.cpp:707
+#: src/bosses/cryptBoss.cpp:154 src/bosses/cryptBoss.cpp:164
+msgid "C4"
+msgstr "C4"
+
+#: src/entities/structures.cpp:693 src/bosses/cryptBoss.cpp:156
+msgid "C4 required"
+msgstr "Wymagane C4"
+
+#: src/entities/structures.cpp:700 src/bosses/cryptBoss.cpp:160
+msgid "Press ACTION to use C4"
+msgstr "Wciśnij przycisk AKCJI, aby użyć C4"
+
+#: src/entities/lift.cpp:114
+msgid "Press ACTION to use lift"
+msgstr "Wciśnij przycisk AKCJI, aby użyć windy"
+
+#: src/entities/items.cpp:113 src/entities/items.cpp:230
+#: src/entities/items.cpp:257 src/entities/items.cpp:284
+#: src/entities/items.cpp:369 src/entities/items.cpp:428
+#: src/entities/items.cpp:525
+#, c-format
+msgid "Picked up %s"
+msgstr "Podniesiono: %s"
+
+#: src/entities/items.cpp:114 src/hud/status.cpp:251
+msgid "Cherries Picked Up"
+msgstr "Podniesionych wiśni"
+
+#: src/entities/items.cpp:142
+#, c-format
+msgid "Picked up a Shield Belt (%dVGhz)"
+msgstr "Podniesiono pas ochronny (%dVGhz)"
+
+#: src/entities/items.cpp:160
+#, c-format
+msgid "Picked up %s for Teeka"
+msgstr "Podniesiono %s dla Teeki"
+
+#: src/entities/items.cpp:168 src/entities/items.cpp:232
+#: src/hud/status.cpp:252
+msgid "Items Picked Up"
+msgstr "Podniesionych obiektów"
+
+#: src/entities/items.cpp:214
+#, c-format
+msgid "Cannot carry any more %ss"
+msgstr "Nie można zabrać więcej %ss"
+
+#: src/entities/items.cpp:303 src/entities/items.cpp:330
+#: src/entities/items.cpp:473
+#, c-format
+msgid "Picked up some %s"
+msgstr "Podniesiono %s"
+
+#: src/entities/items.cpp:348 src/entities/items.cpp:498
+#, c-format
+msgid "Press ACTION to swap %s for %s"
+msgstr "Wciśnij przycisk AKCJI, aby zamienić %s z %s"
+
+#: src/entities/items.cpp:383 src/entities/items.cpp:429
+#: src/entities/items.cpp:476 src/hud/status.cpp:253
+msgid "Weapons Picked Up"
+msgstr "Podniesionych broni"
+
+#: src/entities/items.cpp:469
+#, c-format
+msgid "Got some %s ammo"
+msgstr "Zdobyto amunicję: %s"
+
+#: src/entities/items.cpp:849 src/entities/features.cpp:504
+#: src/entities/features.cpp:522
+msgid "Grappling Hook"
+msgstr "Kotwiczka wspinaczkowa"
+
+#: src/entities/blobs.cpp:290
+#, c-format
+msgid "Rescued %s"
+msgstr "Uratowano %s"
+
+#: src/entities/blobs.cpp:332 src/entities/blobs.cpp:350
+msgid "Teletag"
+msgstr "Czytnik dalekiego zasięgu"
+
+#: src/entities/blobs.cpp:336
+msgid "Teletag required"
+msgstr "Wymagany czytnik dalekiego zasięgu"
+
+#: src/entities/blobs.cpp:340
+msgid "Press ACTION to attach Teletag"
+msgstr "Wciśnij przycisk AKCJI, aby przymocować czytnik dalekiego zasięgu"
+
+#: src/entities/blobs.cpp:1502 src/hud/status.cpp:243
+msgid "Allies Killed"
+msgstr "Zabitych obcych"
+
+#: src/entities/blobs.cpp:1528
+#, c-format
+msgid "%s has been killed"
+msgstr "%s został zabity"
+
+#: src/entities/units.cpp:203
+msgid "YOU'VE BEEN FROZEN! PRESS BUTTONS TO ESCAPE!!!"
+msgstr "ZOSTAŁEŚ ZAMROŻONY! WCISKAJ PRZYCISKI, ABY SIĘ WYDOSTAĆ!!!"
+
+#: src/entities/units.cpp:270
+msgid "YOU'VE BEEN WRAPPED UP! PRESS BUTTONS TO ESCAPE!!!"
+msgstr "ZOSTAŁEŚ POCHŁONIĘTY! WCISKAJ PRZYCISKI, ABY SIĘ WYDOSTAĆ!!!"
+
+#: src/entities/units.cpp:783
+msgid "KIA"
+msgstr "Zabici w akcji"
+
+#: src/entities/units.cpp:787
+msgid "Wounded"
+msgstr "Zranieni"
+
+#: src/entities/units.cpp:791
+msgid "OK"
+msgstr "OK"
+
+#: src/entities/switches.cpp:317
+msgid "Bombs can only be planted by a Blob Demolition expert"
+msgstr "Bomby mogą być zakładane tylko przez eksperta do spraw rozbiórek"
+
+#: src/entities/switches.cpp:501
+#, c-format
+msgid "%d more to go..."
+msgstr "Jeszcze %d, aby kontynuować ..."
+
+#: src/entities/switches.cpp:552
+msgid "Switch can only be activated by a Blob Engineer"
+msgstr "Przełącznik może być aktywowany tylko przez inżyniera"
+
+#: src/entities/switches.cpp:556
+msgid "Switch can only be activated by a Blob Computer Hacker"
+msgstr "Przełącznik może być aktywowany tylko przez hakera komputerowego"
+
+#: src/entities/switches.cpp:562
+msgid "Press ACTION to activate switch"
+msgstr "Wciśnij przycisk AKCJI, aby aktywować przycisk"
+
+#: src/entities/switches.cpp:566
+msgid "Press ACTION to reset puzzle blocks"
+msgstr "Wciśnij przycisk AKCJI, aby przywrócić ustawienie bloków"
+
+#: src/entities/switches.cpp:577
+#, c-format
+msgid "%s required"
+msgstr "wymagany: %s "
+
+#: src/entities/switches.cpp:583
+#, c-format
+msgid "Used %s"
+msgstr "Użyto %s"
+
+#: src/entities/features.cpp:222
+msgid "Cannot exit yet - Primary objectives not completed"
+msgstr "Nie można zakończyć - główne zadania niewykonane"
+
+#: src/entities/features.cpp:232
+msgid "Cannot leave without Teeka"
+msgstr "Nie można zakończyć bez Teeki"
+
+#: src/entities/features.cpp:237
+msgid "Press ACTION to exit mission"
+msgstr "Wciśnij przycisk AKCJI, aby zakończyć misję"
+
+#: src/entities/features.cpp:383
+msgid "Press ACTION to Save Game"
+msgstr "Wciśnij przycisk AKCJI, aby zapisać grę"
+
+#: src/entities/features.cpp:414
+#, c-format
+msgid "data/locale/en/%s"
+msgstr "data/locale/pl/%s"
+
+#: src/entities/features.cpp:474
+msgid "Press ACTION to get Information"
+msgstr "Wciśnij przycisk AKCJI, aby przeczytać informację"
+
+#: src/entities/features.cpp:508
+msgid "Grappling Hooks required"
+msgstr "Wymagana kotwiczka wspinaczkowa"
+
+#: src/entities/features.cpp:512
+msgid "Press ACTION to use Grappling Hook"
+msgstr "Wciśnij przycisk AKCJI, aby użyć kotwiczki wspinaczkowej"
+
+#: src/hud/status.cpp:28
+msgid "Leader"
+msgstr "Lider"
+
+#: src/hud/status.cpp:31
+msgid "Sidekick"
+msgstr "Asystent"
+
+#: src/hud/status.cpp:34
+msgid "Cadet"
+msgstr "Kadet"
+
+#: src/hud/status.cpp:37
+msgid "Demolition Expert"
+msgstr "Ekspert ds. rozbiórki"
+
+#: src/hud/status.cpp:40
+msgid "Engineer"
+msgstr "Inżynier"
+
+#: src/hud/status.cpp:43
+msgid "Hacker"
+msgstr "Haker"
+
+#: src/hud/status.cpp:89
+msgid "Primary Objectives"
+msgstr "Główne zadania"
+
+#: src/hud/status.cpp:108
+msgid "Secondary Objectives"
+msgstr "Dodatkowe zadania"
+
+#: src/hud/status.cpp:128
+msgid "Conditions"
+msgstr "Warunki"
+
+#: src/hud/status.cpp:147
+msgid "Unit Status"
+msgstr "Spis żołnierzy"
+
+#: src/hud/status.cpp:153
+msgid "Name"
+msgstr "Imię"
+
+#: src/hud/status.cpp:154
+msgid "Health"
+msgstr "Zdrowie"
+
+#: src/hud/status.cpp:155
+msgid "Shield"
+msgstr "Pancerz"
+
+#: src/hud/status.cpp:156
+msgid "Job"
+msgstr "Stopień"
+
+#: src/hud/status.cpp:157
+msgid "Weapon"
+msgstr "Broń"
+
+#: src/hud/status.cpp:215 src/hud/status.cpp:307
+msgid "Objectives"
+msgstr "Zadania"
+
+#: src/hud/status.cpp:219
+msgid "Units"
+msgstr "Żołnierze"
+
+#: src/hud/status.cpp:223 src/hud/status.cpp:313
+msgid "Statistics"
+msgstr "Statystyki"
+
+#: src/hud/status.cpp:234 src/misc/misc.cpp:48 src/misc/misc.cpp:64
+msgid "Total Game Time"
+msgstr "Całkowity czas gry"
+
+#: src/hud/status.cpp:238
+msgid "Enemies Killed Teeka"
+msgstr "Wrogowie zabici przez Teekę"
+
+#: src/hud/status.cpp:239
+msgid "Enemies Killed Friendly"
+msgstr "Wrogowie zabici własnym ogniem"
+
+#: src/hud/status.cpp:240
+msgid "Enemies Drowned"
+msgstr "Utoniętych wrogów"
+
+#: src/hud/status.cpp:246 src/combat/weapons.cpp:29
+msgid "Bullets Fired"
+msgstr "Wystrzelonych pocisków"
+
+#: src/hud/status.cpp:257 src/player.cpp:963
+msgid "Times Fallen In Slime"
+msgstr "Upadków do szlamu"
+
+#: src/hud/status.cpp:258 src/player.cpp:971
+msgid "Times Fallen In Lava"
+msgstr "Upadków do lawy"
+
+#: src/hud/status.cpp:261
+msgid "Best Combo"
+msgstr "Najlepsza seria"
+
+#: src/hud/widgets.cpp:224
+#, c-format
+msgid " or Joy %d"
+msgstr " lub dżojstik %d"
+
+#: src/hud/widgets.cpp:228
+#, c-format
+msgid "Joy %d"
+msgstr "Dżojstkik %d"
+
+#: src/hud/widgets.cpp:238
+#, c-format
+msgid " or Mouse %s"
+msgstr " lub mysz %s"
+
+#: src/hud/widgets.cpp:242
+#, c-format
+msgid "Mouse %s"
+msgstr "Mysz %s"
+
+#: src/hud/controlPanel.cpp:423
+#, c-format
+msgid "%s (Recharging)"
+msgstr "%s (ładowanie)"
+
+#: src/hud/controlPanel.cpp:467
+msgid "Desimilator has recharged"
+msgstr "Odwrotny transformator został naładowany"
+
+#: src/effects/particles.cpp:474
+msgid "Blood Spilt"
+msgstr "Rozlana krew"
+
+#: src/player.cpp:364
+msgid "Orders : Follow"
+msgstr "Rozkaz : podążaj"
+
+#: src/player.cpp:373
+msgid "Orders : Wait"
+msgstr "Rozkaz : czekaj"
+
+#: src/player.cpp:382
+msgid "Orders : Use"
+msgstr "Rozkaz : użyj"
+
+#: src/player.cpp:391
+msgid "Orders : Retreat"
+msgstr "Rozkaz : wycofaj się"
+
+#: src/misc/misc.cpp:135
+msgid "<<< Empty >>>"
+msgstr "<<< Pusty >>>"
+
+#: src/misc/cutscene.cpp:875
+#, c-format
+msgid "data/cutscenes/text/en/%s"
+msgstr "data/cutscenes/text/pl/%s"
+
+#: src/bosses/bioTanks.cpp:237 src/bosses/bioTanks.cpp:255
+#: src/bosses/bioTanks.cpp:771 src/bosses/bioTanks.cpp:772
+msgid "AI Kernel Module"
+msgstr "Moduł sztucznej inteligencji jądra"
+
+#: src/bosses/bioTanks.cpp:241
+msgid "AI Kernel Module required"
+msgstr "Wymagany moduł sztucznej inteligencji jądra"
+
+#: src/bosses/bioTanks.cpp:245
+msgid "Press ACTION to apply AI Kernel Module"
+msgstr "Wciśnij przycisk AKCJI, aby użyć modułu sztucznej inteligencji jądra"
+
+#: src/bosses/bioTanks.cpp:269
+#, c-format
+msgid "%s (Patched)"
+msgstr "%s (Załatanych)"
+
+#: src/bosses/bioTanks.cpp:298
+#, c-format
+msgid "%s has recovered!"
+msgstr "%s odtworzony!"
+
+#: src/bosses/bioTanks.cpp:432 src/bosses/bioTanks.cpp:471
+#, c-format
+msgid "%s has been disabled!"
+msgstr "%s wyłączony!"
+
+#: src/bosses/specialist.cpp:149
+#, c-format
+msgid "%s got his %s back!"
+msgstr "%s znowu ma %s!"
+
+#: src/bosses/specialist.cpp:292
+#, c-format
+msgid "%s stole %s"
+msgstr "%s ukradł %s"
+
+#: src/bosses/eyeDroidCommander.cpp:616
+msgid "!!! ION CANNON DESTROYED !!!"
+msgstr "!!! DZIAŁO JONOWE ZNISZCZONE !!!"
+
+#: src/bosses/eyeDroidCommander.cpp:625
+#, c-format
+msgid "%s starting repairs!"
+msgstr "%s rozpoczyna naprawy!"
+
+#: src/bosses/eyeDroidCommander.cpp:640
+#, c-format
+msgid "Ion Cannon: %d%% Complete..."
+msgstr "Działo jonowe: %d%% zakończono..."
+
+#: src/bosses/eyeDroidCommander.cpp:654
+msgid "Reparing Ion Cannon..."
+msgstr "Naprawianie działa jonowego..."
+
+#: src/bosses/eyeDroidCommander.cpp:658
+msgid "Hold ACTION to repair cannon"
+msgstr "Wciśnij przycisk AKCJI, aby naprawić działo"
+
+#: src/bosses/eyeDroidCommander.cpp:671
+msgid "Ion Cannon Repaired!"
+msgstr "Działo jonowe naprawione!"
+
+#: src/bosses/eyeDroidCommander.cpp:786
+msgid "Ion Cannon Damaged!"
+msgstr "Działo jonowe uszkodzone!"
+
+#: src/bosses/eyeDroidCommander.cpp:812
+msgid "Droid Commander Disabled!!"
+msgstr "Dowódca droidów wyłączony!!"
+
+#: src/bosses/eyeDroidCommander.cpp:854
+msgid "Ion Cannon Enabled"
+msgstr "Działo jonowe aktywne"
+
+#: src/bosses/finalBoss.cpp:369
+msgid "A strong blast might be able to send that shot back from where it came..."
+msgstr ""
+"Silny wybuch może jest w stanie wysłać ten pocisk z powrotem tam, skąd "
+"przybył"
+
+#: src/bosses/finalBoss.cpp:491
+msgid "DIE, BOB!!! DIE!!!!"
+msgstr "GIŃ, BOB!!! GIŃ!!!!"
+
+#: src/init.cpp:35
+msgid "data/misc/en/LICENSE"
+msgstr "data/misc/pl/LICENSE"
+
+#: src/combat/explosions.cpp:80
+msgid "Enemies Killed By Tekka"
+msgstr "Wrogowie zabici przez Teekę"
+
+#: src/puzzles/mastermind.cpp:27
+msgid "data/misc/en/mastermind"
+msgstr "data/misc/pl/mastermind"
+
+#: src/puzzles/laserGrid.cpp:25
+msgid "data/misc/en/laserGrid"
+msgstr "data/misc/pl/laserGrid"
+
+#: src/battle.cpp:272
+msgid "Can't do that during a boss battle..."
+msgstr "Nie można wykonać podczas bitwy z bossem"
+
+#: src/battle.cpp:505
+msgid "1 Minute Left..."
+msgstr "Pozostała minuta..."
+
+#: src/battle.cpp:511
+msgid "30 Seconds Remaining!"
+msgstr "Pozostało 30 sekund!"
+
+#: src/battle.cpp:516
+msgid "!!! Hurry Up !!!"
+msgstr "!!! Pospiesz się !!!"
+
+#: src/missions/mission.cpp:420
+msgid "***** Mission Complete *****"
+msgstr "***** Misja wykonana *****"
+
+#: src/missions/mission.cpp:425
+#, c-format
+msgid "%s - Objective Completed"
+msgstr "%s - zadanie wykonane"
+
+#: src/missions/mission.cpp:433 src/missions/mission.cpp:524
+#, c-format
+msgid "%s - Objective Failed"
+msgstr "%s - zadanie niewykonane"
+
+#: src/missions/mission.cpp:456
+msgid "*** MISSION FAILED ****"
+msgstr "*** Misja zakończona niepowodzeniem ****"
+
+#: src/missions/mission.cpp:496
+#, c-format
+msgid "New Objective - %s"
+msgstr "Nowe zadanie - %s"
+
+#: src/cplusplus/CGame.cpp:463
+#, c-format
+msgid "%d Hit Combo!!"
+msgstr "seria %d trafień!!"
+
+#: src/cplusplus/CComboBox.cpp:60
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: added manually
+msgid "8 Months Later..."
+msgstr "8 miesięcy później..."
+
+msgid "Presents"
+msgstr "Prezentuje"
+
+msgid "An SDL-OpenGL Game"
+msgstr "Grę na SDL i OpenGL"
+
+msgid "New Game"
+msgstr "Nowa gra"
+
+msgid "Training"
+msgstr "Trening"
+
+msgid "Load Game"
+msgstr "Wczytaj grę"
+
+msgid "Options"
+msgstr "Opcje"
+
+msgid "Quit"
+msgstr "Zakończ"
+
+msgid "Quit Game"
+msgstr "Zakończ grę"
+
+msgid "Copyright Parallel Realities 2008"
+msgstr "Prawa autorskie: Parallel Realities 2008"
+
+msgid "Version %.2f"
+msgstr "Wersja %.2f"
+
+msgid "Resume Game"
+msgstr "Wznów grę"
+
+msgid "Save Game"
+msgstr "Zapisz stan gry"
+
+msgid "Restart Level"
+msgstr "Wczytaj ponownie"
+
+msgid "Game Options"
+msgstr "Opcje gry"
+
+msgid "Hint: %s"
+msgstr "Wskazówka: %s"
+
+msgid "Uzi"
+msgstr "Uzi"
+
+msgid "Shotgun"
+msgstr "Śrutówka"
+
+msgid "Grenades"
+msgstr "Granaty"
+
+msgid "Small Pistol"
+msgstr "Mały pistolet"
+
+msgid "Resolution"
+msgstr "Rozdzielczość"
+
+msgid "Fullscreen"
+msgstr "Pełny ekran"
+
+msgid "Grab Mouse"
+msgstr "Przytrzymaj mysz"
+
+msgid "Sound Volume"
+msgstr "Głośność dźwięków"
+
+msgid "Music Volume"
+msgstr "Głośność muzyki"
+
+msgid "Ambient Volume"
+msgstr "Głośność podkładu"
+
+msgid "Environment Volume"
+msgstr "Głośność środowiska"
+
+msgid "Brightness"
+msgstr "Jasność"
+
+msgid "Configure Controls..."
+msgstr "Definiuj przyciski..."
+
+msgid "Additional Options..."
+msgstr "Dodatkowe opcje..."
+
+msgid "Left Alt"
+msgstr "Lewy Alt"
+
+msgid "Right Alt"
+msgstr "Prawy Alt"
+
+msgid "Left Ctrl"
+msgstr "Lewy Ctrl"
+
+msgid "Right Ctrl"
+msgstr "Prawy Ctrl"
+
+msgid "Left Super"
+msgstr "Lewy Super"
+
+msgid "Right Super"
+msgstr "Prawy Super"
+
+msgid "Left Shift"
+msgstr "Lewy Shift"
+
+msgid "Right Shift"
+msgstr "Prawy Shift"
+
+msgid "Forward"
+msgstr "Do przodu"
+
+msgid "Backward"
+msgstr "Do tyłu"
+
+msgid "Jump"
+msgstr "Skok"
+
+msgid "Fire"
+msgstr "Strzał"
+
+msgid "Action"
+msgstr "Akcja"
+
+msgid "Status"
+msgstr "Stan"
+
+msgid "Quick Grenade"
+msgstr "Szybki granat"
+
+msgid "Cycle Weapon"
+msgstr "Przełącz broń"
+
+msgid "Auto / Manual Aim"
+msgstr "Automatyczne / ręczne celowanie"
+
+msgid "Cycle Target"
+msgstr "Przełącz cel"
+
+msgid "Rotate Camera Left"
+msgstr "Przesuń kamerę w lewo"
+
+msgid "Rotate Camera Right"
+msgstr "Przesuń kamerę w prawo"
+
+msgid "Pause"
+msgstr "Pauza"
+
+msgid "Return"
+msgstr "Enter"
+
+msgid "Tab"
+msgstr "Tabulator"
+
+msgid "N/A"
+msgstr "brak"
+
+msgid "Caps Lock"
+msgstr "Caps Lock"
+
+msgid "Ctrl"
+msgstr "Ctrl"
+
+msgid "Super"
+msgstr "Super"
+
+msgid "Alt"
+msgstr "Alt"
+
+msgid "Analog Deadzone"
+msgstr "Martwa strefa myszy"
+
+msgid "Mouse Sensitivity"
+msgstr "Przyspieszenie myszy"
+
+msgid "Reset"
+msgstr "Reset ustawień"
+
+msgid "Cancel"
+msgstr "Porzuć"
+
+msgid "Blood Policy"
+msgstr "Krew"
+
+msgid "Shadow Policy"
+msgstr "Cienie"
+
+msgid "Decal Policy"
+msgstr "Tekstury"
+
+msgid "Swap Second Joystick Axis"
+msgstr "Zamień drugą oś dżojstika"
+
+msgid "On"
+msgstr "Włącz"
+
+msgid "Off"
+msgstr "Wyłącz"
+
+msgid "No Stains"
+msgstr "Bez plam"
+
+msgid "Blobs and Enemies"
+msgstr "Blobowie i wrogowie"
+
+msgid "Bob Only"
+msgstr "Tylko Bob"
+
+msgid "Medium"
+msgstr "Średnie"
+
+msgid "Low"
+msgstr "Niskie"
+
+msgid "Cherry"
+msgstr "Wiśnię"
+
+msgid "Medipack"
+msgstr "Apteczka"
+
+msgid "Keycard"
+msgstr "Karta dostępu"
+
+msgid "Battery"
+msgstr "Bateria"
+
+msgid "ID Card"
+msgstr "Karta identyfikacyjna"
+
+msgid "Shield Belt"
+msgstr "Pas ochronny"
+
+msgid "Teeka Weapon"
+msgstr "Broń Teeki"
+
+msgid "Sticky C4"
+msgstr "Lepkie C4"
+
+msgid "Plasma Pistol"
+msgstr "Pistolet plazmowy"
+
+msgid "Plasma Rifle"
+msgstr "Karabin plazmowy"
+
+msgid "Grenade Launcher"
+msgstr "Granatnik"
+
+msgid "Cluster Launcher"
+msgstr "Wyrzutnia kasetowa"
+
+msgid "RPG Launcher"
+msgstr "Granatnik RPG-7"
+
+msgid "Web"
+msgstr "Sieć"
+
+msgid "Ice Gun"
+msgstr "Broń lodowa"
+
+msgid "Flamethrower"
+msgstr "Miotacz ognia"
+
+msgid "Desimilator"
+msgstr "Odwrotny transformator"
+
+msgid "Medicine"
+msgstr "Lekarstwo"
+
+msgid "Map"
+msgstr "Mapa"
+
+msgid "Red Gem"
+msgstr "Czerwony klejnot"
+
+msgid "Orange Gem"
+msgstr "Pomarańczowy klejnot"
+
+msgid "Yellow Gem"
+msgstr "Żółty klejnot"
+
+msgid "Green Gem"
+msgstr "Zielony klejnot"
+
+msgid "Blue Gem"
+msgstr "Niebieski klejnot"
+
+msgid "Purple Gem"
+msgstr "Purpurowy klejnot"
+
+msgid "Cipher #1"
+msgstr "Szyfr #1"
+
+msgid "Cipher #2"
+msgstr "Szyfr #2"
+
+msgid "Life Crystal"
+msgstr "Kryształ życia"
+
+msgid "Incomplete"
+msgstr "Nie wykonano"
+
+msgid "Complete"
+msgstr "Wykonano"
+
+msgid "Complete combat training"
+msgstr "Podejmij walkę treningową"
+
+msgid "Open door to lava passage"
+msgstr "Otwórz drzwi do kładki nad lawą"
+
+msgid "Complete aiming training"
+msgstr "Potrenuj celowanie"
+
+msgid "Complete target training"
+msgstr "Potrenuj namierzanie ruchomych celów"
+
+msgid "Open door to combat training"
+msgstr "Otwórz drzwi do pokoju walki treningowej"
+
+msgid "Page"
+msgstr "Strona"
+
+msgid "Escape from the ambush area"
+msgstr "Wydobądź się z obszaru zasadzki"
+
+msgid "Find a way back to base"
+msgstr "Znajdź drogę do bazy"
+
+msgid "Get to the caves"
+msgstr "Dostań się do jaskiń"
+
+msgid "Get some additional weaponary"
+msgstr "Zdobądź dodatkowe uzbrojenie"
+
+msgid "Destroy BioMech supply crates"
+msgstr "Zniszcz skrzynie z zaopatrzeniem obcych"
+
+msgid "Find a way through the caves"
+msgstr "Znajdź drogę przez jaskinie"
+
+msgid "Get in to main outpost"
+msgstr "Dostań się do środka placówki obcych"
+
+msgid "Rescue Teeka"
+msgstr "Odbij Teekę"
+
+msgid "Find a way through the outpost"
+msgstr "Znajdź drogę przez placówkę obcych"
+
+msgid "Get a better weapon for Teeka"
+msgstr "Zdobądź lepszą broń dla Teeki"
+
+msgid "Destroy waste processing machines"
+msgstr "Zniszcz piece do przetwarzania odpadów"
+
+msgid "Destroy main processing computer"
+msgstr "Zniszcz główny komputer sterujący procesem"
+
+msgid "Gain access to sewer system"
+msgstr "Zdobądź dostęp do systemu serwerowego"
+
+msgid "Find your way through the sewers"
+msgstr "Znajdź drogę przez farmę serwerów"
+
+msgid "Find some C4"
+msgstr "Znajdź C4 (materiał wybuchowy)"
+
+msgid "Blast through crumbling walls"
+msgstr "Wysadź osłabione mury"
+
+msgid "Find a better grenade launcher"
+msgstr "Znajdź lepszy granatnik"
+
+msgid "Open tunnel exit"
+msgstr "Otwórz wyjście tunelu"
+
+msgid "Rescue All MIAs"
+msgstr "Odbij wszystkich zaginionych w akcji"
+
+msgid "Locate some Teletags"
+msgstr "Znajdź czytniki dalekiego zasięgu"
+
+msgid "Locate some medical supplies"
+msgstr "Znajdź zaopatrzenie medyczne"
+
+msgid "Destroy Biomech gun enplacements"
+msgstr "Zniszcz stanowiska obronne obcych"
+
+msgid "Eliminate at least 100 enemies"
+msgstr "Pozbądź się co najmniej 100 wrogów"
+
+msgid "Do not allow any MIAs to be killed"
+msgstr "Nie pozwól na zabicie żadnego z zaginionych w akcji"
+
+msgid "Defeat BioMechs in courtyard area"
+msgstr "Pokonaj obcych na dziedzińcu"
+
+msgid "Destroy Eye Droid Commander"
+msgstr "Zniszcz komandora latających droidów"
+
+msgid "Have Spark Plug open base water door"
+msgstr "Każ Spark Plugowi otworzyć wodne grodzie bazy"
+
+msgid "Teleport in demolition Blob"
+msgstr "Teleportuj do środka Bloba ds. rozbiórek"
+
+msgid "Plant bombs in base foundations"
+msgstr "Podłóż bombę w fundamentach bazy"
+
+msgid "Rescue MIAs"
+msgstr "Uratuj zaginionych w akcji"
+
+msgid "Find some better protection"
+msgstr "Znajdź jakąś lepszą osłonę"
+
+msgid "Protect Spark Plug"
+msgstr "Ochroń Spark Pluga"
+
+msgid "Protect Silvester"
+msgstr "Ochroń Sylwestra"
+
+msgid "Disable alarm systems"
+msgstr "Wyłącz systemy alarmowe"
+
+msgid "Teleport in Demolition Blob"
+msgstr "Teleportuj Bloba ds. rozbiórek do środka"
+
+msgid "Plant bombs in main base structure"
+msgstr "Podłóż bombę w najważniejszej konstrukcji bazy"
+
+msgid "Destroy supply crates"
+msgstr "Zniszcz skrzynie z zaopatrzeniem"
+
+msgid "Destroy sentry guns"
+msgstr "Zniszcz działka strażnicze"
+
+msgid "Protect Arnie"
+msgstr "Ochroń Arnolda"
+
+msgid "Escape before bombs detonate"
+msgstr "Wydostań się przed wybuchem bomb"
+
+msgid "Destroy Beta Biotank"
+msgstr "Zniszcz prototypowy czołg"
+
+msgid "Obtain Grappling Hooks"
+msgstr "Zdobądź kotwiczki wspinaczkowe"
+
+msgid "Activate Drawbridge"
+msgstr "Opuść most zwodzony"
+
+msgid "Destroy all Sentry Cannons"
+msgstr "Zniszcz wszystkie działka strażnicze"
+
+msgid "Gain access to enemy base courtyard"
+msgstr "Zdobądź dostęp do dziedzińca wrogiej bazy"
+
+msgid "Destroy all Shield Generators"
+msgstr "Zniszcz wszystkie generatory pola ochronnego"
+
+msgid "Destroy all enemies"
+msgstr "Zniszcz wszystkich wrogów"
+
+msgid "Gain access to enemy base interior"
+msgstr "Zdobądź dostęp do wnętrza bazy wroga"
+
+msgid "Protect all MIAs"
+msgstr "Ochroń wszystkich zaginionych w akcji"
+
+msgid "Protect Anderson"
+msgstr "Ochroń Andersona"
+
+msgid "Destroy Base"
+msgstr "Zniszcz bazę"
+
+msgid "Gain access to Left and Right Wings"
+msgstr "Zdobądź dostęp do lewego i prawego skrzydła"
+
+msgid "Gain access to Left Wing Generator Room"
+msgstr "Zdobądź dostęp do pomieszczenia generatora w lewym skrzydle"
+
+msgid "Plant bombs in the Left Wing Generator"
+msgstr "Podłóż bomby w pobliżu generatora w lewym skrzydle"
+
+msgid "Gain access to Right Wing Generator Room"
+msgstr "Zdobądź dostęp do pomieszczenia generatora w prawym skrzydle"
+
+msgid "Plant bombs in the Right Wing Generator"
+msgstr "Podłóż bomby w pobliżu generatora w prawym skrzydle"
+
+msgid "Protect Sylvester"
+msgstr "Ochroń Sylwestra"
+
+msgid "Protect Arnold"
+msgstr "Ochroń Arnolda"
+
+msgid "Locate secret tomb entrance"
+msgstr "Znajdź ukryte wejście do grobowca"
+
+msgid "Find Red Gem"
+msgstr "Znajdź czerwony klejnot"
+
+msgid "Find Orange Gem"
+msgstr "Znajdź pomarańczowy klejnot"
+
+msgid "Find Yellow Gem"
+msgstr "Znajdź żółty klejnot"
+
+msgid "Find Green Gem"
+msgstr "Znajdź zielony klejnot"
+
+msgid "Find Blue Gem"
+msgstr "Znajdź niebieski klejnot"
+
+msgid "Find Purple Gem"
+msgstr "Znajdź purpurowy klejnot"
+
+msgid "Open main tomb door"
+msgstr "Otwórz główne wejście do grobowca"
+
+msgid "Acquire first Cipher"
+msgstr "Zdobądź pierwszy szyfr"
+
+msgid "Acquire second Cipher"
+msgstr "Zdobądź drugi szyfr"
+
+msgid "Open door to main Crystal Room"
+msgstr "Otwórz drzwi do głównego pomieszczenia kryształu"
+
+msgid "Aquire more powerful weaponary"
+msgstr "Zdobądź silniejsze uzbrojenie"
+
+msgid "Activate first bridge part"
+msgstr "Uruchom pierwszą część mostu"
+
+msgid "Activate second bridge part"
+msgstr "Uruchom drugą część mostu"
+
+msgid "Activate third bridge part"
+msgstr "Uruchom trzecią część mostu"
+
+msgid "Aquire Life Crystal"
+msgstr "Zdobądź kryształ życia"
+
+msgid "Fight Galdov"
+msgstr "Pokonaj Galdova"
+
+msgid "Open east passage door"
+msgstr "Otwórz wschodni korytarz"
+
+msgid "Open passage to Flooded Tunnel"
+msgstr "Otwórz korytarz do Zalanego tunelu"
+
+msgid "Escape back to base"
+msgstr "Umknij z powrotem do bazy"
+
+msgid "Rescue Anderson"
+msgstr "Odbij Andersona"
+
+msgid "Destroy courtyard shield generators"
+msgstr "Zniszcz generatory osłon na dziedzińcu"
+
+msgid "Rescue 18 MIAs"
+msgstr "Uratuj 18 zaginionych w akcji"
+
+msgid "Hack waste system access control"
+msgstr "Zhakuj kontrolę dostępu systemu przetwarzania odpadów"
+
+msgid "Get a new grenade launcher system"
+msgstr "Zdobądź nowy granatnik"
+
+msgid "Obtain the Desimilator"
+msgstr "Zdobądź odwrotny transformator biomechaniczny"
+
+msgid "Obtain 100 Teletags"
+msgstr "Zdobądź 100 czytników dalekiego zasięgu"
+
+msgid "Desimilate at least 96% of the Blobs"
+msgstr "Przemień z powrotem co najmniej 96% Blobów"
+
+msgid "Rescue at least 96% of the Blobs"
+msgstr "Uratuj co najmniej 96% Blobów"
+
+msgid "Do not lose more than 4% of the Blobs"
+msgstr "Nie utrać więcej niż 4% Blobów"
+
+msgid "Teleport in Spark Plug"
+msgstr "Teleportuj Spark Pluga do środka"
+
+msgid "Teleport in Arnold"
+msgstr "Teleportuj Arnolda do środka"
+
+msgid "Gain access to main dispatch yard"
+msgstr "Zdobądź dostęp do głównej poczekalni"
+
+msgid "Set bombs in tank and ammo bay"
+msgstr "Ustaw bomby w zbiornikach paliwa i amunicji"
+
+msgid "Destroy Biomech teleport points"
+msgstr "Zniszcz punkty teleportacyjne obcych"
+
+msgid "Escape before the bombs detonate!"
+msgstr "Ucieknij zanim bomby wybuchną!"
+
+msgid "Defeat Blaze"
+msgstr "Pokonaj Płomienia"
+
+msgid "Defeat Frost"
+msgstr "Pokonaj Mroza"
+
+msgid "Pass security point #1"
+msgstr "Przejdź przez pierwszy punkt ochrony"
+
+msgid "Pass security point #2"
+msgstr "Przejdź przez drugi punkt ochrony"
+
+msgid "Pass security point #3"
+msgstr "Przejdź przez trzeci punkt ochrony"
+
+msgid "Pass security point #4"
+msgstr "Przejdź przez czwarty punkt ochrony"
+
+msgid "Break in to maintenance tunnel"
+msgstr "Włam się do tunelu serwisowego"
+
+msgid "Defeat main courtyard forces"
+msgstr "Pokonaj główne siły na dziedzińcu"
+
+msgid "Gain access to tower"
+msgstr "Zdobądź dostęp do wieży"
+
+msgid "Get to 1st Floor"
+msgstr "Dostań się na pierwsze piętro"
+
+msgid "Get to 2nd Floor"
+msgstr "Dostań się na drugie piętro"
+
+msgid "Get to 3rd Floor"
+msgstr "Dostań się na trzecie piętro"
+
+msgid "Gain access to Tower Roof"
+msgstr "Zdobądź dostęp na szczyt wieży"
+
+msgid "Cherry Fields"
+msgstr "Uprawy wiśniowe"
+
+msgid "Inner Cave Network #5"
+msgstr "Wewnętrzna sieć jaskiń #5"
+
+msgid "BioMech Outpost"
+msgstr "Wysunięta placówka obcych"
+
+msgid "Waste Disposal"
+msgstr "Przetwórnia odpadów"
+
+msgid "Sewers"
+msgstr "Serwerownia"
+
+msgid "Flooded Tunnel 1"
+msgstr "Zalany tunel"
+
+msgid "Blob Fort Outskirts"
+msgstr "Rubieże bazy Blobów"
+
+msgid "BioMech Supply Base Outskirts"
+msgstr "Rubieże bazy zaopatrzeniowej obcych"
+
+msgid "BioMech Supply Base"
+msgstr "Baza zaopatrzeniowa obcych"
+
+msgid "Biomech Supply Base Rear Exit"
+msgstr "Tylne wyjście bazy zaopatrzeniowej"
+
+msgid "Enemy Base 2 Outskirts"
+msgstr "Rubieże drugiej bazy obcych"
+
+msgid "Enemy Base 2 Courtyard"
+msgstr "Dziedziniec drugiej bazy obcych"
+
+msgid "Enemy Base 2 Interior"
+msgstr "Wnętrze drugiej bazy obcych"
+
+msgid "Ancient Tomb Entrance"
+msgstr "Wejście do starożytnego grobowca"
+
+msgid "Ancient Tomb 5"
+msgstr "Starożytny grobowiec #5"
+
+msgid "Life Crystal Shrine"
+msgstr "Świątynia kryształu życia"
+
+msgid "Unknown"
+msgstr "Lokalizacja nieznana"
+
+msgid "Flooded Tunnel 2"
+msgstr "Zalany tunel #2"
+
+msgid "Biomech Assimilator Outskirts"
+msgstr "Rubieże transformatora biomechanicznego"
+
+msgid "Biomech Assimilator"
+msgstr "Transformator biomechaniczny"
+
+msgid "Biomech Assimilator Dispatch Sector"
+msgstr "Poczekalnia do transformatora biomechanicznego"
+
+msgid "Biomech Tower Perimeter"
+msgstr "Obrzeża wieży obcych"
+
+msgid "Biomech Tower Courtyard"
+msgstr "Dziedziniec wieży obcych"
+
+msgid "Biomech Tower"
+msgstr "Wieża obcych"
+
+msgid "Unlimited Health"
+msgstr "Niekończące się zdrowie"
+
+msgid "Unlimited Shield"
+msgstr "Niezniszczalny pancerz"
+
+msgid "Unlimited Ammo"
+msgstr "Niekończąca się amunicja"
+
+msgid "Unlimited Oxygen"
+msgstr "Nie potrzebujesz tlenu"
+
+msgid "Blind Enemies"
+msgstr "Przeciwnicy cię nie widzą"
+
+msgid "Unlimited Ally Health"
+msgstr "Niekończące się zdrowie pomocników"
+
+msgid "No clipping (F/V, Up/Down)"
+msgstr "Przechodzenie przez ściany"
+
+msgid "Never be stunned"
+msgstr "Ciosy nie blokują ruchu"
+
+msgid "Special items not needed"
+msgstr "Specjalne obiekty niepotrzebne"
+
+msgid "Save anywhere (F2)"
+msgstr "Zapis gry wszędzie (F2)"
+
+msgid "Desimilate any enemy"
+msgstr "Przetransformuj każdego wroga"
+
+msgid "Unlimited Time"
+msgstr "Nieskończony czas"
+
+msgid "Left"
+msgstr "W lewo"
+
+msgid "Right"
+msgstr "W prawo"
+
+msgid "Up"
+msgstr "W górę"
+
+msgid "Down"
+msgstr "W dół"
+
+msgid "Space"
+msgstr "Spacja"
+
+msgid "Cheats"
+msgstr "Ulepszenia"
+
+msgid "Load"
+msgstr "Wczytaj"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "left"
+msgstr "lewy"
+
+msgid "middle"
+msgstr "środkowy"
+
+msgid "right"
+msgstr "prawy"
+
+msgid "wheel up"
+msgstr "rolka w górę"
+
+msgid "wheel down"
+msgstr "rolka w dół"
+
+msgid "unknown"
+msgstr "nieznany"
+
+msgid "Loading Resources..."
+msgstr "Wczytywanie zasobów..."
+
+msgid "Loading Music..."
+msgstr "Wczytywanie muzyki..."
+
+msgid "Loading Game..."
+msgstr "Wczytywanie gry..."
+
+msgid "Saving Game State..."
+msgstr "Zapisywanie stanu gry..."
+
+msgid "Loading Mission..."
+msgstr "Wczytywanie misji"
+
+msgid "Motion Blur"
+msgstr "Rozmycie obrazu przy ruchu"
+
+msgid "Cipher Key #1"
+msgstr "Klucz do szyfru #1"
+
+msgid "Cipher Key #2"
+msgstr "Klucz do szyfru #2"
+
+msgid "Crystal Bridge Key #2"
+msgstr "Klucz #2 mostu kryształu"
+
+msgid "Laser Beam Security Card"
+msgstr "Karta bezpieczeństwa wiązki laserowej"
+
+msgid "Maintenance Tunnel Key"
+msgstr "Klucz do tunelu serwisowego"
+
+msgid "Level 1 Access Key"
+msgstr "Klucz dostępu poziomu 1"
+
+msgid "Laser Checkpoint Card"
+msgstr "Karta punktu kontrolnego lasera"
+
+msgid "2nd Floor Access Key"
+msgstr "Karta dostępu drugiego piętra"
+
+msgid "Level 2 Security Pass"
+msgstr "Przepustka bezpieczeństwa poziomu 2"
+
+msgid "Level 3 Security Pass"
+msgstr "Przepustka bezpieczeństwa poziomu 3"
+
+msgid "Roof Access Keycard #2"
+msgstr "Karta #2 dostępu na szczyt"
+
+msgid "Roof Access Keycard #1"
+msgstr "Karta #1 dostępu na szczyt"
+
+msgid "Outlet Key Card"
+msgstr "Karta wyjścia"
+
+msgid "Store Room 1 Key"
+msgstr "Klucz do 1 magazynu"
+
+msgid "Energy Bridge Key 2"
+msgstr "Klucz #2 mostu energii"
+
+msgid "Energy Bridge Key 1"
+msgstr "Klucz #1 mostu energii"
+
+msgid "Store Room 2 Key"
+msgstr "Klucz do 2 magazynu"
+
+msgid "Store Room 3 Key"
+msgstr "Klucz do 3 magazynu"
+
+msgid "Assimilator Level 5 Key"
+msgstr "Klucz do 5 poziomu transformatora biomechanicznego"
+
+msgid "Assimilator Level 4 Key"
+msgstr "Klucz do 4 poziomu transformatora biomechanicznego"
+
+msgid "Assimilator Level 3 Key"
+msgstr "Klucz do 3 poziomu transformatora biomechanicznego"
+
+msgid "Assimilator Level 2 Key"
+msgstr "Klucz do 2 poziomu transformatora biomechanicznego"
+
+msgid "Assimilator Level 1 Key"
+msgstr "Klucz do 1 poziomu transformatora biomechanicznego"
+
+msgid "Desimilator Control Room 1 Key"
+msgstr "Klucz do 1 pokoju sterowania odwrotnego transformatora"
+
+msgid "Desimilator Right Wing Key 1"
+msgstr "Klucz #1 do prawego skrzydła odwrotnego transformatora"
+
+msgid "Desimilator Right Wing Key 2"
+msgstr "Klucz #2 do prawego skrzydła odwrotnego transformatora"
+
+msgid "Bay Loading Key"
+msgstr "Klucz załadunku zatoki zbiorników"
+
+msgid "Check Point Card #1"
+msgstr "Karta #1 punktu kontrolnego"
+
+msgid "Alarm Key #1"
+msgstr "Klucz alarmowy #1"
+
+msgid "Alarm Key #2"
+msgstr "Klucz alarmowy #2"
+
+msgid "Alarm Key #3"
+msgstr "Klucz alarmowy #3"
+
+msgid "Teleporter Access Key"
+msgstr "Klucz dostępu do teleportu"
+
+msgid "Check Point Key #2"
+msgstr "Klucz #2 punktu kontrolnego"
+
+msgid "Drawbridge Key 1"
+msgstr "Klucz #1 mostu zwodzonego"
+
+msgid "Drawbridge Key 2"
+msgstr "Klucz #2 mostu zwodzonego"
+
+msgid "Armoury Key"
+msgstr "Klucz zbrojowni"
+
+msgid "Shield Generator 1 Key"
+msgstr "Klucz 1. generatora pola ochronnego"
+
+msgid "Control Room Main Key"
+msgstr "Klucz główny pokoju sterowania"
+
+msgid "Control Room 1st Floor Key"
+msgstr "Klucz na 1. piętro pokoju sterowania"
+
+msgid "Shield Generator 2 Key"
+msgstr "Klucz 2. generatora pola ochronnego"
+
+msgid "Shield Generator 3 Key"
+msgstr "Klucz 3. generatora pola ochronnego"
+
+msgid "Shield Generator 4 Key"
+msgstr "Klucz 4. generatora pola ochronnego"
+
+msgid "Holding Cell Key #2"
+msgstr "Klucz #2 celi więziennej"
+
+msgid "Holding Cell Key #1"
+msgstr "Klucz #1 celi więziennej"
+
+msgid "Storage Yard Keycard"
+msgstr "Karta dostępu na podwórze magazynu"
+
+msgid "Tank Storage Bay Key"
+msgstr "Klucz do zatoki zbiorników magazynu"
+
+msgid "Exit Key 1"
+msgstr "Klucz wyjściowy #1"
+
+msgid "Exit Key 2"
+msgstr "Klucz wyjściowy #2"
+
+msgid "Prison Shield Key"
+msgstr "Klucz pola ochronnego więzienia"
+
+msgid "Combat Room Card"
+msgstr "Karta pokoju walki"
+
+msgid "Command Room Key"
+msgstr "Klucz pokoju dowodzenia"
+
+msgid "Storage Locker Key"
+msgstr "Klucz do schowka w magazynie"
+

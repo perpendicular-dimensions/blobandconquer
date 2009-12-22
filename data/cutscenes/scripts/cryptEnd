@@ -1,0 +1,52 @@
+LOAD_NARRATIVE cryptEnd;
+
+ENTITY_POSITION_AT "Bob" "BobEnd";
+ENTITY_POSITION_AT "Teeka" "TeekaEnd";
+ENTITY_POSITION_AT "Galdov" "GaldovEnd";
+
+ENTITY_LOOK_AT "Bob" "ExitLocation";
+ENTITY_LOOK_AT "Teeka" "ExitLocation";
+
+CAMERA_POSITION_AT "CameraLocation8";
+CAMERA_FOLLOW "Bob";
+
+ENTITY_MOVE_TO "Bob" "ExitLocation" 0.65;
+ENTITY_MOVE_TO "Teeka" "ExitLocation" 0.75;
+
+WAIT 300;
+
+CAMERA_FOLLOW "Galdov";
+
+CAMERA_MOVE_TO "ExitLocation" 0.1;
+
+WAIT 150;
+
+ENTITY_VANISH "DarkBlob1" "DarkBlobStart1";
+ENTITY_LOOK_AT "DarkBlob1" "Galdov";
+
+WAIT 100;
+
+ENTITY_VANISH "DarkBlob2" "DarkBlobStart2";
+ENTITY_LOOK_AT "DarkBlob2" "Galdov";
+
+WAIT 25;
+
+ENTITY_VANISH "DarkBlob3" "DarkBlobStart3";
+ENTITY_LOOK_AT "DarkBlob3" "Galdov";
+
+WAIT 50;
+
+ENTITY_VANISH "DarkBlob4" "DarkBlobStart4";
+ENTITY_LOOK_AT "DarkBlob4" "Galdov";
+
+WAIT 150;
+
+ENTITY_LOOK_AT "DarkBlob4" "Bob";
+
+WAIT 100;
+
+SHOW_NARRATIVE 650;
+
+WAIT 100;
+
+@END@

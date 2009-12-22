@@ -1,0 +1,280 @@
+Mission {
+
+	missionName = Biomech Assimilator Outskirts;
+
+	bsp = data/bsp/enemyBase3_1.bsp;
+	
+	music = music/Dark.s3m;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 3500;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/day2.jpg;
+	skySphereSize = 1;
+	
+	enemyLevel = 4;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_MACHINEGUN_BLOB|NME_SHOTGUN_BLOB|NME_PISTOL_DROID|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB|NME_LIGHT_PLASMA_BLOB;
+	spawnSize = 5;
+	minSpawnTime = 5500;
+	maxSpawnTime = 6000;
+	
+	exitToMission = AUTO;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+	
+	startCutscene = data/cutscenes/scripts/assimilatorStart;
+	
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Rescue Anderson;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy courtyard shield generators;
+	status = OBJ_INCOMPLETE;
+	targetValue = 4;
+	active = 1;
+	completionTrigger = powerDownCourtyardShield;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Rescue 18 MIAs;
+	status = OBJ_INCOMPLETE;
+	targetValue = 18;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Hack waste system access control;
+	status = OBJ_INCOMPLETE;
+	targetValue = 4;
+	active = 1;
+	completionTrigger = openLiftShaft;
+
+};
+
+Objective {
+
+	id = 7;
+	priority = OBJ_PRIORITY_SECONDARY;
+	description = Get a new grenade launcher system;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 8;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Anderson;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 9;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Do not allow any MIAs to be killed;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+// =========== Security Triggers ===========
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = securityPoint;
+	objectiveId = 4;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+
+	name = openLiftShaft;
+	action = TRIGGER_ACTION_USE_CAMERA;
+	targetName = openLiftShaft;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_NONE;
+
+	name = openLiftShaft;
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	targetName = liftAccess;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	
+	name = openLiftShaft;
+	targetName = Anderson;
+
+};
+
+// =========== Anderson related triggers ===========
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = securityDoor1;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Anderson;
+	objectiveId = 8;
+
+};
+
+// =========== Courtyard Barrier Shield ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = courtyardBarrierGenerator;
+	objectiveId = 2;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = powerDownCourtyardShield;
+	targetName = courtyardBarrierGenerator;
+
+};
+
+// =========== Rocket Launcher and Grenade Launcher ====================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = finalWeapons;
+	objectiveId = 7;
+
+};
+
+// =========== MIAs ====================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_BLOB_RESCUED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_MIA;
+	objectiveId = 3;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_MIA;
+	objectiveId = 9;
+
+};
+
+// =========== Main Base Doors ====================================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_MISSION_COMPLETE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = MISSION_COMPLETE;
+	targetName = mainBaseDoors;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_MISSION_COMPLETE;
+	
+	action = TRIGGER_ACTION_USE_CAMERA;
+	name = MISSION_COMPLETE;
+	targetName = mainBaseDoors;
+
+};
+
+@END@

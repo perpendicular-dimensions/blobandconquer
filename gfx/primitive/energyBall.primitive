@@ -1,0 +1,9 @@
+Sphere {
+
+	position = 0 0 0;
+	radius = 1;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+@END@

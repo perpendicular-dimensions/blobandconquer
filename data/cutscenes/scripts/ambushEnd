@@ -1,0 +1,63 @@
+LOAD_NARRATIVE ambushEnd;
+
+ENTITY_POSITION_AT "Bob" "BobEnd";
+ENTITY_POSITION_AT "Teeka" "TeekaEnd";
+ENTITY_POSITION_AT "Galdov" "GaldovEnd";
+
+ENTITY_LOOK_AT "Galdov" "Bob";
+ENTITY_LOOK_AT "Bob" "Galdov";
+ENTITY_LOOK_AT "Teeka" "Galdov";
+
+CAMERA_POSITION_AT "CameraLocation2";
+CAMERA_LOOK_AT "Galdov";
+CAMERA_MOVE_TO "CameraLocation3" 0.2;
+
+WAIT 200;
+
+SHOW_NARRATIVE 800;
+
+WAIT 100;
+
+CAMERA_LOOK_AT "Bob";
+
+WAIT 100;
+
+SHOW_NARRATIVE 400;
+
+WAIT 100;
+
+SHOW_NARRATIVE 600;
+
+WAIT 100;
+
+CAMERA_LOOK_AT "Galdov";
+
+WAIT 100;
+
+ENTITY_VANISH "Galdov" "GaldovRetreat";
+
+WAIT 100;
+
+CAMERA_LOOK_AT "CameraExitLocation" 0.2;
+CAMERA_MOVE_TO "CameraExitLocation" 0.2;
+
+WAIT 50;
+
+BARRIER_STATE "ambushExitBarrier" 0;
+
+WAIT 200;
+
+CAMERA_STOP;
+
+WAIT 100;
+
+CAMERA_POSITION_AT "GaldovAppear";
+
+ENTITY_MOVE_TO "Bob" "CameraExitLocation" 0.5;
+ENTITY_MOVE_TO "Teeka" "CameraExitLocation" 0.5;
+
+SHOW_NARRATIVE 1200;
+
+WAIT 100;
+
+@END@

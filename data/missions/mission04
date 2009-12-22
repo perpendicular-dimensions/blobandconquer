@@ -1,0 +1,164 @@
+Mission {
+
+	missionName = Waste Disposal;
+
+	bsp = data/bsp/waste.bsp;
+	
+	music = music/Zenith.s3m;
+	
+	fogColor = 0.0 0.0 0.0;
+	fogMin = 1000;
+	fogMax = 2000;
+	fogDensity = 0.35;
+	
+	skySphere = textures/game/overcast.png;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_MACHINEGUN_BLOB|NME_SHOTGUN_BLOB|NME_PISTOL_DROID|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB;
+	spawnSize = 4;
+	minSpawnTime = 2000;
+	maxSpawnTime = 6000;
+	
+	startCutscene = data/cutscenes/scripts/wasteDisposalStart;
+	
+	ambientEffects = sound/ambience/mech/commplus.ogg|sound/ambience/mech/data_1.ogg|sound/ambience/mech/dial.ogg|sound/ambience/mech/mech1.ogg|sound/ambience/mech/mech2.ogg|sound/ambience/mech/mech3.ogg;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Get a better weapon for Teeka;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy waste processing machines;
+	status = OBJ_INCOMPLETE;
+	targetValue = 3;
+	active = 1;
+	
+	completionTrigger = Reveal Computer;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy main processing computer;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+	
+	completionTrigger = Final Spawners;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Gain access to sewer system;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = WEP_UZI;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = wasteControlPanel;
+	objectiveId = 2;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = mainBoilerComputer;
+	objectiveId = 3;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = sewerAccessSwitch;
+	objectiveId = 4;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_USE_CAMERA;
+	name = Reveal Computer;
+	targetName = mainBoilerComputerPanel;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = mainBoilerComputerPanel;
+	targetName = mainBoilerComputerPanel;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = Final Spawners;
+	
+	targetName = finalEnemySpawners;
+
+};
+
+@END@

@@ -1,0 +1,165 @@
+textures/mech/glass01 {
+
+	lightLevel = 0.05;
+	
+	blended = 1;
+	
+	contents = CONTENTS_SOLID;
+
+};
+
+textures/mech/glass02 {
+
+	lightLevel = 0.05;
+	
+	blended = 1;
+	
+	contents = CONTENTS_SOLID;
+};
+
+textures/mech/energybarrier01 {
+
+	lightLevel = 0.75;
+	
+	blended = 1;
+	
+	mx = TSM_NORMAL;
+	my = TSM_NORMAL;
+	
+	dx = 0;
+	dy = 75;
+
+};
+
+textures/mech/energybarrier02 {
+
+	lightType = LT_PULSE;
+	lightLevel = 0.1;
+	lightMinLevel = 0.1;
+	lightMaxLevel = 0.15;
+	lightSpeed = 0.0005;
+	
+	blended = 1;
+	
+	mx = TSM_NORMAL;
+	my = TSM_NORMAL;
+	
+	dy = -10;
+
+};
+
+textures/mech/light01 {
+
+	bright = 1;
+
+};
+
+textures/mech/computerscreen01 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen02 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen03 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen04 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen05 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen06 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen07 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen08 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/computerscreen09 {
+
+	bright = 1;
+
+	lightLevel = 1.0;
+	
+	
+
+};
+
+textures/mech/plasmapipe {
+
+	bright = 1;
+	
+	mx = TSM_NORMAL;
+	my = TSM_NORMAL;
+	
+	dx = 100;
+	dy = 0;
+
+};
+
+textures/mech/basefloor02 {
+
+	reflective = 1;
+
+};
+
+@END@

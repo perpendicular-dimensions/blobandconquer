@@ -1,0 +1,84 @@
+Grid {
+
+	name = LanguageGrid;
+	x = 0;
+	y = 0;
+	width = 400;
+	height = 100;
+	cellSpacing = 3;
+	rows = 5;
+	cols = 15;
+	valign = 1;
+	halign = 1;
+
+};
+
+Widget {
+	
+	widgetType = LABEL;
+	grid = LanguageGrid;
+	name = label;
+	groupName = language;
+	
+	x = 1;
+	y = 1;
+	
+	text = SELECT_LANGUAGE;
+
+};
+
+Widget {
+	
+	widgetType = COMBOBOX;
+	grid = LanguageGrid;
+	name = Language;
+	groupName = language;
+	enabled = 1;
+	visible = 1;
+	
+	x = 7;
+	y = 1;
+	
+	colSpan = 7;
+
+};
+
+Widget {
+	
+	grid = LanguageGrid;
+	widgetType = BUTTON;
+	name = OK;
+	label = OK;
+	groupName = language;
+	enabled = 1;
+	visible = 0;
+	x = 3;
+	y = 3;
+	colSpan = 4;
+	
+	valign = 1;
+	
+	backgroundColor = 0 100 0;
+
+};
+
+Widget {
+	
+	grid = LanguageGrid;
+	widgetType = BUTTON;
+	name = Cancel;
+	label = Cancel;
+	groupName = language;
+	enabled = 1;
+	visible = 0;
+	x = 9;
+	y = 3;
+	colSpan = 4;
+	
+	valign = 1;
+	
+	backgroundColor = 100 0 0;
+
+};
+
+@END@

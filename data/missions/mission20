@@ -1,0 +1,62 @@
+Mission {
+
+	bsp = data/bsp/crypt.bsp;
+	
+	music = music/A Bear Called Otso.xm;
+	
+	fogColor = 0 0 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	
+	enemyLevel = 5;
+	
+	exitToMission = AUTO;
+	
+	bossDefFile = data/gameDefs/cryptBoss;
+	
+	startCutscene = data/cutscenes/scripts/cryptStart;
+	endCutscene = data/cutscenes/scripts/cryptEnd;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Fight Galdov;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_USE_CAMERA;
+	
+	name = galdovDefeated;
+	targetName = galdovDefeated;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	
+	name = galdovDefeated;
+	targetName = galdovDefeated;
+
+};
+
+@END@

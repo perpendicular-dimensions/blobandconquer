@@ -1,0 +1,12 @@
+// temp Item Model
+
+// Body
+Box {
+
+	position = 0 0 0;
+	size = 6 6 6;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+@END@

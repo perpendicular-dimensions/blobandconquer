@@ -1,0 +1,125 @@
+LOAD_NARRATIVE bossBattle3Start;
+
+CAMERA_POSITION_AT "CameraLocation1";
+CAMERA_LOOK_AT "BobRunLocation";
+
+ENTITY_POSITION_AT "Bob" "BobRunLocation";
+ENTITY_POSITION_AT "Teeka" "TeekaRunLocation";
+
+ENTITY_LOOK_AT "Bob" "BobPauseLocation";
+ENTITY_LOOK_AT "Teeka" "BobPauseLocation";
+
+WAIT 150;
+
+STRUCTURE_STATE "cutsceneLift" 1;
+
+WAIT 250;
+
+ENTITY_LOOK_AT "Bob" "BobPauseLocation";
+ENTITY_LOOK_AT "Teeka" "BobPauseLocation";
+
+CAMERA_FOLLOW "Bob";
+
+ENTITY_MOVE_TO "Bob" "BobPauseLocation" 1;
+
+WAIT 485;
+
+ENTITY_STOP "Bob";
+
+WAIT 100;
+
+ENTITY_LOOK_AT "Bob" "BobPauseLook";
+
+CAMERA_POSITION_AT "CameraLocation2";
+CAMERA_MOVE_TO "CameraLocation1" 0.05;
+
+ENTITY_MOVE_TO "Teeka" "BobPauseLocation" 1;
+
+WAIT 547;
+
+ENTITY_STOP "Teeka";
+
+ENTITY_MOVE_TO "Bob" "BobPauseLook" 1.5;
+ENTITY_MOVE_TO "Teeka" "BobPauseLook" 1.5;
+
+ENTITY_HELPLESS "Bob" 500;
+ENTITY_HELPLESS "Teeka" 500;
+
+WAIT 300;
+
+ENTITY_POSITION_AT "Bob" "BobFallLocation";
+ENTITY_POSITION_AT "Teeka" "TeekaFallLocation";
+
+ENTITY_HELPLESS "Bob" 500;
+ENTITY_HELPLESS "Teeka" 500;
+
+CAMERA_POSITION_AT "CameraLocation3";
+CAMERA_LOOK_AT "BobStart";
+
+WAIT 600;
+
+ENTITY_STOP "Bob";
+ENTITY_STOP "Teeka";
+
+WAIT 100;
+
+ENTITY_LOOK_RANDOM "Bob";
+ENTITY_LOOK_RANDOM "Teeka";
+
+WAIT 100;
+
+CAMERA_MOVE_TO "CameraLocation4" 0.2;
+
+SHOW_NARRATIVE 800;
+
+CAMERA_STOP;
+
+WAIT 100;
+
+ENTITY_LOOK_AT "Bob" "BobStart";
+ENTITY_LOOK_AT "Teeka" "TeekaStart";
+
+SHOW_NARRATIVE 800;
+
+CAMERA_POSITION_AT "CameraLocation5";
+CAMERA_FOLLOW "Bob";
+
+WAIT 25;
+
+ENTITY_MOVE_TO "Bob" "BobStart" 0.5;
+ENTITY_MOVE_TO "Teeka" "TeekaStart" 0.5;
+
+WAIT 250;
+
+ENTITY_STOP "Bob";
+ENTITY_STOP "Teeka";
+
+WAIT 25;
+
+ENTITY_LOOK_AT "Bob" "CameraLocation5";
+ENTITY_LOOK_AT "Teeka" "CameraLocation5";
+
+SHOW_NARRATIVE 200;
+
+ENTITY_POSITION_AT "Map" "MapFallLocation";
+
+ENTITY_WATCH "Bob" "Map";
+ENTITY_WATCH "Teeka" "Map";
+
+WAIT 100;
+
+CAMERA_MOVE_TO "MapFallLocation" 0.025;
+
+WAIT 300;
+
+SHOW_NARRATIVE 800;
+
+SKIP;
+
+ENTITY_POSITION_AT "Bob" "BobStart";
+ENTITY_POSITION_AT "Teeka" "TeekaStart";
+ENTITY_POSITION_AT "Map" "BobStart";
+ENTITY_HELPLESS "Bob" 0;
+ENTITY_HELPLESS "Teeka" 0;
+
+@END@

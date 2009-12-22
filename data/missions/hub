@@ -1,0 +1,25 @@
+Mission {
+
+	bsp = data/bsp/hub.bsp;
+	
+	//music = music/A Bear Called Otso.xm;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 3500;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	
+	itemLimit = 8;
+	
+	enemyLevel = 5;
+	
+	//startCutscene = data/cutscenes/scripts/hub;
+	
+	exitToMission = mission01;
+};
+
+@END@

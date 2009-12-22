@@ -1,0 +1,56 @@
+div.line {
+
+	background-color: #AAAAAA;
+	height: 1px;
+}
+
+a {
+	color: #466FFF; 
+	text-decoration: none; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10pt;
+}
+	
+a:hover {
+	color: #49DFFF; 
+	text-decoration: underline; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10pt;
+}
+	
+body {
+	color: #FFFFFF;
+	background: #000000;
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10pt;
+}
+
+h4 {
+	background: #002244;
+}
+
+h3 {
+	background: #000066;
+}
+
+p.terminal {
+	color: #00CC00;
+	font-family: monospace;
+	font-size: 10pt;
+}
+
+table {
+	color: #FFFFFF; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10pt;
+}
+
+input {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10pt;
+}
+
+textarea {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10pt;
+}

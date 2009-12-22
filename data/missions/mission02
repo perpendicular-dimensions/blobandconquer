@@ -1,0 +1,53 @@
+Mission {
+
+	missionName = Inner Cave Network #5;
+
+	bsp = data/bsp/caves1.bsp;
+	
+	music = music/Dragon Cave.xm;
+	
+	fogColor = 0.0 0.0 0.0;
+	
+	fogMin = 1000;
+	
+	fogMax = 1500;
+	
+	fogDensity = 0.35;
+	
+	skySphere = textures/game/overcast.png;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_PISTOL_DROID|NME_GRENADE_BLOB|NME_MACHINEGUN_DROID;
+	spawnSize = 3;
+	minSpawnTime = 4000;
+	maxSpawnTime = 4500;
+	
+	ambientEffects = sound/ambience/caves/lava1.ogg|sound/ambience/caves/lava2.ogg|sound/ambience/caves/lava3.ogg|sound/ambience/caves/lava4.ogg;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Find a way through the caves;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint;
+	objectiveId = 1;
+
+};
+
+@END@

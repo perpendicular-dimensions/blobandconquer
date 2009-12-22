@@ -1,0 +1,80 @@
+Mission {
+
+	bsp = data/bsp/bossBattle4.bsp;
+	
+	music = music/Super Robot Fighter.xm;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 7500;
+	fogDensity = 0.25;
+	
+	enemyLevel = 4;
+	
+	skySphere = textures/game/day2.jpg;
+	skySphereSize = 1;
+	
+	supplyCrateList = WEP_GRENADE;
+	
+	bossDefFile = data/gameDefs/specialist;
+	
+	startCutscene = data/cutscenes/scripts/bossBattle4Start;
+	
+	exitToMission = AUTO;
+	
+	ambientEffects = sound/ambience/grasslands/birdsong.ogg|sound/ambience/grasslands/cardinal.ogg|sound/ambience/grasslands/falsebird.ogg|sound/ambience/grasslands/lapwing.ogg|sound/ambience/grasslands/robin.ogg;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+};
+
+// =================== Objectives =================
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Defeat Blaze;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Defeat Frost;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// =================== Triggers =======================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Blaze;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Frost;
+	objectiveId = 2;
+
+};
+
+@END@

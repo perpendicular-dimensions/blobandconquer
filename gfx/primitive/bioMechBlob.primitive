@@ -1,0 +1,52 @@
+// Bob Model
+
+// Body
+Sphere {
+
+	position = 0 0 0;
+	radius = 3;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+// Left Eye
+Sphere {
+
+	position = -1 -2.85 0;
+	radius = 0.6;
+	color = 0.0 0.0 0.0 1.0;
+
+};
+
+// Right Eye
+Sphere {
+
+	position = 1 -2.85 0;
+	radius = 0.6;
+	color = 0.0 0.0 0.0 1.0;
+
+};
+
+// Left Eyebrow
+Sphere {
+
+	position = -1.25 -6 1.75;
+	rotate = 30.0 0.0 1.0 0.0;
+	scale = 1.5 0.5 0.5;
+	radius = 0.6;
+	color = 0.0 0.0 0.0 1.0;
+
+};
+
+// Right Eyebrow
+Sphere {
+
+	position = 1.25 -6 1.75;
+	rotate = -30.0 0.0 1.0 0.0;
+	scale = 1.5 0.5 0.5;
+	radius = 0.6;
+	color = 0.0 0.0 0.0 1.0;
+
+};
+
+@END@

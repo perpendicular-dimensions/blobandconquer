@@ -1,0 +1,71 @@
+CAMERA_POSITION_AT "CameraStart";
+CAMERA_MOVE_TO "CameraMove1" 1;
+
+ENTITY_POSITION_AT "Bob" "BobStart";
+ENTITY_POSITION_AT "Teeka" "TeekaStart";
+
+ENTITY_LOOK_AT "Bob" "Life Crystal";
+ENTITY_WATCH "Teeka" "Bob";
+
+CAMERA_LOOK_AT "Bob";
+
+WAIT 300;
+
+ENTITY_MOVE_TO "Bob" "Life Crystal" 0.5;
+
+WAIT 150;
+
+CAMERA_STOP;
+CAMERA_POSITION_AT "CameraLocation2";
+
+WAIT 125;
+
+ENTITY_STOP "Bob";
+ENTITY_VANISH "Life Crystal" "VanishTarget1";
+
+WAIT 25;
+
+ENTITY_MOVE_TO "Teeka" "Bob" 0.8;
+
+WAIT 150;
+		
+ENTITY_STOP "Teeka";
+		
+WAIT 100;
+
+ENTITY_LOOK_RANDOM "Bob";
+ENTITY_LOOK_RANDOM "Teeka";
+
+CAMERA_POSITION_AT "CameraLocation3";
+CAMERA_LOOK_AT "Teeka";
+
+WAIT 250;
+
+CAMERA_POSITION_AT "CameraLocation2";
+CAMERA_LOOK_AT "Bob";
+
+WAIT 315;
+
+ENTITY_LOOK_AT "Bob" "Teeka";
+ENTITY_VANISH "Teeka" "VanishTarget2";
+
+WAIT 35;
+
+CAMERA_POSITION_AT "CameraLocation3";
+
+WAIT 125;
+
+ENTITY_LOOK_RANDOM "Bob";
+
+WAIT 150;
+
+CAMERA_POSITION_AT "CameraLocation5";
+CAMERA_LOOK_AT "Bob";
+
+WAIT 150;
+
+ENTITY_VANISH "Bob" "VanishTarget3";
+
+WAIT 300;
+
+@END@

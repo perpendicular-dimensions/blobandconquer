@@ -1,0 +1,53 @@
+CustomItem {
+
+	name = Map;
+	
+	model1 = gfx/primitive/map.primitive;
+	
+	texture1 = textures/game/map.png;
+	
+	bbMins = -3 -3 -1;
+	
+	bbMaxs = 3 3 1;
+	
+	customCarriable = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_FUNCTION_POINTER;
+	name = SpiderBobStart;
+	targetName = SpiderBobStart;
+
+};
+
+Mission {
+
+	bsp = data/bsp/bossBattle3.bsp;
+	
+	music = music/The Siege.xm;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	fogColor = 0.25 0.0 0.0;
+	fogMin = 0;
+	fogMax = 2500;
+	fogDensity = 0.25;
+	
+	enemyLevel = 5;
+	
+	bossDefFile = data/gameDefs/spiderBlobCommander;
+	
+	skySphere = textures/game/dawn.jpg;
+	
+	startCutscene = data/cutscenes/scripts/bossBattle3Start;
+	
+	exitToMission = AUTO;
+};
+
+@END@

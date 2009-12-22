@@ -1,0 +1,465 @@
+Mission {
+	
+	missionName = Enemy Base 2 Interior;
+
+	bsp = data/bsp/enemyBase2_2.bsp;
+	
+	music = music/Warlord Theme.s3m;
+	
+	fogColor = 0.05 0.05 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	
+	enemyLevel = 3;
+	
+	enemySpawnList = NME_GRENADE_BLOB|NME_MACHINEGUN_BLOB|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB|NME_MACHINEGUN_BLOB|NME_MACHINEGUN_DROID|NME_LIGHT_PLASMA_BLOB;
+	spawnSize = 5;
+	minSpawnTime = 6000;
+	maxSpawnTime = 9000;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	exitToMission = AUTO;
+	
+	ambientEffects = sound/ambience/mech/commplus.ogg|sound/ambience/mech/data_1.ogg|sound/ambience/mech/dial.ogg|sound/ambience/mech/mech1.ogg|sound/ambience/mech/mech2.ogg|sound/ambience/mech/mech3.ogg;
+};
+
+// ============ Bombs ============
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy Base;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+	
+	completionTrigger = missionComplete;
+};
+
+// ============ Left and Right Wings ============
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Gain access to Left and Right Wings;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+};
+
+// ============ Left Wing Generator Room ============
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Gain access to Left Wing Generator Room;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+	
+	completionTrigger = disableLeftWingShield;
+};
+
+// ============ Left Wing Bombs ============
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Plant bombs in the Left Wing Generator;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+	
+	completionTrigger = completeLeftWing;
+};
+
+// ============ Right Wing Generator Room ============
+
+Objective {
+
+	id = 5;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Gain access to Right Wing Generator Room;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+	
+	completionTrigger = disableRightWingShield;
+};
+
+// ============ Right Wing Bombs ============
+
+Objective {
+
+	id = 6;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Plant bombs in the Right Wing Generator;
+	status = OBJ_INCOMPLETE;
+	targetValue = 1;
+	active = 1;
+	
+	completionTrigger = completeRightWing;
+};
+
+// ============ Protect Anderson ============
+
+Objective {
+
+	id = 7;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Anderson;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============ Protect Sylvester ============
+
+Objective {
+
+	id = 8;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Sylvester;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============ Protect Arnold ============
+
+Objective {
+
+	id = 9;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Arnold;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============ Teleporter 1 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = teleporter1;
+	targetName = teleporter1Spawner;
+};
+
+// ============ Teleporter 2 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = teleporter2;
+	targetName = teleporter2Spawner;
+};
+
+// ============ Teleporter 3 Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = teleporter3;
+	targetName = hackerSpawner;
+};
+
+// ============ Left Demolition Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = leftWingSpawnDemolition;
+	targetName = leftWingDemolitionSpawner;
+};
+
+// ============ Right Demolition Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = rightWingSpawnDemolition;
+	targetName = rightWingDemolitionSpawner;
+};
+
+// ============ Wing Switches ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = wings;
+	objectiveId = 2;
+};
+
+// ============ Left Wing Conduits ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = leftWingConduit1;
+	objectiveId = 3;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = leftWingConduit2;
+	objectiveId = 3;
+};
+
+// ============ Left Wing Shield ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = disableLeftWingShield;
+	targetName = leftWingGeneratorRoom;
+};
+
+// ============ Left Wing Demolition ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = leftWingDemolition;
+	objectiveId = 4;
+};
+
+// ============ Left Wing Spawners ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = completeLeftWing;
+	targetName = leftWingSpawner;
+};
+
+// ============ Left Wing Update Objective 1 ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = completeLeftWing;
+	objectiveId = 1;
+};
+
+// ============ Right Wing Conduits ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = rightWingConduit1;
+	objectiveId = 5;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = rightWingConduit2;
+	objectiveId = 5;
+};
+
+// ============ Right Wing Shield ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = disableRightWingShield;
+	targetName = rightWingGeneratorRoom;
+};
+
+// ============ Right Wing Demolition ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = rightWingDemolition;
+	objectiveId = 6;
+};
+
+// ============ Right Wing Update Objective 1 ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = completeRightWing;
+	objectiveId = 1;
+};
+
+// ============ Mission Complete Spawner ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = missionComplete;
+	targetName = missionCompleteSpawner;
+};
+
+// ============ Mission Complete Timer ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_MISSION_COMPLETE;
+	
+	action = TRIGGER_ACTION_START_TIME_LIMIT;
+	
+	name = MISSION_COMPLETE;
+	timeLimit = 240;
+
+};
+
+// ============ Anderson ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	name = missionComplete;
+	targetName = Anderson;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Anderson;
+	objectiveId = 7;
+};
+
+// ============ Sylvester ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	name = completeRightWing;
+	targetName = Sylvester;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Sylvester;
+	objectiveId = 8;
+};
+
+// ============ Arnold ============
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	name = completeLeftWing;
+	targetName = Arnold;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Arnold;
+	objectiveId = 9;
+};
+
+@END@

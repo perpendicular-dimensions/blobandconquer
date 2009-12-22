@@ -1,0 +1,26 @@
+textures/virtual/portal {
+
+	lightType = LT_PULSE;
+	lightLevel = 1.0;
+	lightMinLevel = 0.20;
+	lightMaxLevel = 1.0;
+	lightSpeed = 0;
+	
+	blended = 1;
+	warp = 1;
+	bright = 1;
+
+};
+
+textures/virtual/bridge {
+
+	lightType = LT_PULSE;
+	lightLevel = 1.0;
+	
+	blended = 1;
+	warp = 1;
+	bright = 1;
+
+};
+
+@END@

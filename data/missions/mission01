@@ -1,0 +1,166 @@
+Mission {
+
+	missionName = Cherry Fields;
+	
+	autoInfo = AUTO;
+
+	bsp = data/bsp/start.bsp;
+	
+	music = music/Dark Club.s3m;
+	
+	fogColor = 0.0 0.0 0.0;
+	fogMin = 1000;
+	fogMax = 2000;
+	fogDensity = 0.35;
+	
+	skySphere = textures/game/starsky2.png;
+	skySphereSize = 10;
+	
+	weather = WEATHER_RAIN;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_PISTOL_DROID|NME_GRENADE_BLOB;
+	spawnSize = 3;
+	minSpawnTime = 5500;
+	maxSpawnTime = 6000;
+	
+	ambientEffects = sound/ambience/night/crickets1.ogg|sound/ambience/night/crickets2.ogg|sound/ambience/night/crickets3.ogg|sound/ambience/night/frog1.ogg|sound/ambience/night/grillons.ogg|sound/ambience/night/owl1.ogg|sound/ambience/night/owl2.ogg;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Escape from the ambush area;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Find a way back to base;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	completionTrigger = Enable Caves;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Get to the caves;
+	status = OBJ_INCOMPLETE;
+	active = 0;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_SECONDARY;
+	description = Get some additional weaponary;
+	status = OBJ_INCOMPLETE;
+	targetValue = 2;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 5;
+	priority = OBJ_PRIORITY_SECONDARY;
+	description = Destroy BioMech supply crates;
+	status = OBJ_INCOMPLETE;
+	targetValue = 13;
+	active = 1;
+
+};
+
+// ========== Checkpoint #1 =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#1;
+	objectiveId = 1;
+
+};
+
+// ========== Checkpoint #2 =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#2;
+	objectiveId = 2;
+
+};
+
+// ========== Checkpoint #3 =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_OBJECTIVE;
+	name = Enable Caves;
+	objectiveId = 3;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#3;
+	objectiveId = 3;
+
+};
+
+// ========== Additional Weapons =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = additionalWeapon;
+	objectiveId = 4;
+
+};
+
+// ========== Supply crates =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = supplyCrate;
+	objectiveId = 5;
+
+};
+
+@END@

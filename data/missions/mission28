@@ -1,0 +1,209 @@
+Mission {
+
+	missionName = Biomech Tower Perimeter;
+
+	bsp = data/bsp/bioMechTower1.bsp;
+	
+	music = music/Dark Club.s3m;
+	
+	fogColor = 0.0 0.0 0.0;
+	fogMin = 0;
+	fogMax = 10000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	skySphereSize = 1;
+	
+	enemyLevel = 5;
+	
+	exitToMission = AUTO;
+	
+	startCutscene = data/cutscenes/scripts/biomechTowerStart;
+	
+	ambientEffects = sound/ambience/night/crickets1.ogg|sound/ambience/night/crickets2.ogg|sound/ambience/night/crickets3.ogg|sound/ambience/night/frog1.ogg|sound/ambience/night/grillons.ogg|sound/ambience/night/owl1.ogg|sound/ambience/night/owl2.ogg;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_PLASMA_RIFLE;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Pass security point #1;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	completionTrigger = PowerDownCheckPoint1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Pass security point #2;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Pass security point #3;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Pass security point #4;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 5;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Break in to maintenance tunnel;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============== Checkpoint #1 ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint1;
+	objectiveId = 1;	
+	targetValue = 4;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = PowerDownCheckPoint1;
+	targetName = checkPoint1EnergyBarrier;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#1;
+	objectiveId = 1;
+
+};
+
+// ============== Checkpoint #2 ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#2;
+	objectiveId = 2;
+
+};
+
+// ============== Checkpoint #3 ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#3;
+	objectiveId = 3;
+
+};
+
+// ============== Checkpoint #4 ===================
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = barrier4Computer;
+	targetName = checkPoint4Barrier;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = checkpoint#4;
+
+};
+
+Trigger {
+
+	active = 1;
+	
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = checkpoint#4;
+	objectiveId = 4;
+
+};
+
+// ============== Secret Tunnel ===================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = maintenanceSwitchLocation;
+	targetName = spiderBlobLift;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = secretTunnelAccess;
+	objectiveId = 5;
+
+};
+
+@END@

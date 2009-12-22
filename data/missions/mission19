@@ -1,0 +1,178 @@
+CustomItem {
+
+	name = Life Crystal;
+	
+	model1 = gfx/primitive/lifeCrystal.primitive;
+	
+	texture1 = textures/game/LifeCrystal.png;
+	
+	bbMins = -4 -4 -4;
+	
+	bbMaxs = 4 4 4;
+
+};
+
+Mission {
+
+	missionName = Life Crystal Shrine;
+
+	bsp = data/bsp/ancientTomb3.bsp;
+	
+	music = music/Liquid Crystal.xm;
+	
+	fogColor = 0.05 0.05 0;
+	fogMin = 1000;
+	fogMax = 3000;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/overcast.png;
+	
+	endCutscene = data/cutscenes/scripts/ancientTomb3End;
+	
+	enemyLevel = 3;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_GRENADE_BLOB|NME_MACHINEGUN_BLOB|NME_SHOTGUN_BLOB|NME_PISTOL_DROID|NME_PISTOL_DROID|NME_MACHINEGUN_DROID|NME_MACHINEGUN_DROID;
+	spawnSize = 8;
+	minSpawnTime = 6000;
+	maxSpawnTime = 6000;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Activate first bridge part;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	completionTrigger = darkBlobTrigger1;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Activate second bridge part;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	completionTrigger = darkBlobTrigger2;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Activate third bridge part;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	completionTrigger = darkBlobTrigger3;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Aquire Life Crystal;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	name = lifeCrystal;
+
+};
+
+// ====================== Triggers ====================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = crystalBridge1;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = crystalBridge1;
+	targetName = crystalBridge1Spawner;
+
+};
+
+// ======================================================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = crystalBridge2;
+	objectiveId = 2;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = crystalBridge2;
+	targetName = crystalBridge2Spawner;
+
+};
+
+// ======================================================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = crystalBridge3;
+	objectiveId = 3;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	name = crystalBridge3;
+	targetName = crystalBridge3Spawner;
+
+};
+
+// ======================================================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_LOCATION;
+	
+	action = TRIGGER_ACTION_EXIT_MISSION;
+	name = crystalLocation;
+	targetName = mission21;
+
+};
+
+@END@

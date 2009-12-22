@@ -1,0 +1,139 @@
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	action = TRIGGER_ACTION_FUNCTION_POINTER;
+	name = IonCannonSwitch;
+	targetName = IonCannonSwitch;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	action = TRIGGER_ACTION_FUNCTION_POINTER;
+	name = bossWall;
+	targetName = bossWall;
+};
+
+Mission {
+
+	bsp = data/bsp/bossBattle1.bsp;
+	
+	music = music/The Siege.xm;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 2500;
+	fogDensity = 0.25;
+	
+	enemyLevel = 2;
+	
+	bossDefFile = data/gameDefs/eyeDroidCommander;
+	
+	startCutscene = data/cutscenes/scripts/bossBattle1Start;
+	
+	skySphere = textures/game/dawn.jpg;
+	skySphereSize = 1;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Defeat BioMechs in courtyard area;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+	targetValue = 1;
+	
+	completionTrigger = ActivateBoss;
+
+};
+
+Objective {
+
+	id = 2;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Destroy Eye Droid Commander;
+	status = OBJ_INCOMPLETE;
+	active = 0;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ALL_ENEMIES_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_ENEMY;
+	objectiveId = 1;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Eye Droid Commander;
+	objectiveId = 2;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	action = TRIGGER_ACTION_USE_CAMERA;
+	name = ActivateBoss;
+	targetName = bossWall;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	action = TRIGGER_ACTION_ENABLE_OBJECTIVE;
+	name = bossWall;
+	objectiveId = 2;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	action = TRIGGER_ACTION_DESTROY_STRUCTURE;
+	name = bossWall;
+	targetName = bossWall;
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = bossWall;
+	targetName = ionCannonBarrier;
+};
+
+@END@

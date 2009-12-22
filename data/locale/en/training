@@ -1,0 +1,13 @@
+AUTO = Welcome to the Training Arena. Make sure you read the information points (Yellow light columns) so you know what to do (Note - You cannot die in this Arena).
+I001 = A nice selection of weapons! Pick up what you can carry and then head to the door behind you to begin the weapon aiming course.
+I002 = This switch requires a keycard. Once you have it just use the switch and the door will open. You can get the key by completing the first two training courses.
+I003 = Lock on to the crates and move around. Once you are used to moving around and locking targets, destroy each other crates to gain access to the next section. Notice how these crates glow. All mission targets do this.
+I004 = These enemy Blobs are moving but they won't attack you. Again, get used to locking and cycling targets. Once you are happy defeat the Blobs, get the key and return to the main concourse.
+I005 = Once you've defeated the Blobs this platform will lower so you can get the key!
+I006 = This is it! Press the switch the begin real combat against real BioMechs! Again, they cannot kill you but that won't stop them trying to! More weapons are available in the room.
+I007 = This is a switch. Press it to open the door to the next section of the Training Arena.
+I008 = You need to get to that switch to in order to open the door. Jump on the platforms to get to it. Don't worry if you fall in, it's only water. Just swim back to the start.
+I009 = This is a teleporter. It will take you directly to the final combat training. It is recommended you attempt to complete the other courses first.
+I010 = This area is filled with lava. Climb to the top of the tower and make sure you jump any gaps in the walkway. If you fall in to the lava you'll lose a lot of health!
+I011 = This is an exit point. It will not be enabled until you have defeated all the BioMechs. Once it is enabled step it to it and press ACTION to complete the course.
+END

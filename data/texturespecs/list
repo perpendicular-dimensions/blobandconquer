@@ -1,0 +1,6 @@
+liquid data/texturespecs/liquid
+common data/texturespecs/common
+mech data/texturespecs/mech
+virtual data/texturespecs/virtual
+
+@END@

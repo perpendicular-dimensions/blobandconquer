@@ -1,0 +1,19 @@
+// Body
+Box {
+
+	position = 0 0 -2;
+	size = 6 6 10;
+	color = 1.0 1.0 1.0 1.0;
+
+};
+
+// Body
+Box {
+
+	position = 0 0 0.75;
+	size = 6 6 1;
+	color = 0.0 0.0 0.0 1.0;
+
+};
+
+@END@

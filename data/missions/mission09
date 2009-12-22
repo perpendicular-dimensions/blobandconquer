@@ -1,0 +1,291 @@
+Mission {
+
+	missionName = BioMech Supply Base Outskirts;
+
+	bsp = data/bsp/enemyBase1_1.bsp;
+	
+	music = music/Tales Untold.xm;
+	
+	fogColor = 0.25 0.25 0.25;
+	fogMin = 0;
+	fogMax = 2500;
+	fogDensity = 0.25;
+	
+	skySphere = textures/game/day2.jpg;
+	skySphereSize = 1;
+	
+	enemyLevel = 2;
+	
+	supplyCrateList = WEP_UZI|WEP_SHOTGUN|WEP_PLASMA_PISTOL|WEP_GRENADE_LAUNCHER;
+	
+	enemySpawnList = NME_PISTOL_BLOB|NME_MACHINEGUN_BLOB|NME_SHOTGUN_BLOB|NME_PISTOL_DROID|NME_MACHINEGUN_DROID|NME_GRENADE_BLOB;
+	spawnSize = 6;
+	minSpawnTime = 4500;
+	maxSpawnTime = 6000;
+	
+	startCutscene = data/cutscenes/scripts/supplyStart;
+	
+	exitToMission = AUTO;
+};
+
+Objective {
+
+	id = 1;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Have Spark Plug open base water door;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 3;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Teleport in demolition Blob;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 4;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Plant bombs in base foundations;
+	status = OBJ_INCOMPLETE;
+	targetValue = 6;
+	active = 1;
+	completionTrigger = teleportOutSilvester;
+
+};
+
+Objective {
+
+	id = 5;
+	priority = OBJ_PRIORITY_PRIMARY;
+	description = Rescue MIAs;
+	status = OBJ_INCOMPLETE;
+	targetValue = 4;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 6;
+	priority = OBJ_PRIORITY_SECONDARY;
+	description = Find some better protection;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 7;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Spark Plug;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+Objective {
+
+	id = 8;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Protect Silvester;
+	status = OBJ_INCOMPLETE;
+	active = 0;
+
+};
+
+Objective {
+
+	id = 9;
+	priority = OBJ_PRIORITY_CONDITION;
+	description = Do not allow any MIAs to be killed;
+	status = OBJ_INCOMPLETE;
+	active = 1;
+
+};
+
+// ============ Base Access Triggers ================= 
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	
+	name = waterDoor1;
+	targetName = Spark Plug;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	
+	name = waterDoor1;
+	objectiveId = 1;
+
+};
+
+// ============ Bridge Triggers =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_TOGGLE_STRUCTURE;
+	name = bridgeBarrierGen;
+	targetName = bridgeBarrier;
+	
+	targetValue = 2;
+
+};
+
+// ============ MIAs =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_BLOB_RESCUED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_MIA;
+	objectiveId = 5;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = ANY_MIA;
+	objectiveId = 9;
+
+};
+
+// ============ Silvester =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_FEATURE;
+	
+	name = demoSpawner;
+	targetName = demoSpawner;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	
+	name = demoSpawner;
+	objectiveId = 3;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_ENABLE_OBJECTIVE;
+	
+	name = demoSpawner;
+	objectiveId = 8;
+
+};
+
+// ============ Base foundations =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	objectiveId = 4;
+	name = bombFoundation;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_NONE;
+	
+	action = TRIGGER_ACTION_TELEPORT_BLOB;
+	name = teleportOutSilvester;
+	targetName = Silvester;
+
+};
+
+// ============ Shield Belt =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ITEM_PICKED_UP;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = shieldBelt;
+	objectiveId = 6;
+
+};
+
+// ============ Conditions =================
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Spark Plug;
+	objectiveId = 7;
+
+};
+
+Trigger {
+
+	active = 1;
+
+	type = TRIGGER_TYPE_ENTITY_KILLED;
+	
+	action = TRIGGER_ACTION_UPDATE_OBJECTIVE;
+	name = Silvester;
+	objectiveId = 8;
+
+};
+
+@END@

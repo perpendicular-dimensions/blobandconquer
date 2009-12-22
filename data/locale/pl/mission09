@@ -1,0 +1,6 @@
+I001 = Spark Plug jest mechanikiem. Może podłączać się do aparatury obcych i nadpisywać jej normalny sposób działania. Wydaj mu rozkaz UŻYJ w pobliżu urządzeń.
+I002 = Sylwester jest ekspertem do spraw rozbiórek. Potrafi zaminować różne obiekty. Wydaj mu rozkaz UŻYJ, gdy znajdziecie się blisko platformy do rozbiórki.
+I003 = To jest przełącznik mechaniczny. Wydaj Spark Plugowi rozkaz UŻYJ, aby zmienił jego działanie.
+I004 = To jest platforma do rozbiórki. Wydaj Sylwestrowi (Blobowi od rozbiórek) rozkaz UŻYJ, aby podłożył bombę.
+I005 = Ten przycisk powinien otworzyć drzwi na dole. Jeśli nie będziesz mógł (mogła) ich znaleźć, musisz poszukać innej drogi...
+END
