@@ -99,7 +99,7 @@ void animateEntityMD2(Entity *ent)
 		{
 			// Loop back to start...
 			
-			if (ent->flags & EF_NO_MD2_LOOP == 0)
+			if ((ent->flags & EF_NO_MD2_LOOP) == 0)
 			{
 				ent->currentAnimFrame = ent->currentAnim->start;
 			}

@@ -1152,7 +1152,7 @@ void processAnimatedCutscene(List *data)
 					sscanf(narrative->name.getText(), "%*c%s", speakerName);
 					if (strcmp(speakerName, "STORY"))
 					{
-						speaker = graphics->getGLString(speakerName);
+						speaker = graphics->getGLString("%s", speakerName);
 					}
 				}
 				

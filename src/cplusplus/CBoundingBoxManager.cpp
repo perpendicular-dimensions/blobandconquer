@@ -421,7 +421,7 @@ bool BoundingBoxManager::lineIntersectBox(Entity *e, Vector start, Vector end)
 {
 	char inside = 1, quadrant[3];
 	int i, whichPlane;
-	double maxT[3], candidatePlane[3], origin[3], minB[3], maxB[3], dir[3], coord[3], percentage;
+	double maxT[3], candidatePlane[3], origin[3], minB[3], maxB[3], dir[3], coord[3], percentage = 1;
 	Vector v;
 	
 	v = end;

@@ -81,7 +81,7 @@ class Graphics {
 		bool fullscreen;
 		bool hasStencils;
 		float gamma;
-		int motionBlur;
+		unsigned int motionBlur;
 		bool allowMotionBlur;
 		
 		int redPulseDir;

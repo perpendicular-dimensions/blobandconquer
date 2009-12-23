@@ -38,8 +38,8 @@ class String : public Linkable {
 	bool operator== (const char *c);
 	bool operator!= (const char *c);
 	
-	void operator= (String s);
-	void operator= (String *s);
+	void operator= (String s) GCC_NORETURN;
+	void operator= (String *s) GCC_NORETURN;
 	
 	void setText(const char *text, ...) GCC_PRINTF(2, 3);
 	const char *getText();

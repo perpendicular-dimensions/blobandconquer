@@ -212,7 +212,7 @@ bool Pak::unpack(const char *filename, PAK::TYPE fileType)
 			exit(1);
 		}
 		
-		debug(("unpack() - RWops : %p\n", sdlrw));
+		debug(("unpack() - RWops : %p\n", (void *)sdlrw));
 	}
 	
 	else

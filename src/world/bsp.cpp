@@ -114,7 +114,7 @@ int tesselate(BSPBiQuadraticPatch *quadPatch)
 
 	if (quadPatch->verts == NULL)
 	{
-		graphics->showErrorAndExit("BSP - Failed to allocate %u bytes for tesselation", (bsp->tesselation + 1) * (bsp->tesselation + 1) * sizeof(BSPVertex));
+		graphics->showErrorAndExit("BSP - Failed to allocate %lu bytes for tesselation", (bsp->tesselation + 1) * (bsp->tesselation + 1) * sizeof(BSPVertex));
 	}
 
 	for (v=0;v<=bsp->tesselation;v++)
@@ -206,7 +206,7 @@ int tesselate(BSPBiQuadraticPatch *quadPatch)
 
 	if (quadPatch->indices == NULL)
 	{
-		graphics->showErrorAndExit("BSP - Failed to allocate %u bytes for indices", bsp->tesselation * (bsp->tesselation + 1) * 2 * sizeof(unsigned int));
+		graphics->showErrorAndExit("BSP - Failed to allocate %lu bytes for indices", bsp->tesselation * (bsp->tesselation + 1) * 2 * sizeof(unsigned int));
 	}
 
 	for (row=0;row<bsp->tesselation;row++)
@@ -224,12 +224,12 @@ int tesselate(BSPBiQuadraticPatch *quadPatch)
 
 	if (quadPatch->trianglesPerRow == NULL)
 	{
-		graphics->showErrorAndExit("BSP - Failed to allocate %d bytes for trianglesPerRow", bsp->tesselation * sizeof(int));
+		graphics->showErrorAndExit("BSP - Failed to allocate %lu bytes for trianglesPerRow", bsp->tesselation * sizeof(int));
 	}
 
 	if (quadPatch->rowIndexPointers == NULL)
 	{
-		graphics->showErrorAndExit("BSP - Failed to allocate %u bytes for rowIndexPointers", bsp->tesselation * sizeof(unsigned int));
+		graphics->showErrorAndExit("BSP - Failed to allocate %lu bytes for rowIndexPointers", bsp->tesselation * sizeof(unsigned int));
 	}
 
 	for (row=0;row<bsp->tesselation;row++)
@@ -381,14 +381,14 @@ int loadTextures(unsigned char *buffer, BSPLump *lumps)
 
 	if (bsp->textures == NULL)
 	{
-		graphics->showErrorAndExit("BSP - Failed to allocate %u bytes for textures", bsp->numOfTextures * sizeof(BSPTexture));
+		graphics->showErrorAndExit("BSP - Failed to allocate %lu bytes for textures", bsp->numOfTextures * sizeof(BSPTexture));
 	}
 
 	bsp->textureSpec = (TextureSpec **)malloc(bsp->numOfTextures * sizeof(TextureSpec *));
 
 	if (bsp->textureSpec == NULL)
 	{
-		graphics->showErrorAndExit("BSP - Failed to allocate %u bytes for texture validation", bsp->numOfTextures * sizeof(TextureSpec));
+		graphics->showErrorAndExit("BSP - Failed to allocate %lu bytes for texture validation", bsp->numOfTextures * sizeof(TextureSpec));
 	}
 
 	buffer += lumps[kTextures].offset;
@@ -845,7 +845,7 @@ int loadPatches(unsigned char *buffer, BSPLump *lumps)
 
 		if (bsp->patches == NULL)
 		{
-			printf("Failed to allocate %u bytes for patches\n", bsp->numOfPatches * sizeof(BSPPatch));
+			printf("Failed to allocate %lu bytes for patches\n", bsp->numOfPatches * sizeof(BSPPatch));
 	
 			exit(1);
 		}

@@ -345,7 +345,7 @@ void doCredits()
 			
 		y += pos;
 			
-		credit[lastCredit] = graphics->getGLString(cred);
+		credit[lastCredit] = graphics->getGLString("%s", cred);
 		cy[lastCredit] = y;
 	
 		token = strtok(NULL, "\n");

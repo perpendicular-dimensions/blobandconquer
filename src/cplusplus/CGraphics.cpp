@@ -502,7 +502,8 @@ Texture *Graphics::loadTexture(const char *filename)
 	
 	if (strstr(filename, ".tga"))
 	{
-		image = IMG_LoadTyped_RW(pak->sdlrw, true, "TGA");
+		char type[] = "TGA";
+		image = IMG_LoadTyped_RW(pak->sdlrw, true, type);
 		
 		return createTextureFromTGA(image);
 	}

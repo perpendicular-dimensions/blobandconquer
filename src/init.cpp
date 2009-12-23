@@ -61,7 +61,7 @@ void showLicense()
 		{
 			y += dy;
 		
-			graphics->drawString(graphics->screenMidX, y, TXT_CENTERED, GLColor::white, true, line);
+			graphics->drawString(graphics->screenMidX, y, TXT_CENTERED, GLColor::white, true, "%s", line);
 		}
 		
 		token = strtok(NULL, "\n");
