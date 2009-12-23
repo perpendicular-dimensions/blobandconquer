@@ -130,7 +130,7 @@ bool Audio::loadSound(int i, const char *filename)
 	
 	if (!pak->unpack(filename, PAK::BINARY))
 	{
-		return false;
+		return true;
 	}
 		
 	sound[i] = Mix_LoadWAV_RW(pak->sdlrw, true);
@@ -162,7 +162,7 @@ bool Audio::loadMusic(const char *filename)
 	
 	if (!pak->unpack(filename, PAK::BINARY))
 	{
-		return false;
+		return true;
 	}
 	
 	// only supported in SDL 1.2.7+
