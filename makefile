@@ -104,7 +104,7 @@ pak: $(PAKOBJS)
 %.mo: %.po
 	msgfmt -c -o $@ $<
 	
-buildpak:
+buildpak: pak
 	./pak $(PAKDIRS) $(PAKNAME)
 	
 install:
@@ -148,4 +148,4 @@ uninstall:
 
 # cleaning everything that can be automatically recreated with "make".
 clean:
-	$(RM) $(OBJS) $(PAK).o main.o $(PROG) $(LOCALE_MO)
+	$(RM) $(OBJS) $(PAKOBJS) pak main.o $(PROG) $(LOCALE_MO)
