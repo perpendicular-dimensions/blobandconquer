@@ -26,7 +26,7 @@ CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUS
 CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall -pedantic
 CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -g
 LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
-LIBS = -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
+LIBS = -lX11 -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
 
 # Yes, it means compiling is a little slower... but it's less hassle
 SEARCHPATH += src/
