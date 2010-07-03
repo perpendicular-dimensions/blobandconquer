@@ -603,7 +603,7 @@ void doEntityGroundTrace(Entity *entity)
 	end.z += entity->boundingBox.mins.z;
 	end.z -= SHADOW_LENGTH;
 	
-	bsp->trace(start, end);
+	bsp->traceRay(start, end);
 	
 	entity->heightAboveGround = tracer->outputEnd.z;
 	

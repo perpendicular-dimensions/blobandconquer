@@ -436,7 +436,7 @@ void eyeDroidCommanderSeek()
 	end = self->position;
 	end.z -= 64;
 	
-	bsp->trace(self->position, end);
+	bsp->traceRay(self->position, end);
 	
 	if (tracer->outputFraction != 1)
 	{

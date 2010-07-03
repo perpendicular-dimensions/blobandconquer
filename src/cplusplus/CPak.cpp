@@ -196,9 +196,10 @@ bool Pak::unpack(const char *filename, PAK::TYPE fileType)
 		
 		debug(("unpack() : Reading %s (%ld)\n", filename, lastReadDataSize));
 		
-		*buffer = new unsigned char[lastReadDataSize];
+		*buffer = new unsigned char[lastReadDataSize + 1];
 		rewind(fp);
 		fread(*buffer, 1, lastReadDataSize, fp);
+		(*buffer)[lastReadDataSize] = 0;
 		fclose(fp);
 	}
 

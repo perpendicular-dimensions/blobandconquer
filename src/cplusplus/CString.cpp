@@ -71,6 +71,9 @@ void String::setText(const char *in, ...)
 
 void String::operator= (const char *in)
 {
+	if(text == in)
+		return;
+
 	reallocate(strlen(in));
 	
 	strcpy(text, in);

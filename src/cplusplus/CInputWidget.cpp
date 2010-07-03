@@ -27,6 +27,7 @@ InputWidget::InputWidget()
 	redraw = true;
 	
 	awaitingInput = false;
+	currentImage = NULL;
 	
 	value[0] = value[1] = value[2] = -1;
 }

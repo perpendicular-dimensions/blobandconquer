@@ -31,6 +31,7 @@ BaseWidget::BaseWidget()
 
 	clicked = false;
 
+	currentImage = NULL;
 	normalImage = NULL;
 	clickedImage = NULL;
 	disabledImage = NULL;
