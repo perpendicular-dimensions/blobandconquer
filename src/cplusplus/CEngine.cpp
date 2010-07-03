@@ -353,7 +353,7 @@ bool Engine::loadDefines()
 			continue;
 		}
 		
-		if (strlen(token) < 9)
+		if (strlen(token) < 4)
 		{
 			token = strtok(NULL, "\n");
 			continue;
