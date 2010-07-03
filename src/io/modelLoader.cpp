@@ -168,6 +168,8 @@ MD2Model *loadMD2Model(const char *filename)
 	tMd2TexCoord *textureIndex;
 	tMd2Face *triangleIndex;
 	
+	memset(&currentFrame, 0, sizeof currentFrame);
+
 	MD2Model *model = new MD2Model();
 
 	if (!pak->unpack(filename, PAK::BINARY))

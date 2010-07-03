@@ -766,7 +766,7 @@ bool blobSightHealth()
 		return false;
 	}
 	
-	Item *item;
+	Item *item = 0;
 	ItemDef *itemDef;
 	
 	Item *targetHealth = NULL;
@@ -851,7 +851,8 @@ bool blobSightHealth()
 		self->velocity.y *= 0.75;
 		self->velocity.z = oldZ;
 					
-		faceLocation((Unit*)self, item->position);
+		if(item)
+			faceLocation((Unit*)self, item->position);
 					
 		debug(("%s is going for health...\n", self->getName()));
 		

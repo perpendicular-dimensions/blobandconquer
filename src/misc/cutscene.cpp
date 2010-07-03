@@ -670,7 +670,7 @@ void bioMechsMoveTo(char *args)
 void blobsWatch(char *args)
 {
 	char target[128];
-	Entity *entity;
+	Entity *entity = 0;
 
 	sscanf(args, "%*c%[^\"]", target);
 	
@@ -683,7 +683,7 @@ void blobsWatch(char *args)
 
 	for (Unit *unit = (Unit*)entityManager->blobList.getFirstElement() ; unit != NULL ; unit = (Unit*)unit->next)
 	{
-		if (watch)
+		if (entity)
 		{
 			unit->target = entity;
 			unit->action = &entityWatch;
@@ -951,7 +951,7 @@ void buildCutsceneNarrative(char *filename, Texture **text, int width, int heigh
 	int i = -2;
 	
 	char *token = strtok((char*)pak->dataBuffer, "\n");
-	char *previousToken;
+	char *previousToken = 0;
 	
 	bool done = false;
 	
@@ -991,8 +991,10 @@ void buildCutsceneNarrative(char *filename, Texture **text, int width, int heigh
 				text[i]->iw = graphics->textWidth;
 				text[i]->ih = graphics->textHeight;
 				
-				textureManager->removeTexture(previousToken);
-				textureManager->addTexture(previousToken, text[i]);
+				if(previousToken) {
+					textureManager->removeTexture(previousToken);
+					textureManager->addTexture(previousToken, text[i]);
+				}
 			}
 			
 			previousToken = token;
@@ -1025,7 +1027,7 @@ void processAnimatedCutscene(List *data)
 	Vector explosionCenter, explosionPosition;
 	int explosionRadius = 0;
 	float waitTimer = 0;
-	int tenPercent, y, bx, by;
+	int tenPercent, y, bx = 0, by = 0;
 	float explosionTimer;
 	float fade = 0;
 	float fadeSpeed = 0;

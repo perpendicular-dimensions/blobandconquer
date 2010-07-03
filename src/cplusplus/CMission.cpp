@@ -177,6 +177,9 @@ int Mission::activeObjectives(int type)
 		case OBJ_PRIORITY_CONDITION:
 			list = &conditions;
 			break;
+
+		default:
+			return 0;
 	}
 	
 	int rtn = 0;

@@ -347,7 +347,7 @@ int mainBattleLoop()
 	
 	game->retrying = false;
 	
-	for (int i = 0 ; i < 5 ; i++)
+	for (int i = 0 ; i < 4 ; i++)
 	{
 		game->infoMessage[i].life = -1;
 	}

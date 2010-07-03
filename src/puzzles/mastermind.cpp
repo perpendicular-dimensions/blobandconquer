@@ -137,7 +137,7 @@ bool doMasterMindPuzzle(int seed)
 	
 	int mx = 0;
 	int tx, ty;
-	int unsolvedX, unsolvedY;
+	int unsolvedX = 0, unsolvedY = 0;
 	
 	gx = 150 + (mx * 40) + graphics->getOffsetX();
 	gy = 80 + (attempts * 40) + graphics->getOffsetY();

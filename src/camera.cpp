@@ -143,7 +143,7 @@ void handleTightPassage() /*Fnar fnar */
 
 void handleNormalCamera()
 {
-	float distance;
+	float distance = 0;
 
 	camera->position = player->position;
 	

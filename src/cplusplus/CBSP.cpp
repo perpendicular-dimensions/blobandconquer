@@ -274,7 +274,7 @@ void BSP::checkNode(int nodeIndex, float startFraction, float endFraction, Vecto
 {
 	int i, side;
 	float fraction1, fraction2, middleFraction, inverseDistance;
-	float startDistance, endDistance, offset;
+	float startDistance, endDistance, offset = 0;
 	Vector middle;
 	BSPLeaf *leaf;
 	BSPBrush *brush;
@@ -399,8 +399,8 @@ void BSP::checkNode(int nodeIndex, float startFraction, float endFraction, Vecto
 
 void BSP::checkBrush(BSPBrush *brush, Vector inputStart, Vector inputEnd)
 {
-	int i, startsOut, endsOut, planeIndex;
-	float startFraction, endFraction, startDistance, endDistance, fraction;
+	int i, startsOut, endsOut, planeIndex = 0;
+	float startFraction, endFraction, startDistance = 0, endDistance = 0, fraction;
 	float *d, lengthX, lengthY, lengthZ;
 	Vector offset;
 	BSPBrushSide *brushSide;

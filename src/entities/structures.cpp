@@ -257,9 +257,7 @@ void changeShieldState(const char *name, int state)
 {
 	debug(("toggleShield - %s\n", name));
 	
-	Structure *structure;
-	
-	bool shutDown = false;
+	Structure *structure = 0;
 	
 	for (Entity *entity = (Entity*)entityManager->structureList.getFirstElement() ; entity != NULL ; entity = (Entity*)entity->next)
 	{
@@ -283,11 +281,9 @@ void changeShieldState(const char *name, int state)
 		{
 			structure->custom = !structure->custom;
 		}
-		
-		shutDown = true;
 	}
 	
-	if (shutDown)
+	if (structure)
 	{
 		audio->playSound(SND_BARRIER_SHUT_DOWN, CH_ANY, camera->getSoundDistance(structure->position));
 	}
@@ -697,7 +693,7 @@ void weakWallLookForPlayer()
 		
 		if (game->isControl(CTRL_ACTION))
 		{
-			int face;
+			int face = -1;
 			
 			int i = game->removeItem(_("C4"));
 			

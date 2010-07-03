@@ -40,7 +40,7 @@ Game::Game()
 		itemId[i] = 0;
 	}
 	
-	for (int i = 0 ; i < 5 ; i++)
+	for (int i = 0 ; i < 4 ; i++)
 	{
 		infoMessage[i].life = -1;
 		infoMessage[i].redraw = true;

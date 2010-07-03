@@ -227,7 +227,7 @@ bool checkEntityToWorld(Entity *entity)
 
 bool checkEntityToOthers(Entity *entity)
 {
-	int j, startsOut, endsOut, planeIndex, max, misses;
+	int j, startsOut, endsOut, planeIndex = 0, max, misses;
 	float x1, y1, z1, h1, w1, l1, x2, y2, z2, h2, w2, l2;
 	float startFraction, endFraction, startDistance, endDistance, fraction;
 	Vector inputStart, inputEnd, offset, v;
