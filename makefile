@@ -23,7 +23,7 @@ CXXFLAGS += -Wformat=2 -Wformat-security -Wstrict-aliasing=2
 CXXFLAGS += -Wmissing-format-attribute -Wmissing-noreturn
 CXXFLAGS += -Wdisabled-optimization
 CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
-CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall -pedantic
+CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall
 CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -g
 LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
 LIBS = -lX11 -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
