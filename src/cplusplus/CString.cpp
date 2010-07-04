@@ -109,6 +109,10 @@ void String::trim()
 	int c = 0;
 	int start = 0;
 	int end = strlen(text) - 1;
+
+	if(end < 0)
+		return;
+
 	char *newText = new char[capacity];
 	
 	memset(newText, 0, capacity);
