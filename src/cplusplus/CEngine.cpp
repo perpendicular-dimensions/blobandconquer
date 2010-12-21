@@ -88,12 +88,12 @@ void Engine::addKeyEvent(const char *key)
 
 	if (index == -1)
 	{
-		for (int i = 0 ; i < 35 ; i++)
+		for (int i = 0 ; i < 34 ; i++)
 		{
 			lastKeyEvents[i] = lastKeyEvents[i + 1];
 		}
 
-		index = 24;
+		index = 34;
 	}
 	
 	char k = key[0];
