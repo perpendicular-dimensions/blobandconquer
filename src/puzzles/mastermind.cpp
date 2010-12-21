@@ -60,7 +60,7 @@ bool doMasterMindPuzzle(int seed)
 	srand(seed);
 	
 	String s;
-	Texture *ball[7];
+	Texture *ball[8];
 	
 	for (int i = 0 ; i < 8 ; i++)
 	{
