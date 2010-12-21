@@ -68,8 +68,8 @@ char *RandomNameGenerator::createName()
 	int letter = (int)(rand() % 26);
 	int len = 0;
 	char c;
-	char i = 0;
-	char length = Math::rrand(4, 8);
+	int i = 0;
+	int length = Math::rrand(4, 8);
 
 	char cons = 0;
 	char vowels = 0;
@@ -120,10 +120,10 @@ char *RandomNameGenerator::createName()
 			letter -= 32;
 		}
 
-		sprintf(name, "%s%c", name, c);
-		i++;
+		name[i++] = c;
+		name[i] = 0;
 
-		if (i == length)
+		if (i >= length)
 		{
 			break;
 		}
