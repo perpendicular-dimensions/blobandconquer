@@ -423,6 +423,13 @@ int loadLightmaps(unsigned char *buffer, BSPLump *lumps)
 
 	debug(("BSP: %d lightmaps\n", bsp->numOfLightmaps));
 
+	bsp->lightmapTextures = (unsigned int *)malloc(bsp->numOfLightmaps * sizeof(unsigned int));
+
+	if (bsp->lightmapTextures == NULL)
+	{
+		return 1;
+	}
+
 	lightmaps = (BSPLightmap *)malloc(bsp->numOfLightmaps * sizeof(BSPLightmap));
 
 	if (lightmaps == NULL)
@@ -433,13 +440,6 @@ int loadLightmaps(unsigned char *buffer, BSPLump *lumps)
 	buffer += lumps[kLightmaps].offset;
 	
 	memcpy(lightmaps, buffer, sizeof(BSPLightmap) * bsp->numOfLightmaps);
-
-	bsp->lightmapTextures = (unsigned int *)malloc(bsp->numOfLightmaps * sizeof(unsigned int));
-
-	if (bsp->lightmapTextures == NULL)
-	{
-		return 1;
-	}
 
 	glGenTextures(bsp->numOfLightmaps, bsp->lightmapTextures);
 
