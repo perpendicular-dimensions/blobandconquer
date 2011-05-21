@@ -85,6 +85,14 @@ void GCC_NORETURN showVersion()
 
 int main(int argc, char *argv[])
 {
+	#if RELEASE
+	if (chdir(PAKLOCATION))
+	{
+		perror("Could not chdir to " PAKLOCATION ":");
+		return 1;
+	}
+	#endif
+
 	setlocale(LC_ALL, "");
 	setlocale(LC_NUMERIC, "C");
 	textdomain("blobAndConquer");
