@@ -6,25 +6,25 @@ ICONS = icons/
 PAKDIRS = data gfx music sound textures
 
 VERSION = 1.11
-RELEASE = 1
-USEPAK = 0
-DEV = 0
+RELEASE ?= 0
+USEPAK ?= 0
+DEV ?= 0
 
-PREFIX = $(DESTDIR)/usr
-BINDIR = $(PREFIX)/games/
-DATADIR = $(PREFIX)/share/games/blobAndConquer/
-DOCDIR = $(PREFIX)/share/doc/$(PROG)/
-ICONDIR = $(PREFIX)/share/icons/
-MENUDIR = $(PREFIX)/share/applications/
-LOCALEDIR = $(PREFIX)/share/locale/
+PREFIX ?= /usr
+BINDIR ?= $(PREFIX)/games/
+DATADIR ?= $(PREFIX)/share/games/blobAndConquer/
+DOCDIR ?= $(PREFIX)/share/doc/$(PROG)/
+ICONDIR ?= $(PREFIX)/share/icons/
+MENUDIR ?= $(PREFIX)/share/applications/
+LOCALEDIR ?= $(PREFIX)/share/locale/
 
-CXXFLAGS = $(CFLAGS)
 CXXFLAGS += -Wformat=2 -Wformat-security -Wstrict-aliasing=2
 CXXFLAGS += -Wmissing-format-attribute -Wmissing-noreturn
 CXXFLAGS += -Wdisabled-optimization
 CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
 CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall
 CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -g
+CXXFLAGS += $(CFLAGS)
 LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
 LIBS = -lX11 -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
 
@@ -88,8 +88,13 @@ PAKOBJS = CLinkable.o CFileData.o pak.o
 
 LOCALE_MO = $(patsubst %.po,%.mo,$(wildcard locale/*.po))
 
+ALL = $(PROG) $(LOCALE_MO)
+ifeq ($(USEPAK), 1)
+	ALL += $(PAKNAME)
+endif
+
 # top-level rule to create the program.
-all: $(PROG) pak $(LOCALE_MO)
+all: $(ALL)
 
 %.o: %.cpp %.h data/gameDefs/defines.h defs.h headers.h
 	$(CXX) $(CXXFLAGS) -c $<
@@ -103,47 +108,50 @@ pak: $(PAKOBJS)
 	
 %.mo: %.po
 	msgfmt -c -o $@ $<
-	
-buildpak: pak
+
+$(PAKNAME): pak
 	./pak $(PAKDIRS) $(PAKNAME)
 	
-install:
-	./pak $(PAKDIRS) $(PAKNAME)
-
-	mkdir -p $(BINDIR)
-	mkdir -p $(DATADIR)
-	mkdir -p $(DOCDIR)
-	mkdir -p $(ICONDIR)/16x16/apps
-	mkdir -p $(ICONDIR)/32x32/apps
-	mkdir -p $(ICONDIR)/64x64/apps
-	mkdir -p $(MENUDIR)
-
-	install -m 755 $(PROG) $(BINDIR)/$(PROG)
-	install -m 644 $(PAKNAME) $(DATADIR)/$(PAKNAME)
+buildpak: $(PAKNAME)
 	
-	cp -r $(DOCS) $(DOCDIR)
-	cp $(ICONS)$(PROG).png $(ICONDIR)32x32/apps/
-	cp $(ICONS)$(PROG).desktop $(MENUDIR)
+install: $(ALL)
+	mkdir -p $(DESTDIR)$(BINDIR)
+	mkdir -p $(DESTDIR)$(DATADIR)
+	mkdir -p $(DESTDIR)$(DOCDIR)
+	mkdir -p $(DESTDIR)$(ICONDIR)16x16/apps
+	mkdir -p $(DESTDIR)$(ICONDIR)32x32/apps
+	mkdir -p $(DESTDIR)$(ICONDIR)64x64/apps
+	mkdir -p $(DESTDIR)$(MENUDIR)
+
+	install -m 755 $(PROG) $(DESTDIR)$(BINDIR)$(PROG)
+ifeq ($(USEPAK), 1)
+	install -m 644 $(PAKNAME) $(DESTDIR)$(DATADIR)$(PAKNAME)
+else
+	cp -pr $(PAKDIRS) $(DESTDIR)$(DATADIR)
+endif
+	cp -pr $(DOCS) $(DESTDIR)$(DOCDIR)
+	cp -p $(ICONS)$(PROG).png $(DESTDIR)$(ICONDIR)32x32/apps/
+	cp -p $(ICONS)$(PROG).desktop $(DESTDIR)$(MENUDIR)
 
 	@for f in $(LOCALE_MO); do \
 		lang=`echo $$f | sed -e 's/^locale\///;s/\.mo$$//'`; \
-		mkdir -p $(LOCALEDIR)$$lang/LC_MESSAGES; \
-		echo "cp $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
-		cp $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
+		mkdir -p $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES; \
+		echo "cp -p $$f $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
+		cp -p $$f $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
 	done
 	
 uninstall:
 
-	rm -f $(BINDIR)/$(PROG)
-	rm -rf $(DATADIR)
-	rm -rf $(DOCDIR)
-	rm -f $(ICONDIR)/blobAndConquer.png
-	rm -f $(MENUDIR)/blobAndConquer.desktop
+	rm -f $(DESTDIR)$(BINDIR)/$(PROG)
+	rm -rf $(DESTDIR)$(DATADIR)
+	rm -rf $(DESTDIR)$(DOCDIR)
+	rm -f $(DESTDIR)$(ICONDIR)/blobAndConquer.png
+	rm -f $(DESTDIR)$(MENUDIR)/blobAndConquer.desktop
 	
 	@for f in $(LOCALE_MO); do \
 		lang=`echo $$f | sed -e 's/^locale\///;s/\.mo$$//'`; \
-		echo "$(RM) $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
-		$(RM) $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
+		echo "$(RM) $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
+		$(RM) $(DESTDIR)$(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
 	done
 
 # cleaning everything that can be automatically recreated with "make".
