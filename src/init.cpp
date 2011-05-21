@@ -359,8 +359,8 @@ void initCommonResources()
 
 	graphics->loadFont(FONT_NORMAL, "data/fonts/vera.ttf", 12);
 	graphics->loadFont(FONT_LARGE, "data/fonts/vera.ttf", 32);
-	graphics->loadFont(FONT_DIGITAL, "data/fonts/zekton__.ttf", 32);
-	graphics->loadFont(FONT_LARGE_DIGITAL, "data/fonts/zekton__.ttf", 5);
+	graphics->loadFont(FONT_DIGITAL, "data/fonts/vera.ttf", 32);
+	graphics->loadFont(FONT_LARGE_DIGITAL, "data/fonts/vera.ttf", 5);
 	graphics->loadFont(FONT_NUMBER, "data/fonts/vera.ttf", 5);
 	graphics->loadTimerDigits();
 
