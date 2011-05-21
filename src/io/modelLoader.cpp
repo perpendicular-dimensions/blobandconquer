@@ -158,7 +158,7 @@ MD2Model *loadMD2Model(const char *filename)
 	
 	char name[255], lastName[255];
 	unsigned char *buffer, *bufferIndex;
-	int i, j, k, frame;
+	int i, j, k;
 	tMd2AliasFrame *frameIndex;
 	Object currentFrame;
 	MD2 md2;
@@ -353,7 +353,6 @@ MD2Model *loadMD2Model(const char *filename)
 		{
 			if (!isdigit(name[j]))
 			{
-				frame       = atoi(strrchr(name, name[j + 1]));
 				name[j + 1] = '\0';
 				break;
 			}

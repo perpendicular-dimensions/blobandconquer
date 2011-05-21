@@ -66,17 +66,10 @@ void drawFeature(bool transparent)
 
 void fireFeatureTrigger(const char *name)
 {
-	int triggerId = -1;
-
 	for (Feature *feature = (Feature*)entityManager->featureList.getFirstElement() ; feature != NULL ; feature = (Feature*)feature->next)
 	{
 		if (feature->name == name)
 		{
-			if (feature->triggerId != -1)
-			{
-				triggerId = feature->triggerId;
-			}
-
 			feature->active = false;
 			feature->health = 0;
 		}

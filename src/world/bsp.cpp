@@ -1303,11 +1303,10 @@ int isClusterVisible(int cluster)
 void renderBSP()
 {
 	Vector position;
-	int cameraLeaf, i, j, facesToDraw, faceIndex;
+	int cameraLeaf, i, j, faceIndex;
 
 	memset(bsp->facesDrawn.bits, 0, sizeof(unsigned int) * bsp->facesDrawn.size);
 	
-	facesToDraw   = 0;
 	cameraLeaf    = calculateEntityLeaf(camera->getRenderingTarget());
 	camera->cluster = bsp->leafs[cameraLeaf].cluster;
 

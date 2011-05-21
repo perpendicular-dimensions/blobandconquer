@@ -407,7 +407,7 @@ void playerFireWeapon(Weapon *weapon)
 	if ((weapon->currentAmmo > 0) || (game->cheatAmmo))
 	{
 		// can't fire underwater :)
-		if ((player->liquidLevel > 1) && ((WeaponDef*)weapon->definition->type != WEP_PISTOL))
+		if ((player->liquidLevel > 1) && (weapon->definition->type != WEP_PISTOL))
 		{
 			return;
 		}

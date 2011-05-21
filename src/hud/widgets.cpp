@@ -53,10 +53,9 @@ void drawSelectedListItem(float x, float y, float w, float h, bool isSelectedWid
 
 void drawListView(ListView *listView)
 {
-	int xLoc, yLoc, index;
+	int yLoc, index;
 	
 	listView->visibleItems = 0;
-	xLoc = listView->x + listView->width;
 	yLoc = listView->y + 2;
 	index = 0;
 	GLColor blue, green;
@@ -315,9 +314,8 @@ BaseWidget *createButtonWidget(Properties *props)
 	button->setProperties(props);
 	createWidgetColors(button, props);
 
-	int color, disabledRed, disabledGreen, disabledBlue;
+	int disabledRed, disabledGreen, disabledBlue;
 	
-	color = graphics->getColor(button->backgroundColorRed, button->backgroundColorGreen, button->backgroundColorBlue);
 	disabledRed = button->backgroundColorRed / 2;
 	disabledGreen = button->backgroundColorGreen / 2;
 	disabledBlue = button->backgroundColorBlue / 2;

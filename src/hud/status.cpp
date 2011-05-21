@@ -275,8 +275,6 @@ void showMissionStatusPanel()
 	
 	finished->setVisible(true);
 	
-	bool sectionChanged = false;
-	
 	mouse->setBusy(false);
 	
 	createStatsDebriefTab();
@@ -326,8 +324,6 @@ void showMissionStatusPanel()
 					{
 						selectedSection = i;
 						
-						sectionChanged = true;
-						
 						audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
 					}
 					
@@ -342,7 +338,6 @@ void showMissionStatusPanel()
 		{
 			selectedSection = 0;
 			audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
-			sectionChanged = true;
 			stats->setVisible(false);
 			engine->keyState[SDLK_1] = 0;
 		}
@@ -351,7 +346,6 @@ void showMissionStatusPanel()
 		{
 			selectedSection = 1;
 			audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
-			sectionChanged = true;
 			stats->setVisible(false);
 			engine->keyState[SDLK_2] = 0;
 		}
@@ -360,7 +354,6 @@ void showMissionStatusPanel()
 		{
 			selectedSection = 2;
 			audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
-			sectionChanged = true;
 			stats->setVisible(true);
 			engine->keyState[SDLK_3] = 0;
 		}

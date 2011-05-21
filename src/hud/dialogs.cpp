@@ -341,7 +341,6 @@ int doLoadSaveGameDialog(const char *type)
 	
 	populateSavesList(savesList);
 	
-	ListViewItem *selectedItem = NULL;
 	SaveGameHeader *header = NULL;
 	
 	header = (SaveGameHeader*)savesList->getSelectedObject();
@@ -391,7 +390,6 @@ int doLoadSaveGameDialog(const char *type)
 		if (savesList->itemSelectionChanged())
 		{
 			header = (SaveGameHeader*)savesList->getSelectedObject();
-			selectedItem = savesList->getSelectedItem();
 			deleteGame->setEnabled(header->inUse);
 			load->setEnabled(header->inUse);
 		}
@@ -407,7 +405,6 @@ int doLoadSaveGameDialog(const char *type)
 			{
 				removeSaveFromList(savesList->getSelectedIndex());
 				header = (SaveGameHeader*)savesList->getSelectedObject();
-				selectedItem = savesList->getSelectedItem();
 				deleteGame->setEnabled(header->inUse);
 				load->setEnabled(header->inUse);
 				

@@ -230,8 +230,6 @@ void pressurePlateTouch(Entity *other)
 		return;
 	}
 	
-	bool lockInPlace = false;
-	
 	self->riding = other;
 	
 	switch (other->entityType)
@@ -247,11 +245,9 @@ void pressurePlateTouch(Entity *other)
 			{
 				return;
 			}
-			lockInPlace = true;
 			break;
 			
 		case ET_PUSHBLOCK:
-			lockInPlace = true;
 			break;
 			
 		default:
