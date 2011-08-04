@@ -92,6 +92,7 @@ class Graphics {
 	void destroy();
 	
 	void queryStencilSupport();
+	void calculateScreenModes();
 	void setResolution(int i);
 	void resetFPSCount();
 	void drawFPSCount(int y);

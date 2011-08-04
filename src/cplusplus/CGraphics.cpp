@@ -98,6 +98,57 @@ Graphics::~Graphics()
 	destroy();
 }
 
+static int screenModeCompare(const void *a, const void *b) {
+	const SDL_Rect *ma = (const SDL_Rect *)a, *mb = (const SDL_Rect *)b;
+
+	if(ma->h < mb->h)
+		return -1;
+	else if(ma->h > mb->h)
+		return 1;
+	else if(ma->w < mb->w)
+		return -1;
+	else if(ma->w > mb->w)
+		return 1;
+	else
+		return 0;
+}
+
+void Graphics::calculateScreenModes() {
+	const SDL_VideoInfo *videoInfo;
+	int n = 5;
+
+	videoInfo = SDL_GetVideoInfo();
+	fprintf(stderr, "Best video res: %d x %d\n", videoInfo->current_w, videoInfo->current_h);
+
+	for(int i = 1; i <= 10; i++) {
+		int w = videoInfo->current_w / i;
+		int h = videoInfo->current_h / i;
+
+		if(w < 800 || h < 600)
+			break;
+
+		if(!SDL_VideoModeOK(w, h, 32, SDL_OPENGL | SDL_HWPALETTE | SDL_FULLSCREEN))
+			continue;
+
+		bool ok = true;
+
+		for(int j = 0; j < n; j++) {
+			if(w == screenMode[i].w && h == screenMode[i].h) {
+				ok = false;
+				break;
+			}
+		}
+
+		if(!ok)
+			break;
+		screenMode[n].w = w;
+		screenMode[n].h = h;
+		n++;
+	}
+
+	qsort(screenMode, n, sizeof *screenMode, screenModeCompare);
+}
+
 Graphics *Graphics::getInstance()
 {
 	return &instance;

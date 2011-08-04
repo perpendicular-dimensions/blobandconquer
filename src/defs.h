@@ -95,7 +95,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // if there are anywhere near this number of entities to check against then we've got a major problem...
 #define MAX_CANDIDATES	1024
 
-#define MAX_RESOLUTIONS 	5
+#define MAX_RESOLUTIONS 	15
 		
 #define CUTSCENE_NONE 		0
 #define CUTSCENE_INGAME		1

@@ -405,6 +405,7 @@ void initSystem()
 		exit(1);
 	}
 	
+	graphics->calculateScreenModes();
 	graphics->queryStencilSupport();
 	
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);

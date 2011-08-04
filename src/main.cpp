@@ -36,6 +36,8 @@ void GCC_NORETURN showHelp()
 	printf("\t-fullscreen         Start the game in fullscreen mode (default)\n");
 	printf("\t-window             Start the game in windowed mode\n");
 	
+	graphics->calculateScreenModes();
+
 	for (unsigned i = 0 ; i < MAX_RESOLUTIONS ; i++)
 	{
 		if (graphics->screenMode[i].w == 0)
@@ -108,6 +110,8 @@ int main(int argc, char *argv[])
 	for (int i = 1 ; i < argc ; i++)
 	{
 		if (strcmp(argv[i], "-fullscreen") == 0) graphics->fullscreen = true;
+		else if (strcmp(argv[i], "-window") == 0) graphics->fullscreen = false;
+		else if (strcmp(argv[i], "-screensize") == 0) graphics->currentScreenResolution = atoi(argv[++i]);
 		else if (strcmp(argv[i], "-noaudio") == 0) audio->useAudio = 0;
 		else if (strcmp(argv[i], "-mono") == 0) audio->useAudio = 1;
 		else if (strcmp(argv[i], "-version") == 0) showVersion();
