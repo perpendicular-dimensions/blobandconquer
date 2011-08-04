@@ -27,6 +27,7 @@ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -g
 CXXFLAGS += $(CFLAGS)
 LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
 LIBS = -lX11 -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
+PAKLIBS = -lz
 
 # Yes, it means compiling is a little slower... but it's less hassle
 SEARCHPATH += src/
@@ -104,7 +105,7 @@ $(PROG): $(GAMEOBJS)
 	$(CXX) $(GAMEOBJS) -o $(PROG) $(LIBS)
 	
 pak: $(PAKOBJS)
-	$(CXX) $(PAKOBJS) -o pak $(LIBS)
+	$(CXX) $(PAKOBJS) -o pak $(PAKLIBS)
 	
 %.mo: %.po
 	msgfmt -c -o $@ $<
