@@ -32,9 +32,6 @@ Mouse::Mouse()
 	busy = false;
 	
 	grab = false;
-	
-	//TODO: assume it is always ungrabbed at startup
-	//SDL_SetWindowGrab(graphics->window, SDL_FALSE);
 }
 
 Mouse::~Mouse()
