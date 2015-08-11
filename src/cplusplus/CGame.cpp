@@ -184,18 +184,19 @@ void Game::clear()
 
 void Game::setDefaultKeyboardControls()
 {
-	keyboard[CTRL_UP] 				= SDLK_UP;
-	keyboard[CTRL_DOWN] 			= SDLK_DOWN;
-	keyboard[CTRL_LEFT] 			= SDLK_LEFT;
-	keyboard[CTRL_RIGHT] 			= SDLK_RIGHT;
-	keyboard[CTRL_ACTION] 			= SDLK_RETURN;
-	keyboard[CTRL_PAUSE] 			= SDLK_p;
-	keyboard[CTRL_STATUS] 			= SDLK_TAB;
-	keyboard[CTRL_QUICK_GRENADE] 	= SDLK_RSHIFT;
-	
-	mouseCtrl[CTRL_FIRE]			= SDL_BUTTON_LEFT;
-	mouseCtrl[CTRL_JUMP]			= SDL_BUTTON_RIGHT;
-	mouseCtrl[CTRL_CYCLE_TARGET]	= SDL_BUTTON_MIDDLE;
+	keyboard[CTRL_UP]            = SDL_SCANCODE_W;
+	keyboard[CTRL_DOWN]          = SDL_SCANCODE_S;
+	keyboard[CTRL_LEFT]          = SDL_SCANCODE_A;
+	keyboard[CTRL_RIGHT]         = SDL_SCANCODE_D;
+	keyboard[CTRL_JUMP]          = SDL_SCANCODE_SPACE;
+	keyboard[CTRL_ACTION]        = SDL_SCANCODE_RETURN;
+	keyboard[CTRL_PAUSE]         = SDL_SCANCODE_P;
+	keyboard[CTRL_STATUS]        = SDL_SCANCODE_TAB;
+	keyboard[CTRL_QUICK_GRENADE] = SDL_SCANCODE_G;
+
+	mouseCtrl[CTRL_FIRE]         = SDL_BUTTON_LEFT;
+	mouseCtrl[CTRL_JUMP]         = SDL_BUTTON_RIGHT;
+	mouseCtrl[CTRL_CYCLE_TARGET] = SDL_BUTTON_MIDDLE;
 }
 
 bool Game::isControl(int control)

@@ -70,20 +70,20 @@ void InputWidget::clear()
 	value[0] = value[1] = value[2] = -1;
 }
 
-void InputWidget::keyPressed(int key, bool shiftHeld)
+void InputWidget::keyPressed(int key)
 {
 	if (!awaitingInput)
 	{
 		return;
 	}
 	
-	if (key == SDLK_ESCAPE)
+	if (key == SDL_SCANCODE_ESCAPE)
 	{
 		awaitingInput = false;
 		return;
 	}
 	
-	if (key == SDLK_BACKSPACE)
+	if (key == SDL_SCANCODE_BACKSPACE)
 	{
 		clear();
 		return;

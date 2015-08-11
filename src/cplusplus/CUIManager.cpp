@@ -379,7 +379,7 @@ void UIManager::mouseMoved(int x, int y)
 	focusedWidget->mouseMoved(x, y);
 }
 
-void UIManager::keyPressed(int key, bool shiftHeld)
+void UIManager::keyPressed(int key)
 {
 	//debug(("UIManager::keyPressed() - %d : %c\n", key, (char)key));
 
@@ -388,7 +388,7 @@ void UIManager::keyPressed(int key, bool shiftHeld)
 		return;
 	}
 
-	focusedWidget->keyPressed(key, shiftHeld);
+	focusedWidget->keyPressed(key);
 }
 
 void UIManager::joystickButtonPressed(int key)

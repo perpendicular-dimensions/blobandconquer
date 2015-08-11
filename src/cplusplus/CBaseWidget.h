@@ -68,7 +68,7 @@ class BaseWidget : public Linkable {
 	virtual void mousePressed(SDL_MouseButtonEvent mouse);
 	virtual void mouseReleased(SDL_MouseButtonEvent mouse);
 	virtual void mouseMoved(int x, int y);
-	virtual void keyPressed(int key, bool shiftHeld);
+	virtual void keyPressed(int key);
 	virtual void joystickButtonPressed(int key);
 
 	void setBaseValues(Properties *properties);

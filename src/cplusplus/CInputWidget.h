@@ -37,7 +37,7 @@ class InputWidget : public BaseWidget {
 	void use(int x, int y);
 	
 	void mousePressed(SDL_MouseButtonEvent mouse);
-	void keyPressed(int key, bool shiftHeld);
+	void keyPressed(int key);
 	void joystickButtonPressed(int key);
 	
 	void setProperties(Properties *properties);

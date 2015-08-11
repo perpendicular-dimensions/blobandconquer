@@ -189,7 +189,8 @@ void loadConfig()
 	{
 		string.setText("keyboard%d", i);
 		sscanf(props->getString(string.getText(), "-1"), "%d", &c);
-		game->keyboard[i] = c;
+		if (c >= -1 && c < SDL_NUM_SCANCODES)
+			game->keyboard[i] = c;
 		
 		string.setText("joystick%d", i);
 		sscanf(props->getString(string.getText(), "-1"), "%d", &c);

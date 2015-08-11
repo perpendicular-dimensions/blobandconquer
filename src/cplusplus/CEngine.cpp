@@ -139,7 +139,7 @@ void Engine::getInput()
 			case SDL_KEYDOWN:
 				keyState[event.key.keysym.scancode] = 1;
 				fireKeyPressed(&event.key);
-				addKeyEvent(SDL_GetKeyName(event.key.keysym.sym));
+				addKeyEvent(SDL_GetScancodeName(event.key.keysym.scancode));
 				break;
 
 			case SDL_KEYUP:
@@ -217,7 +217,7 @@ void Engine::fireKeyPressed(SDL_KeyboardEvent *key)
 {
 	//debug(("Engine::fireKeyPressed()\n"));
 
-	UIManager::getInstance()->keyPressed(key->keysym.sym, key->keysym.mod & KMOD_SHIFT);
+	UIManager::getInstance()->keyPressed(key->keysym.scancode);
 }
 
 void Engine::fireJoystickButtonPressed(int key)
