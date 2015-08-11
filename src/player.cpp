@@ -570,20 +570,16 @@ void doPlayerWeapons()
 		engine->keyState[SDL_SCANCODE_4] = 0;
 	}
 	
-#if 0
-	// TODO: use SDL_MouseWheel events
-	if (mouse->buttonState[SDL_BUTTON_WHEELUP])
+	if (mouse->wheelState < 0)
 	{
 		doPlayerCycleWeapon(-1);
-		mouse->buttonState[SDL_BUTTON_WHEELUP] = 0;
+		mouse->wheelState = 0;
 	}
-	
-	if (mouse->buttonState[SDL_BUTTON_WHEELDOWN])
+	else if (mouse->wheelState > 0)
 	{
 		doPlayerCycleWeapon(1);
-		mouse->buttonState[SDL_BUTTON_WHEELDOWN] = 0;
+		mouse->wheelState = 0;
 	}
-#endif
 	
 	if (game->isControl(CTRL_FIRE))
 	{

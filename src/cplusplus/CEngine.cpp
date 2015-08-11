@@ -129,7 +129,8 @@ void Engine::getInput()
 				break;
 
 			case SDL_MOUSEWHEEL:
-				// TODO: handle mouse wheel up/down events
+				mouse->wheelState = event.wheel.y;
+				fireMouseWheeled(event.wheel);
 				break;
 
 			case SDL_MOUSEMOTION:
@@ -211,6 +212,13 @@ void Engine::fireMouseMoved()
 	//debug(("Engine::fireMouseMoved()\n"));
 
 	UIManager::getInstance()->mouseMoved(mouse->x, mouse->y);
+}
+
+void Engine::fireMouseWheeled(SDL_MouseWheelEvent mouse)
+{
+	//debug(("Engine::fireMouseWheeled()\n"));
+
+	UIManager::getInstance()->mouseWheeled(mouse);
 }
 
 void Engine::fireKeyPressed(SDL_KeyboardEvent *key)

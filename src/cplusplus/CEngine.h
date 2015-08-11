@@ -76,6 +76,7 @@ class Engine {
 	void fireMouseReleased(SDL_MouseButtonEvent mouse);
 	void fireKeyPressed(SDL_KeyboardEvent *key);
 	void fireMouseMoved();
+	void fireMouseWheeled(SDL_MouseWheelEvent mouse);
 	void fireJoystickButtonPressed(int key);
 
 	bool userAccepts();

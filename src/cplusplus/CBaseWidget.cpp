@@ -110,5 +110,6 @@ void BaseWidget::setEnabled(bool enabled){}
 void BaseWidget::mousePressed(SDL_MouseButtonEvent mouse){}
 void BaseWidget::mouseReleased(SDL_MouseButtonEvent mouse){}
 void BaseWidget::mouseMoved(int x, int y){}
+void BaseWidget::mouseWheeled(SDL_MouseWheelEvent mouse){}
 void BaseWidget::keyPressed(int key){}
 void BaseWidget::joystickButtonPressed(int key){}

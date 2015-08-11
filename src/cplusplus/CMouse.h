@@ -31,7 +31,8 @@ class Mouse
 	public:
 
 		int x, y;
-		int buttonState[10];
+		int buttonState[MAX_MOUSE_BUTTONS];
+		int wheelState;
 		bool grab;
 		
 	static Mouse *getInstance();

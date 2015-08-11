@@ -111,16 +111,13 @@ const char *Mouse::translateMouseButton(int button)
 			return _("right");
 			break;
 			
-#if 0
-		// TODO: handle SDL_MouseWheel events
-		case SDL_BUTTON_WHEELUP:
-			return _("wheel up");
+		case SDL_BUTTON_X1:
+			return _("x1");
 			break;
-			
-		case SDL_BUTTON_WHEELDOWN:
-			return _("wheel down");
+
+		case SDL_BUTTON_X2:
+			return _("x2");
 			break;
-#endif
 	}
 	
 	return _("unknown");

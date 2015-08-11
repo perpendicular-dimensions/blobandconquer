@@ -379,6 +379,16 @@ void UIManager::mouseMoved(int x, int y)
 	focusedWidget->mouseMoved(x, y);
 }
 
+void UIManager::mouseWheeled(SDL_MouseWheelEvent mouse)
+{
+	if (focusedWidget == NULL)
+	{
+		return;
+	}
+
+	focusedWidget->mouseWheeled(mouse);
+}
+
 void UIManager::keyPressed(int key)
 {
 	//debug(("UIManager::keyPressed() - %d : %c\n", key, (char)key));

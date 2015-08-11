@@ -227,24 +227,6 @@ bool ListView::itemSelectionChanged()
 
 void ListView::mousePressed(SDL_MouseButtonEvent mouse)
 {
-#if 0
-	// TODO: Handle SDL_MouseWheel events
-	if (mouse.button == SDL_BUTTON_WHEELUP)
-	{
-		Math::limit(&(--currentPage), 1, numberOfPages);
-		gotoPage(currentPage);
-		
-		itemSelected = true;
-	}
-	else if (mouse.button == SDL_BUTTON_WHEELDOWN)
-	{
-		Math::limit(&(++currentPage), 1, numberOfPages);
-		gotoPage(currentPage);
-		
-		itemSelected = true;
-	}
-#endif
-
 	int index = 0;
 
 	for (ListViewItem *item = (ListViewItem*)items.getFirstElement() ; item != NULL ; item = (ListViewItem*)item->next)
@@ -262,6 +244,24 @@ void ListView::mousePressed(SDL_MouseButtonEvent mouse)
 	}
 	
 	buttonState = 1;
+}
+
+void ListView::mouseWheeled(SDL_MouseWheelEvent mouse)
+{
+	if (mouse.y > 0)
+	{
+		Math::limit(&(--currentPage), 1, numberOfPages);
+		gotoPage(currentPage);
+
+		itemSelected = true;
+	}
+	else if (mouse.y < 0)
+	{
+		Math::limit(&(++currentPage), 1, numberOfPages);
+		gotoPage(currentPage);
+
+		itemSelected = true;
+	}
 }
 
 void ListView::resync()

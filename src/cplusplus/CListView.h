@@ -70,5 +70,6 @@ class ListView : public BaseWidget {
 	void mousePressed(SDL_MouseButtonEvent mouse);
 	void mouseReleased(SDL_MouseButtonEvent mouse);
 	void mouseMoved(int x, int y);
+	void mouseWheeled(SDL_MouseWheelEvent mouse);
 
 };

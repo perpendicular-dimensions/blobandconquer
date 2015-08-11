@@ -74,6 +74,7 @@ class UIManager {
 	void mousePressed(SDL_MouseButtonEvent mouse);
 	void mouseReleased(SDL_MouseButtonEvent mouse);
 	void mouseMoved(int x, int y);
+	void mouseWheeled(SDL_MouseWheelEvent mouse);
 	void keyPressed(int key);
 	void joystickButtonPressed(int key);
 
