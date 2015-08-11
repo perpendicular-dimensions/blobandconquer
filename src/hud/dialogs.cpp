@@ -254,7 +254,6 @@ void showMessageDialog(const char *message, const char *buttonLabel)
 	{
 		engine->getInput();
 		graphics->clearScreen();
-		graphics->updateScreen();
 		
 		engine->doTimeDifference();
 		
@@ -273,6 +272,8 @@ void showMessageDialog(const char *message, const char *buttonLabel)
 		{
 			doneReading = true;
 		}
+
+		graphics->updateScreen();
 	}
 	
 	engine->resetTimeDifference();
