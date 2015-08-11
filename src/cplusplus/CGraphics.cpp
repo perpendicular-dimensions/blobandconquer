@@ -95,24 +95,27 @@ void Graphics::calculateScreenModes() {
 	SDL_DisplayMode mode;
 	SDL_GetDesktopDisplayMode(0, &mode);
 
-	fprintf(stderr, "Best video res: %d x %d\n", mode.w, mode.h);
+	fprintf(stderr, "Desktop video res: %d x %d\n", mode.w, mode.h);
 
-	screenMode[0].w = mode.w;
-	screenMode[0].h = mode.h;
+	screenMode[0].w = 800;
+	screenMode[0].h = 600;
 
 	int n = 1;
 
-	for(int i = 2; i <= 10; i++) {
+	for(int i = 10; i >= 1; i--) {
 		int w = mode.w / i;
 		int h = mode.h / i;
 
 		// Skip anything smaller than 800 x 600
+		if(w == 800 && h == 600)
+			continue;
+
 		if(w < 800 || h < 600)
-			break;
+			continue;
 
 		// Skip resolutions that are not integer divisions
 		if (w * i != mode.w || h * i != mode.h)
-			break;
+			continue;
 
 		screenMode[n].w = w;
 		screenMode[n].h = h;
@@ -262,7 +265,17 @@ void Graphics::queryStencilSupport()
 
 void Graphics::setResolution(int i)
 {
-	// TODO: set resolution
+	Math::limit(&i, 0, MAX_RESOLUTIONS - 1);
+
+	debug(("Graphics::setResolution() - %d: %d x %d\n", i, screenMode[i].w, screenMode[i].h));
+
+	SDL_SetWindowSize(window, screenMode[i].w, screenMode[i].h);
+	screen = SDL_GetWindowSurface(window);
+
+	currentScreenResolution = i;
+
+	screenMidX = screen->w / 2;
+	screenMidY = screen->h / 2;
 
 	debug(("Graphics::setResolution() - Done\n"));
 }

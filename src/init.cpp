@@ -410,9 +410,7 @@ void initSystem()
 	graphics->queryStencilSupport();
 
 	graphics->window = SDL_CreateWindow("Blobwars: Blob And Conquer", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-	graphics->screen = SDL_GetWindowSurface(graphics->window);
-	graphics->screenMidX = 400;
-	graphics->screenMidY = 300;
+	SDL_SetWindowMinimumSize(graphics->window, 800, 600);
 
 	SDL_GL_CreateContext(graphics->window);	
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
