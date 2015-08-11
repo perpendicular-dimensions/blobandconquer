@@ -767,7 +767,7 @@ Texture *Graphics::getGLString(const char *in, ...)
 		text = TTF_RenderUTF8_Blended(font[fontIndex], "FONT_ERROR", fontWhite);
 	}
 	
-	SDL_SetAlpha(text, 0);
+	//SDL_SetAlpha(text, 0);
 	
 	Texture *texture = createTexture(text);
 	
