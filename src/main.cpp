@@ -55,20 +55,17 @@ void GCC_NORETURN showHelp()
 		}
 	}
 	
-#if 0
-	// TODO: fix Joystick support
 	for (int i = 0 ; i < SDL_NumJoysticks() ; i++)
 	{
 		if (i == 0)
 		{
-			printf("\t-joystick 0         Enable joystick '%s' (default)\n", SDL_JoystickName(i));
+			printf("\t-joystick 0         Enable joystick '%s' (default)\n", SDL_JoystickNameForIndex(i));
 		}
 		else
 		{
-			printf("\t-joystick %d         Enable joystick '%s'\n", i, SDL_JoystickName(i));
+			printf("\t-joystick %d         Enable joystick '%s'\n", i, SDL_JoystickNameForIndex(i));
 		}
 	}
-#endif
 	
 	printf("\t-mono               Use mono sound\n");
 	printf("\t-stereo             Use stereo sound (default)\n");

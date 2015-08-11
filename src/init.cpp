@@ -470,8 +470,6 @@ void initSystem()
 		}
 	}
 
-#if 0
-	// TODO: Fix Joystick support
 	if (SDL_NumJoysticks() > 0)
 	{
 		debug(("Found a joystick...\n"));
@@ -489,17 +487,16 @@ void initSystem()
 
 		SDL_JoystickEventState(SDL_ENABLE);
 
-		debug(("Opening Joystick %s...\n", SDL_JoystickName(engine->joystickIndex)));
+		debug(("Opening Joystick %s...\n", SDL_JoystickNameForIndex(engine->joystickIndex)));
 		engine->joystick = SDL_JoystickOpen(engine->joystickIndex);
 		engine->buttonState = new char[SDL_JoystickNumButtons(engine->joystick)];
 		
-		debug(("Number of Analog Sticks: %d\n", SDL_JoystickNumAxes(engine->joystick)));
+		debug(("Number of Axes: %d\n", SDL_JoystickNumAxes(engine->joystick)));
 	}
 	else
 	{
 		debug(("No joystick available.\n"));
 	}
-#endif
 
 	srand(time(NULL));
 
