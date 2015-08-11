@@ -52,20 +52,16 @@ void Mouse::setBusy(bool busy)
 		SDL_ShowCursor(SDL_DISABLE);
 		SDL_GetRelativeMouseState(NULL, NULL);
 		
-		if (grab)
-		{
-			SDL_SetWindowGrab(graphics->window, SDL_TRUE);
-		}
+		SDL_SetWindowGrab(graphics->window, grab ? SDL_TRUE : SDL_FALSE);
+		SDL_SetRelativeMouseMode(grab ? SDL_TRUE : SDL_FALSE);
 	}
 	else
 	{
 		SDL_ShowCursor(SDL_ENABLE);
 		SDL_GetRelativeMouseState(NULL, NULL);
-		
-		if (grab)
-		{
-			SDL_SetWindowGrab(graphics->window, SDL_FALSE);
-		}
+
+		SDL_SetWindowGrab(graphics->window, SDL_FALSE);
+		SDL_SetRelativeMouseMode(SDL_FALSE);
 	}
 }
 
