@@ -20,6 +20,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USAf.
 
 #include "../headers.h"
 
+extern Graphics *graphics;
+
 Mouse::Mouse()
 {
 	for (int i = 0 ; i < MAX_MOUSE_BUTTONS ; i++)
@@ -31,7 +33,8 @@ Mouse::Mouse()
 	
 	grab = false;
 	
-	SDL_WM_GrabInput(SDL_GRAB_OFF);
+	//TODO: assume it is always ungrabbed at startup
+	//SDL_SetWindowGrab(graphics->window, SDL_FALSE);
 }
 
 Mouse::~Mouse()
@@ -54,7 +57,7 @@ void Mouse::setBusy(bool busy)
 		
 		if (grab)
 		{
-			SDL_WM_GrabInput(SDL_GRAB_ON);
+			SDL_SetWindowGrab(graphics->window, SDL_TRUE);
 		}
 	}
 	else
@@ -64,7 +67,7 @@ void Mouse::setBusy(bool busy)
 		
 		if (grab)
 		{
-			SDL_WM_GrabInput(SDL_GRAB_OFF);
+			SDL_SetWindowGrab(graphics->window, SDL_FALSE);
 		}
 	}
 }
@@ -76,12 +79,12 @@ bool Mouse::isBusy()
 
 void Mouse::set(int x, int y)
 {
-	SDL_WarpMouse(x, y);
+	SDL_WarpMouseInWindow(graphics->window, x, y);
 }
 
 void Mouse::move(int x, int y)
 {
-	SDL_WarpMouse(this->x + x, this->y + y);
+	SDL_WarpMouseInWindow(graphics->window, this->x + x, this->y + y);
 }
 
 void Mouse::clear()
@@ -108,6 +111,8 @@ const char *Mouse::translateMouseButton(int button)
 			return _("right");
 			break;
 			
+#if 0
+		// TODO: handle SDL_MouseWheel events
 		case SDL_BUTTON_WHEELUP:
 			return _("wheel up");
 			break;
@@ -115,6 +120,7 @@ const char *Mouse::translateMouseButton(int button)
 		case SDL_BUTTON_WHEELDOWN:
 			return _("wheel down");
 			break;
+#endif
 	}
 	
 	return _("unknown");

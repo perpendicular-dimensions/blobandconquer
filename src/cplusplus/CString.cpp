@@ -74,6 +74,9 @@ void String::operator= (const char *in)
 	if(text == in)
 		return;
 
+	if (!in)
+		abort();
+
 	reallocate(strlen(in));
 	
 	strcpy(text, in);

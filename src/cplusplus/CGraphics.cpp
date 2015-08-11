@@ -22,7 +22,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #ifdef __unix__
 #include <GL/glx.h>
-#include <SDL/SDL_syswm.h>
+#include <SDL2/SDL_syswm.h>
 #endif
 
 #ifndef __unix__
@@ -30,6 +30,11 @@ extern char *strtok_r(char *s1, const char *s2, char **lasts);
 #include <stdint.h>
 #define drand48 rand
 #endif
+
+void SDL_SetAlpha(SDL_Surface *surface, uint8_t value) {
+	SDL_SetSurfaceBlendMode(surface, SDL_BLENDMODE_BLEND);
+	SDL_SetSurfaceAlphaMod(surface, value);
+}
 
 Graphics::Graphics()
 {
@@ -60,18 +65,6 @@ Graphics::Graphics()
 	screenMode[0].w = 800;
 	screenMode[0].h = 600;
 	
-	screenMode[1].w = 1024;
-	screenMode[1].h = 768;
-	
-	screenMode[2].w = 1280;
-	screenMode[2].h = 800;
-	
-	screenMode[3].w = 1280;
-	screenMode[3].h = 1024;
-	
-	screenMode[4].w = 1680;
-	screenMode[4].h = 1050;
-	
 	animTimer = 0;
 	
 	wireframe = false;
@@ -98,55 +91,33 @@ Graphics::~Graphics()
 	destroy();
 }
 
-static int screenModeCompare(const void *a, const void *b) {
-	const SDL_Rect *ma = (const SDL_Rect *)a, *mb = (const SDL_Rect *)b;
-
-	if(ma->h < mb->h)
-		return -1;
-	else if(ma->h > mb->h)
-		return 1;
-	else if(ma->w < mb->w)
-		return -1;
-	else if(ma->w > mb->w)
-		return 1;
-	else
-		return 0;
-}
-
 void Graphics::calculateScreenModes() {
-	const SDL_VideoInfo *videoInfo;
-	int n = 5;
+	SDL_DisplayMode mode;
+	SDL_GetDesktopDisplayMode(0, &mode);
 
-	videoInfo = SDL_GetVideoInfo();
-	fprintf(stderr, "Best video res: %d x %d\n", videoInfo->current_w, videoInfo->current_h);
+	fprintf(stderr, "Best video res: %d x %d\n", mode.w, mode.h);
 
-	for(int i = 1; i <= 10; i++) {
-		int w = videoInfo->current_w / i;
-		int h = videoInfo->current_h / i;
+	screenMode[0].w = mode.w;
+	screenMode[0].h = mode.h;
 
+	int n = 1;
+
+	for(int i = 2; i <= 10; i++) {
+		int w = mode.w / i;
+		int h = mode.h / i;
+
+		// Skip anything smaller than 800 x 600
 		if(w < 800 || h < 600)
 			break;
 
-		if(!SDL_VideoModeOK(w, h, 32, SDL_OPENGL | SDL_HWPALETTE | SDL_FULLSCREEN))
-			continue;
-
-		bool ok = true;
-
-		for(int j = 0; j < n; j++) {
-			if(w == screenMode[i].w && h == screenMode[i].h) {
-				ok = false;
-				break;
-			}
-		}
-
-		if(!ok)
+		// Skip resolutions that are not integer divisions
+		if (w * i != mode.w || h * i != mode.h)
 			break;
+
 		screenMode[n].w = w;
 		screenMode[n].h = h;
 		n++;
 	}
-
-	qsort(screenMode, n, sizeof *screenMode, screenModeCompare);
 }
 
 Graphics *Graphics::getInstance()
@@ -244,7 +215,7 @@ void Graphics::queryStencilSupport()
 	
 	SDL_VERSION(&wm_info.version);
 
-	if (SDL_GetWMInfo(&wm_info) && wm_info.subsystem == SDL_SYSWM_X11)
+	if (SDL_GetWindowWMInfo(window, &wm_info) && wm_info.subsystem == SDL_SYSWM_X11)
 	{
 		XVisualInfo theTemplate;  
 		XVisualInfo *visuals;
@@ -252,8 +223,6 @@ void Graphics::queryStencilSupport()
 		long mask = VisualScreenMask;
 		Display *dpy = wm_info.info.x11.display;
 		
-		wm_info.info.x11.lock_func();
-
 		theTemplate.screen = 0;
 		visuals = XGetVisualInfo(dpy, mask, &theTemplate, &numVisuals);
 		
@@ -276,7 +245,7 @@ void Graphics::queryStencilSupport()
 				break;
 			}
 		}
-		wm_info.info.x11.unlock_func();
+
 		debug(("Query stencil support: has stencils: %d\n", (int)hasStencils));
 	}
 	else
@@ -293,39 +262,8 @@ void Graphics::queryStencilSupport()
 
 void Graphics::setResolution(int i)
 {
-	Math::limit(&i, 0, MAX_RESOLUTIONS - 1);
+	// TODO: set resolution
 
-	debug(("Graphics::setResolution() - %d: %d x %d\n", i, screenMode[i].w, screenMode[i].h));
-	
-	long flags = SDL_OPENGL|SDL_HWPALETTE;
-	
-	if (fullscreen)
-	{
-		flags |= SDL_FULLSCREEN;
-	}
-	
-	screen = SDL_SetVideoMode(screenMode[i].w, screenMode[i].h, 0, flags);
-	
-	if (screen == NULL)
-	{
-		screen = SDL_SetVideoMode(screenMode[0].w, screenMode[0].h, 0, flags);
-	
-		if (screen == NULL)
-		{
-			printf("Couldn't set %dx%d video mode: %s\n", screenMode[i].w, screenMode[i].h, SDL_GetError());
-			exit(1);
-		}
-		
-		currentScreenResolution = 0;
-	}
-	else
-	{
-		currentScreenResolution = i;
-	}
-	
-	screenMidX = screen->w / 2;
-	screenMidY = screen->h / 2;
-	
 	debug(("Graphics::setResolution() - Done\n"));
 }
 
@@ -447,16 +385,16 @@ void Graphics::updateScreenMB()
 		acc = 0;
 		lastflush = now;
 		swapframes++;
-		SDL_GL_SwapBuffers();
+		SDL_GL_SwapWindow(window);
 	}
 	//SDL_Delay(1);
 
-	if ((engine->keyState[SDLK_F10]) || ((engine->keyState[SDLK_RETURN]) && (engine->keyState[SDLK_LALT])))
+	if ((engine->keyState[SDL_SCANCODE_F10]) || ((engine->keyState[SDL_SCANCODE_RETURN]) && (engine->keyState[SDL_SCANCODE_LALT])))
 	{
-		SDL_WM_ToggleFullScreen(screen);
 		fullscreen = !fullscreen;
+		SDL_SetWindowFullscreen(window, fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
 
-		engine->keyState[SDLK_F10] = engine->keyState[SDLK_LALT] = engine->keyState[SDLK_RETURN] = 0;
+		engine->keyState[SDL_SCANCODE_F10] = engine->keyState[SDL_SCANCODE_LALT] = engine->keyState[SDL_SCANCODE_RETURN] = 0;
 		
 		engine->resetTimeDifference();
 	}
@@ -472,15 +410,15 @@ void Graphics::updateScreen()
 		return;
 	}
 	
-	SDL_GL_SwapBuffers();
+	SDL_GL_SwapWindow(window);
 	SDL_Delay(1);
 
-	if ((engine->keyState[SDLK_F10]) || ((engine->keyState[SDLK_RETURN]) && (engine->keyState[SDLK_LALT])))
+	if ((engine->keyState[SDL_SCANCODE_F10]) || ((engine->keyState[SDL_SCANCODE_RETURN]) && (engine->keyState[SDL_SCANCODE_LALT])))
 	{
-		SDL_WM_ToggleFullScreen(screen);
 		fullscreen = !fullscreen;
+		SDL_SetWindowFullscreen(window, fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
 
-		engine->keyState[SDLK_F10] = engine->keyState[SDLK_LALT] = engine->keyState[SDLK_RETURN] = 0;
+		engine->keyState[SDL_SCANCODE_F10] = engine->keyState[SDL_SCANCODE_LALT] = engine->keyState[SDL_SCANCODE_RETURN] = 0;
 		
 		engine->resetTimeDifference();
 	}
@@ -492,7 +430,7 @@ void Graphics::delay(int time, bool allowSkip)
 {
 	unsigned long then = SDL_GetTicks();
 
-	engine->keyState[SDLK_ESCAPE] = 0;
+	engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 	
 	while (true)
 	{
@@ -505,7 +443,7 @@ void Graphics::delay(int time, bool allowSkip)
 		
 		if (allowSkip)
 		{
-			if (engine->keyState[SDLK_ESCAPE])
+			if (engine->keyState[SDL_SCANCODE_ESCAPE])
 			{
 				break;
 			}
@@ -706,7 +644,7 @@ Point Graphics::convertToScreenCoords(Vector position)
 
 void Graphics::setTransparent(SDL_Surface *sprite)
 {
-	SDL_SetColorKey(sprite, (SDL_SRCCOLORKEY|SDL_RLEACCEL), SDL_MapRGB(sprite->format, 0, 0, 0));
+	SDL_SetColorKey(sprite, true, SDL_MapRGB(sprite->format, 0, 0, 0));
 }
 
 Texture *Graphics::createTexture(SDL_Surface *surface)
@@ -829,7 +767,7 @@ Texture *Graphics::getGLString(const char *in, ...)
 		text = TTF_RenderUTF8_Blended(font[fontIndex], "FONT_ERROR", fontWhite);
 	}
 	
-	SDL_SetAlpha(text, SDL_SRCALPHA|SDL_RLEACCEL, 0);
+	SDL_SetAlpha(text, 0);
 	
 	Texture *texture = createTexture(text);
 	
@@ -1347,8 +1285,6 @@ void Graphics::setFontColor(int red, int green, int blue, int red2, int green2, 
 	fontBackground.r = red2;
 	fontBackground.g = green2;
 	fontBackground.b = blue2;
-
-	fontForeground.unused = fontBackground.unused = 0;
 }
 
 SDL_Surface *Graphics::createSurface(int width, int height)
@@ -1420,7 +1356,7 @@ void Graphics::showLicenseErrorAndExit()
 	{
 		updateScreen();
 		engine->getInput();
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			exit(1);
 		}
@@ -1480,7 +1416,7 @@ void Graphics::showErrorAndExit(const char *error ...)
 	{
 		updateScreen();
 		engine->getInput();
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			exit(1);
 		}

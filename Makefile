@@ -21,12 +21,12 @@ LOCALEDIR ?= $(PREFIX)/share/locale/
 CXXFLAGS += -Wformat=2 -Wformat-security -Wstrict-aliasing=2
 CXXFLAGS += -Wmissing-format-attribute -Wmissing-noreturn
 CXXFLAGS += -Wdisabled-optimization
-CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
+CXXFLAGS += `sdl2-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
 CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall
 CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -g
 CXXFLAGS += $(CFLAGS)
 LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
-LIBS = -lX11 -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
+LIBS = -lX11 -lGL -lGLU `sdl2-config --libs` -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lz
 PAKLIBS = -lz
 
 # Yes, it means compiling is a little slower... but it's less hassle

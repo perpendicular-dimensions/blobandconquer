@@ -42,7 +42,7 @@ class Engine {
 		
 		bool slowLogic;
 
-		char keyState[350];
+		char keyState[SDL_NUM_SCANCODES];
 		char *buttonState;
 		Mouse *mouse;
 		int axis1X, axis1Y, axis2X, axis2Y;

@@ -394,7 +394,7 @@ int doLoadSaveGameDialog(const char *type)
 			load->setEnabled(header->inUse);
 		}
 		
-		if ((load->wasClicked()) || (save->wasClicked()) || (engine->keyState[SDLK_RETURN]))
+		if ((load->wasClicked()) || (save->wasClicked()) || (engine->keyState[SDL_SCANCODE_RETURN]))
 		{
 			break;
 		}

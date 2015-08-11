@@ -1167,7 +1167,7 @@ void processAnimatedCutscene(List *data)
 					
 					graphics->clearScreen();
 					
-					if (engine->keyState[SDLK_ESCAPE])
+					if (engine->keyState[SDL_SCANCODE_ESCAPE])
 					{
 						waitTimer = 0;
 					}
@@ -1276,11 +1276,11 @@ void processAnimatedCutscene(List *data)
 			}
 		}
 		
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			skip = true;
 			
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 		}
 		
 		cc = (CutsceneCommand*)cc->next;
@@ -1362,7 +1362,7 @@ void processStaticCutscene(List *data)
 		
 		graphics->setMode(MODE_2D);
 		
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			done = true;
 			skip = true;

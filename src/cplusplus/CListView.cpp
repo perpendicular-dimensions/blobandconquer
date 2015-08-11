@@ -227,6 +227,8 @@ bool ListView::itemSelectionChanged()
 
 void ListView::mousePressed(SDL_MouseButtonEvent mouse)
 {
+#if 0
+	// TODO: Handle SDL_MouseWheel events
 	if (mouse.button == SDL_BUTTON_WHEELUP)
 	{
 		Math::limit(&(--currentPage), 1, numberOfPages);
@@ -241,6 +243,7 @@ void ListView::mousePressed(SDL_MouseButtonEvent mouse)
 		
 		itemSelected = true;
 	}
+#endif
 
 	int index = 0;
 

@@ -406,10 +406,10 @@ void doCheatOptions()
 			game->cheatTime = timeCheat->checked;
 		}
 		
-		if ((done->wasClicked()) || (engine->keyState[SDLK_ESCAPE]))
+		if ((done->wasClicked()) || (engine->keyState[SDL_SCANCODE_ESCAPE]))
 		{
 			finished = true;
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 		}
 	}
 	
@@ -673,7 +673,7 @@ void doConfigOptions()
 		if (fullscreen->wasClicked())
 		{
 			graphics->fullscreen = !graphics->fullscreen;
-			SDL_WM_ToggleFullScreen(graphics->screen);
+			SDL_SetWindowFullscreen(graphics->window, graphics->fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
 		}
 		
 		if (grab->wasClicked())
@@ -705,7 +705,10 @@ void doConfigOptions()
 		{
 			graphics->gamma = 50 + brightness->value;
 			Math::limit(&graphics->gamma, 0, 200);
+#if 0
+			// TODO: fix Gamma
 			SDL_SetGamma(graphics->gamma / 100, graphics->gamma / 100, graphics->gamma / 100);
+#endif
 		}
 		
 		if (controlConfig->wasClicked())
@@ -729,10 +732,10 @@ void doConfigOptions()
 			cheats->setVisible(game->cheatsActive);
 		}
 		
-		if ((done->wasClicked()) || (engine->keyState[SDLK_ESCAPE]))
+		if ((done->wasClicked()) || (engine->keyState[SDL_SCANCODE_ESCAPE]))
 		{
 			finished = true;
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 		}
 		
 		fullscreen->checked = graphics->fullscreen;
@@ -853,10 +856,10 @@ void doInGameOptions()
 			finished = true;
 		}
 		
-		if ((resume->wasClicked()) || (engine->keyState[SDLK_ESCAPE]) || (game->isControl(CTRL_PAUSE)))
+		if ((resume->wasClicked()) || (engine->keyState[SDL_SCANCODE_ESCAPE]) || (game->isControl(CTRL_PAUSE)))
 		{
 			finished = true;
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 		}
 		
 		if (quit->wasClicked())

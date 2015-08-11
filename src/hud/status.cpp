@@ -334,28 +334,28 @@ void showMissionStatusPanel()
 			mouse->buttonState[SDL_BUTTON_LEFT] = 0;
 		}
 		
-		if (engine->keyState[SDLK_1])
+		if (engine->keyState[SDL_SCANCODE_1])
 		{
 			selectedSection = 0;
 			audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
 			stats->setVisible(false);
-			engine->keyState[SDLK_1] = 0;
+			engine->keyState[SDL_SCANCODE_1] = 0;
 		}
 		
-		if (engine->keyState[SDLK_2])
+		if (engine->keyState[SDL_SCANCODE_2])
 		{
 			selectedSection = 1;
 			audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
 			stats->setVisible(false);
-			engine->keyState[SDLK_2] = 0;
+			engine->keyState[SDL_SCANCODE_2] = 0;
 		}
 		
-		if (engine->keyState[SDLK_3])
+		if (engine->keyState[SDL_SCANCODE_3])
 		{
 			selectedSection = 2;
 			audio->playSound(SND_BUTTONCLICK, CH_ANY, 128);
 			stats->setVisible(true);
-			engine->keyState[SDLK_3] = 0;
+			engine->keyState[SDL_SCANCODE_3] = 0;
 		}
 		
 		if (game->isControl(CTRL_STATUS))

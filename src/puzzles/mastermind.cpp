@@ -304,7 +304,7 @@ bool doMasterMindPuzzle(int seed)
 				}
 			}
 			
-			if (engine->keyState[SDLK_ESCAPE])
+			if (engine->keyState[SDL_SCANCODE_ESCAPE])
 			{
 				timer = 0;
 			}
@@ -353,7 +353,7 @@ bool doMasterMindPuzzle(int seed)
 		}
 	}
 	
-	if ((engine->keyState[SDLK_ESCAPE]) && (player == NULL))
+	if ((engine->keyState[SDL_SCANCODE_ESCAPE]) && (player == NULL))
 	{
 		exit(0);
 	}

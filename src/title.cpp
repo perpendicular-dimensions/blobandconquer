@@ -126,12 +126,12 @@ int doTitle()
 		
 		logoTimer += engine->getTimeDifference(TD_LOGIC);
 		
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			backX = graphics->screenMidX;
 			logoTimer = 2800;
 			fade = 1.0;
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 		}
 		
 		if ((logoTimer > 300) && (logoTimer <= 700))
@@ -279,7 +279,7 @@ void doIntro()
 		x -= 0.65 * engine->getTimeDifference(TD_LOGIC);
 		timer -= engine->getTimeDifference(TD_LOGIC);
 		
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			skip = true;
 			timer = 0;
@@ -371,7 +371,7 @@ void doCredits()
 	
 	while (cy[lastCredit - 1] > (yPos - 25))
 	{
-		if (engine->keyState[SDLK_ESCAPE])
+		if (engine->keyState[SDL_SCANCODE_ESCAPE])
 		{
 			break;
 		}

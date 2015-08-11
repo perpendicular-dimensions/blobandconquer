@@ -270,7 +270,7 @@ void doGameObjects()
 
 void doBattleCamera()
 {
-	if (engine->keyState[SDLK_F2])
+	if (engine->keyState[SDL_SCANCODE_F2])
 	{
 		if ((game->canSaveGame) || (game->cheatSave))
 		{
@@ -285,10 +285,10 @@ void doBattleCamera()
 			}
 		}
 
-		engine->keyState[SDLK_F2] = 0;
+		engine->keyState[SDL_SCANCODE_F2] = 0;
 	}
 
-	if (engine->keyState[SDLK_F5])
+	if (engine->keyState[SDL_SCANCODE_F5])
 	{
 		if ((game->canSaveGame) || (game->cheatSave))
 		{
@@ -296,27 +296,27 @@ void doBattleCamera()
 			engine->resetTimeDifference();
 		}
 
-		engine->keyState[SDLK_F5] = 0;
+		engine->keyState[SDL_SCANCODE_F5] = 0;
 	}
 	
 	#if DEV
-	if (engine->keyState[SDLK_F11])
+	if (engine->keyState[SDL_SCANCODE_F11])
 	{
-		engine->keyState[SDLK_F11] = 0;
+		engine->keyState[SDL_SCANCODE_F11] = 0;
 		graphics->wireframe = !graphics->wireframe;
 	}
 	
-	if (engine->keyState[SDLK_F8])
+	if (engine->keyState[SDL_SCANCODE_F8])
 	{
 		processCutscene(&mission->startCutsceneData);
 	}
 	
-	if (engine->keyState[SDLK_F9])
+	if (engine->keyState[SDL_SCANCODE_F9])
 	{
 		processCutscene(&mission->endCutsceneData);
 	}
 	
-	if (engine->keyState[SDLK_F12])
+	if (engine->keyState[SDL_SCANCODE_F12])
 	{
 		String exitToMission;
 		exitToMission = mission->getNextMissionName();
@@ -441,21 +441,21 @@ int mainBattleLoop()
 		graphics->updateScreen();
 		engine->getInput();
 		
-		if ((SDL_GetAppState() & SDL_APPINPUTFOCUS) == 0)
+		if ((SDL_GetWindowFlags(graphics->window) & SDL_WINDOW_INPUT_FOCUS) == 0)
 		{
 			doInGameOptions();
 		}
 		
-		if ((game->isControl(CTRL_PAUSE)) || (engine->keyState[SDLK_ESCAPE]))
+		if ((game->isControl(CTRL_PAUSE)) || (engine->keyState[SDL_SCANCODE_ESCAPE]))
 		{
 			debug(("Player = %s\n", player->position.toString()));
 		
 			graphics->allowMotionBlur = false;
 			game->resetControl(CTRL_PAUSE);
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 			doInGameOptions();
 			game->resetControl(CTRL_PAUSE);
-			engine->keyState[SDLK_ESCAPE] = 0;
+			engine->keyState[SDL_SCANCODE_ESCAPE] = 0;
 			graphics->allowMotionBlur = true;
 		}
 		

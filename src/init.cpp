@@ -355,7 +355,8 @@ void initCommonResources()
 	f.setText("%s/config", engine->userHomeDirectory.getText());
 
 	graphics->mapColors();
-	SDL_SetGamma(graphics->gamma / 100, graphics->gamma / 100, graphics->gamma / 100);
+	//TODO: use CalculateGammaRamp+SetWindowGammaRamp
+	//SDL_SetGamma(graphics->gamma / 100, graphics->gamma / 100, graphics->gamma / 100);
 
 	graphics->loadFont(FONT_NORMAL, "data/fonts/vera.ttf", 12);
 	graphics->loadFont(FONT_LARGE, "data/fonts/vera.ttf", 32);
@@ -407,7 +408,13 @@ void initSystem()
 	
 	graphics->calculateScreenModes();
 	graphics->queryStencilSupport();
-	
+
+	graphics->window = SDL_CreateWindow("Blobwars: Blob And Conquer", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+	graphics->screen = SDL_GetWindowSurface(graphics->window);
+	graphics->screenMidX = 400;
+	graphics->screenMidY = 300;
+
+	SDL_GL_CreateContext(graphics->window);	
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	
 	if (graphics->hasStencils)
@@ -419,9 +426,7 @@ void initSystem()
 		SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 0);
 	}
 	
-	#ifdef __unix__
-	SDL_GL_SetAttribute(SDL_GL_SWAP_CONTROL, 1);
-	#endif
+	SDL_GL_SetSwapInterval(1);
 	SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE, 1);
 	SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE, 1);
 	SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE, 1);
@@ -464,6 +469,8 @@ void initSystem()
 		}
 	}
 
+#if 0
+	// TODO: Fix Joystick support
 	if (SDL_NumJoysticks() > 0)
 	{
 		debug(("Found a joystick...\n"));
@@ -491,13 +498,12 @@ void initSystem()
 	{
 		debug(("No joystick available.\n"));
 	}
+#endif
 
 	srand(time(NULL));
 
-	//SDL_WM_SetIcon(device, NULL);
-	SDL_WM_SetCaption("Blob Wars : Blob and Conquer", "Blob And Conquer");
-
-	SDL_EnableKeyRepeat(500, 30);
+	//SDL_SetWindowIcon(graphics->window, device);
+	SDL_SetWindowTitle(graphics->window, "Blob Wars: Blob and Conquer");
 
 	// force defaults or loaded
 	audio->setSoundVolume(audio->soundVolume);

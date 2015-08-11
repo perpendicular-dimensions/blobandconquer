@@ -362,39 +362,39 @@ void playerSelectBestWeapon()
 
 void playerIssueOrders()
 {
-	if (engine->keyState[SDLK_7] || engine->keyState[SDLK_KP7])
+	if (engine->keyState[SDL_SCANCODE_7] || engine->keyState[SDL_SCANCODE_KP_7])
 	{
 		game->setInfoMessage(INFO_HINT, _("Orders : Follow"));
 		game->currentOrders = ORDERS_FOLLOW;
-		engine->keyState[SDLK_7] = 0;
-		engine->keyState[SDLK_KP7] = 0;
+		engine->keyState[SDL_SCANCODE_7] = 0;
+		engine->keyState[SDL_SCANCODE_KP_7] = 0;
 		resetBlobOrders();
 	}
 	
-	if (engine->keyState[SDLK_8] || engine->keyState[SDLK_KP8])
+	if (engine->keyState[SDL_SCANCODE_8] || engine->keyState[SDL_SCANCODE_KP_8])
 	{
 		game->setInfoMessage(INFO_HINT, _("Orders : Wait"));
 		game->currentOrders = ORDERS_WAIT;
-		engine->keyState[SDLK_8] = 0;
-		engine->keyState[SDLK_KP8] = 0;
+		engine->keyState[SDL_SCANCODE_8] = 0;
+		engine->keyState[SDL_SCANCODE_KP_8] = 0;
 		resetBlobOrders();
 	}
 	
-	if (engine->keyState[SDLK_9] || engine->keyState[SDLK_KP9])
+	if (engine->keyState[SDL_SCANCODE_9] || engine->keyState[SDL_SCANCODE_KP_9])
 	{
 		game->setInfoMessage(INFO_HINT, _("Orders : Use"));
 		game->currentOrders = ORDERS_USE;
-		engine->keyState[SDLK_9] = 0;
-		engine->keyState[SDLK_KP9] = 0;
+		engine->keyState[SDL_SCANCODE_9] = 0;
+		engine->keyState[SDL_SCANCODE_KP_9] = 0;
 		resetBlobOrders();
 	}
 	
-	if (engine->keyState[SDLK_0] || engine->keyState[SDLK_KP0])
+	if (engine->keyState[SDL_SCANCODE_0] || engine->keyState[SDL_SCANCODE_KP_0])
 	{
 		game->setInfoMessage(INFO_HINT, _("Orders : Retreat"));
 		game->currentOrders = ORDERS_RETREAT;
-		engine->keyState[SDLK_0] = 0;
-		engine->keyState[SDLK_KP0] = 0;
+		engine->keyState[SDL_SCANCODE_0] = 0;
+		engine->keyState[SDL_SCANCODE_KP_0] = 0;
 		resetBlobOrders();
 	}
 }
@@ -532,34 +532,34 @@ void doPlayerWeapons()
 		doPlayerCycleWeapon(1);
 	}
 	
-	if (engine->keyState[SDLK_1])
+	if (engine->keyState[SDL_SCANCODE_1])
 	{
 		game->weaponIndex = 0;
 		game->selectedWeapon = game->weapon[game->weaponIndex];
-		engine->keyState[SDLK_1] = 0;
+		engine->keyState[SDL_SCANCODE_1] = 0;
 	}
 	
-	if (engine->keyState[SDLK_2])
+	if (engine->keyState[SDL_SCANCODE_2])
 	{
 		if (game->weapon[1] != NULL)
 		{
 			game->weaponIndex = 1;
 			game->selectedWeapon = game->weapon[1];
 		}
-		engine->keyState[SDLK_2] = 0;
+		engine->keyState[SDL_SCANCODE_2] = 0;
 	}
 	
-	if (engine->keyState[SDLK_3])
+	if (engine->keyState[SDL_SCANCODE_3])
 	{
 		if (game->weapon[2] != NULL)
 		{
 			game->weaponIndex = 2;
 			game->selectedWeapon = game->weapon[2];
 		}
-		engine->keyState[SDLK_3] = 0;
+		engine->keyState[SDL_SCANCODE_3] = 0;
 	}
 	
-	if (engine->keyState[SDLK_4])
+	if (engine->keyState[SDL_SCANCODE_4])
 	{
 		game->weaponIndex = 3;
 		
@@ -567,9 +567,11 @@ void doPlayerWeapons()
 		{
 			game->selectedWeapon = game->weapon[3];
 		}
-		engine->keyState[SDLK_4] = 0;
+		engine->keyState[SDL_SCANCODE_4] = 0;
 	}
 	
+#if 0
+	// TODO: use SDL_MouseWheel events
 	if (mouse->buttonState[SDL_BUTTON_WHEELUP])
 	{
 		doPlayerCycleWeapon(-1);
@@ -581,6 +583,7 @@ void doPlayerWeapons()
 		doPlayerCycleWeapon(1);
 		mouse->buttonState[SDL_BUTTON_WHEELDOWN] = 0;
 	}
+#endif
 	
 	if (game->isControl(CTRL_FIRE))
 	{
@@ -796,7 +799,7 @@ void movePlayer()
 		if ((player->liquidLevel == 0) && (player->flags & EF_ONGROUND))
 		{
 			player->velocity.z = 4.0 / 3.0;
-			engine->keyState[SDLK_SPACE] = 0;
+			engine->keyState[SDL_SCANCODE_SPACE] = 0;
 			player->flags &= ~EF_ONGROUND;
 		}
 		else if (player->liquidLevel > 0)
@@ -819,13 +822,13 @@ void movePlayer()
 	}
 	
 	#if DEV
-	if (engine->keyState[SDLK_f])
+	if (engine->keyState[SDL_SCANCODE_F])
 	{
 		player->velocity.z = 0;
 		player->position.z += (engine->getTimeDifference(TD_LOGIC));
 	}
 	
-	if (engine->keyState[SDLK_v])
+	if (engine->keyState[SDL_SCANCODE_V])
 	{
 		player->velocity.z = 0;
 		player->position.z -= (engine->getTimeDifference(TD_LOGIC));

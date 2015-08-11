@@ -63,6 +63,7 @@ class Graphics {
 		
 		SDL_Rect screenMode[MAX_RESOLUTIONS];
 
+		SDL_Window *window;
 		SDL_Surface *screen, *glScreenshot, *scratchSurface;
 		
 		Texture *counterDigit[13];

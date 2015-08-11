@@ -124,11 +124,12 @@ void Engine::getInput()
 				break;
 
 			case SDL_MOUSEBUTTONUP:
-				if ((event.button.button != SDL_BUTTON_WHEELUP) && (event.button.button != SDL_BUTTON_WHEELDOWN))
-				{
-					mouse->buttonState[event.button.button] = 0;
-					fireMouseReleased(event.button);
-				}
+				mouse->buttonState[event.button.button] = 0;
+				fireMouseReleased(event.button);
+				break;
+
+			case SDL_MOUSEWHEEL:
+				// TODO: handle mouse wheel up/down events
 				break;
 
 			case SDL_MOUSEMOTION:
@@ -136,13 +137,13 @@ void Engine::getInput()
 				break;
 
 			case SDL_KEYDOWN:
-				keyState[event.key.keysym.sym] = 1;
+				keyState[event.key.keysym.scancode] = 1;
 				fireKeyPressed(&event.key);
 				addKeyEvent(SDL_GetKeyName(event.key.keysym.sym));
 				break;
 
 			case SDL_KEYUP:
-				keyState[event.key.keysym.sym] = 0;
+				keyState[event.key.keysym.scancode] = 0;
 				break;
 				
 			case SDL_JOYAXISMOTION:
@@ -240,7 +241,7 @@ void Engine::endDebugTimer(const char *text)
 
 bool Engine::userAccepts()
 {
-	if ((keyState[SDLK_SPACE]) || (keyState[SDLK_ESCAPE]) || (keyState[SDLK_LCTRL]) || (keyState[SDLK_RCTRL]) || (keyState[SDLK_RETURN]))
+	if ((keyState[SDL_SCANCODE_SPACE]) || (keyState[SDL_SCANCODE_ESCAPE]) || (keyState[SDL_SCANCODE_LCTRL]) || (keyState[SDL_SCANCODE_RCTRL]) || (keyState[SDL_SCANCODE_RETURN]))
 	{
 		return true;
 	}
@@ -255,7 +256,7 @@ void Engine::flushInput()
 
 void Engine::clearInput()
 {
-	for (int i = 0 ; i < 350 ; i++)
+	for (int i = 0 ; i < SDL_NUM_SCANCODES ; i++)
 	{
 		keyState[i] = 0;
 	}

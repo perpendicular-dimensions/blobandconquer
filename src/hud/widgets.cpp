@@ -207,7 +207,7 @@ void drawInputWidget(InputWidget *inputWidget)
 		if (inputWidget->value[INPUT_KEY] != -1)
 		{
 			String keyName;
-			keyName = SDL_GetKeyName((SDLKey)inputWidget->value[INPUT_KEY]);
+			keyName = SDL_GetKeyName((SDL_Keycode)inputWidget->value[INPUT_KEY]);
 			
 			if (keyName != "unknown key")
 			{
