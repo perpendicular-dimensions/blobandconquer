@@ -705,10 +705,7 @@ void doConfigOptions()
 		{
 			graphics->gamma = 50 + brightness->value;
 			Math::limit(&graphics->gamma, 0, 200);
-#if 0
-			// TODO: fix Gamma
-			SDL_SetGamma(graphics->gamma / 100, graphics->gamma / 100, graphics->gamma / 100);
-#endif
+			graphics->setGamma(graphics->gamma);
 		}
 		
 		if (controlConfig->wasClicked())

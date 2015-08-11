@@ -315,6 +315,14 @@ float Graphics::getAnimTimer()
 	return animTimer;
 }
 
+void Graphics::setGamma(float value)
+{
+	gamma = value;
+	Uint16 ramp[256];
+	SDL_CalculateGammaRamp(value / 100, ramp);
+	SDL_SetWindowGammaRamp(window, ramp, ramp, ramp);
+}
+
 void Graphics::mapColors()
 {
 	debug(("Graphics::mapColors\n"));

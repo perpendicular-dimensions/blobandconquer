@@ -356,8 +356,7 @@ void initCommonResources()
 	f.setText("%s/config", engine->userHomeDirectory.getText());
 
 	graphics->mapColors();
-	//TODO: use CalculateGammaRamp+SetWindowGammaRamp
-	//SDL_SetGamma(graphics->gamma / 100, graphics->gamma / 100, graphics->gamma / 100);
+	graphics->setGamma(graphics->gamma);
 
 	graphics->loadFont(FONT_NORMAL, "data/fonts/vera.ttf", 12);
 	graphics->loadFont(FONT_LARGE, "data/fonts/vera.ttf", 32);

@@ -104,6 +104,7 @@ class Graphics {
 	
 	void setMode(int mode);
 
+	void setGamma(float gamma);
 	void mapColors();
 	int getColor(int red, int green, int blue);
 
