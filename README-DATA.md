@@ -1,0 +1,453 @@
+# *Blob Wars Episode II: Blob and Conquer* - Data Repository
+
+This repository is here to collect Creative Commons and otherwise GPL-compatible music, sounds and textures to replace the proprietary files in Blob and Conquer.
+
+To view the original, proprietary files, see https://github.com/jmendeth/BlobAndConquer/.
+
+There is not much here currently, and what is here is not necessarily the best for the job, so pull requests (even for files that have already been replaced) are welcome. Just search for replacements on websites like http://opengameart.org/ and http://freesound.org/.
+
+If you add a file,
+
+1. Add the name of the file to the *Files with replacements* section below.
+    * If it does not make sense to keep the old filename (as with music), write *old_name -> new_name* when you add it to the *Files with replacements* section. This will tell other people that the code or mission files need to be modified in order for it to work.
+    * If you need to add a special note (such as which code/mission file(s) is/are affected by the file), add another bullet point nested below the filename.
+2. Remove the name of the file from the *Files still needing replacements* section further below.
+3. Add the name of the file and the appropriate attribution (even if it is public domain) to **CREDITS**.
+
+**Note**: I have actually **not** played the game through completely, so I might naively replace some files with new ones that do not make sense in some cases.
+
+This means that once the files are replaced, we need testers to check if the game still seems normal.
+
+###Files with replacements
+* textures
+    * grasslands
+        * drygrass.jpg
+        * gx_03_rock_01.jpg
+        * american_cherry.jpg
+        * dirt01.jpg
+        * dirt02.jpg
+        * grass03.jpg
+        * grass04.jpg
+        * grass5.jpg
+        * rock01.jpg
+    * mech
+        * crate.jpg
+        * metalbox.jpg
+        * box-metal01.jpg
+    * liquid
+        * lava01.jpg
+        * lava02.jpg
+    * arctic
+        * snow_01.png
+* sound
+    * ambience
+        * grasslands
+            * cardinal.ogg
+    * general
+        * rain.ogg
+    * gui
+        * buttonClick.ogg
+* music
+    * Helmet Shake.mod -> Intro.ogg
+        * Line 55 of src/title.cpp needs to be changed to *audio->loadMusic("music/Intro.ogg");*
+    * Dragon Cave.xm -> covert_operations.ogg
+        * Line 7 of data/missions/mission02 needs to be changed to *music = music/covert_operations.ogg;
+        * Line 7 of data/missions/mission03 needs to be changed to *music = music/covert_operations.ogg;
+        * Line 7 of data/missions/mission21 needs to be changed to *music = music/covert_operations.ogg;
+
+###Files still needing replacements
+* textures
+    * grasslands
+        * brick01.jpg
+        * brick30.jpg
+        * crackedrock01.jpg
+        * crackedrock02.jpg
+        * dirt01.jpg
+        * dirt02.jpg
+        * grass.jpg
+        * grass02.jpg
+        * grass15.jpg
+        * grass42.jpg
+        * grassdirt01.jpg
+        * gx_03_grass_01_patchy2.jpg
+        * gx_04_grass_01_patchy3.jpg
+        * gx_05_grass_02.jpg
+        * kbtexture6.jpg
+        * rimu_coloured.jpg
+        * rock43.jpg
+        * rock44.jpg
+        * rusticblk.jpg
+        * sapele_cross_cut.jpg
+        * stonetile4.jpg
+        * stonetile6.jpg
+        * stonetile15.jpg
+        * stonewall03.jpg
+        * transparent1.tga
+        * transparent2.tga
+    * game
+        * AIUnit.png
+        * altSwitch1.png
+        * altSwitch2.png
+        * aquaBlob.png
+        * arrow.png
+        * babySpiderBlob.png
+        * black.png
+        * blackDroid.png
+        * blood01.png
+        * blood02.png
+        * blood03.png
+        * blood04.png
+        * blood05.png
+        * blueGem.png
+        * bullet.png
+        * bulletMark01.tga
+        * bulletMark02.tga
+        * LifeCrystal.png
+        * machineGunBlob.png
+        * machineGunDroid.png
+        * machineGunSpiderBlob.png
+        * manualTargetter.png
+        * map.png
+        * mastermindArrow.png
+        * mastermindBackground.png
+        * mastermindBall1.png
+        * mastermindBall2.png
+        * mastermindBall3.png
+        * mastermindBall4.png
+        * mastermindBall5.png
+        * mastermindBall6.png
+        * mastermindBall7.png
+        * mastermindBall8.png
+        * medicine.png
+        * medipack.png
+        * demolitionPlate10.png
+        * desimilator.png
+        * dusk.jpg
+        * energyShot.png
+        * explosion.png
+        * explosionMark01.tga
+        * explosionMark02.tga
+        * explosionMark03.tga
+        * eyedroidcommander.png
+        * fire.png
+        * flameThrower.png
+        * glassImpact01.png
+        * gold.png
+        * goodBlob.png
+        * goodBlobInjured.png
+        * grad.png
+        * greenGem.png
+        * grenade.png
+        * grenadeBlob.png
+        * grenadeDroid.png
+        * grenadeLauncher.png
+        * grenadeTexture.png
+        * grey.png
+        * groundTarget.tga
+        * hackerSwitch.png
+        * hackerSwitch1.png
+        * hackerSwitch2.png
+        * halo.png
+        * hook.png
+        * iceBlock.jpg
+        * iceGun.png
+        * keycard.png
+        * laserBeam.png
+        * shotGunDroid.png
+        * shotgunSpiderBlob.png
+        * spiderBlob.png
+        * spiderBlobCommander.png
+        * spotLightMap.png
+        * starsky.png
+        * starsky2.png
+        * stickyc4.png
+        * sunset.png
+        * switch1.png
+        * switch2.png
+        * tankbase1.png
+        * tankbase2.png
+        * tankbase3.png
+        * tanktop1.png
+        * tanktop2.png
+        * tanktop3.png
+        * targetter.png
+        * teekaWeapon.png
+        * teletag.png
+        * thrownGrenade.png
+        * uzi.png
+        * weapon.png
+        * weaponTexture.png
+        * web.png
+        * white.png
+        * yellowGem.png
+        * bulletMark03.tga
+        * demolitionPlate09.png
+        * laserBlob.png
+        * noTarget.png
+        * shieldBelt.png
+        * orangeGem.png
+        * overcast.png
+        * pistolBlob.png
+        * pistolDroid.png
+        * pistolTexture.png
+        * plasmaPistol.png
+        * plasmaRifle.png
+        * plasmaSpiderBlob.png
+        * pressurePlate1.png
+        * pressurePlate2.png
+        * purpleGem.png
+        * redGem.png
+        * rifle.png
+        * rocket.png
+        * rocketLauncher.png
+        * sentryGun1.jpg
+        * c4.png
+        * cannonBase.png
+        * cannonTop1.png
+        * cherry.png
+        * cherryTexture.png
+        * danger.png
+        * darkBlob.png
+        * dawn.jpg
+        * day.jpg
+        * day2.jpg
+        * demolitionPlate01.png
+        * demolitionPlate02.png
+        * demolitionPlate03.png
+        * demolitionPlate04.png
+        * demolitionPlate05.png
+        * demolitionPlate06.png
+        * demolitionPlate07.png
+        * demolitionPlate08.png
+    * common
+        * blank.jpg
+        * target.tga
+        * target2.tga
+    * liquid
+        * cryptpool.jpg
+        * mist.jpg
+        * slime.jpg
+        * waste01.jpg
+        * water01.jpg
+        * water2.jpg
+    * mech
+        * energybarrier01.jpg
+        * basefloor01.jpg
+        * basefloor02.jpg
+        * basemetal.jpg
+        * biohazard.jpg
+        * caution01.jpg
+        * computerscreen01.jpg
+        * computerscreen02.jpg
+        * computerscreen03.jpg
+        * computerscreen04.jpg
+        * computerscreen05.jpg
+        * computerscreen06.jpg
+        * computerscreen07.jpg
+        * computerscreen08.jpg
+        * computerscreen09.jpg
+        * crackedmetal06.jpg
+        * e8_jumppad02.jpg
+        * e8_launchpad1.jpg
+        * energybarrier02.jpg
+        * floor-concrete06.jpg
+        * glass01.jpg
+        * glass02.jpg
+        * light01.jpg
+        * metal01.jpg
+        * metal02.jpg
+        * metal03.jpg
+        * metal04.jpg
+        * metal05.jpg
+        * metal06.jpg
+        * metal07.jpg
+        * pipe.jpg
+        * plasmapipe.jpg
+        * rollup.jpg
+        * rustedmetal07.jpg
+        * taillight.jpg
+        * wallpaintgrey01.jpg
+    * radiant
+        * notex.tga
+        * shadernotex.tga
+    * ruins
+        * granite01.jpg
+        * stone01.jpg
+    * tools
+        * nospawn.tga
+        * trigger.jpg
+    * tunnels
+        * crackedsewerbricks1.jpg
+        * crackedsewerbricks2.jpg
+        * dkstone.jpg
+        * grate1.jpg
+        * metal04.jpg
+        * metalrust2.jpg
+        * metc1.jpg
+        * metc2.jpg
+        * ramp.jpg
+        * sewer.jpg
+        * sewerbricks1.jpg
+        * sewerbricks2.jpg
+        * sewerwall1.jpg
+    * virtual
+        * bridge.jpg
+        * portal.jpg
+        * virtual.jpg
+* sound
+    * ambiance
+        * caves
+            * lava1.ogg
+            * lava2.ogg
+            * lava3.ogg
+            * lava4.ogg
+        * flooded
+            * drips1.ogg
+            * drips2.ogg
+            * drips3.ogg
+            * drips4.ogg
+            * drips5.ogg
+        * general
+            * baseAlarm.ogg
+            * klaxon.ogg
+        * grasslands
+            * birdsong.ogg
+            * falsebird.ogg
+            * lapwing.ogg
+            * robin.ogg
+        * mech
+            * commplus.ogg
+            * data_1.ogg
+            * dial.ogg
+            * mech1.ogg
+            * mech2.ogg
+            * mech3.ogg
+        * night
+            * crickets1.ogg
+            * crickets2.ogg
+            * crickets3.ogg
+            * frog1.ogg
+            * grillons.ogg
+            * owl1.ogg
+            * owl2.ogg
+        * ruins
+            * soulWail1.ogg
+            * soulWail2.ogg
+            * wolfHowl.ogg
+    * combat
+        * arm1.ogg
+        * arm2.ogg
+        * arm3.ogg
+        * barrierShutDown.ogg
+        * becomeIceBlock.ogg
+        * boom.ogg
+        * bulletHitWater.ogg
+        * C4Clock.ogg
+        * clang.ogg
+        * clock.ogg
+        * command.ogg
+        * computer_write.ogg
+        * crateShatter.ogg
+        * death1.ogg
+        * death2.ogg
+        * death3.ogg
+        * death4.ogg
+        * desimilated.ogg
+        * desimilator.ogg
+        * doorOpened.ogg
+        * doorStart.ogg
+        * drowning.ogg
+        * elecDeath1.ogg
+        * elecDeath2.ogg
+        * heavyPlasma.ogg
+        * hit.ogg
+        * ice.ogg
+        * iceHit.ogg
+        * iceHowl.ogg
+        * iceShatter.ogg
+        * item.ogg
+        * largeExplosion.ogg
+        * laser.ogg
+        * machineGun.ogg
+        * pain1.ogg
+        * pistol.ogg
+        * pistolReload.ogg
+        * plantBomb.ogg
+        * plasma1.ogg
+        * plasmaHit.ogg
+        * pop.ogg
+        * rico1.ogg
+        * rico2.ogg
+        * rifle.ogg
+        * rocketLauncher.ogg
+        * electricSparks01.ogg
+        * electricSparks02.ogg
+        * electricSparks03.ogg
+        * electricSparks04.ogg
+        * electricSparks05.ogg
+        * empty.ogg
+        * explode.ogg
+        * flameThrower.ogg
+        * galdovCharge.ogg
+        * galdovFire.ogg
+        * galdovLaugh.ogg
+        * galdovPain.ogg
+        * galdovSplit.ogg
+        * glassHit1.ogg
+        * glassHit2.ogg
+        * glassShatter1.ogg
+        * glassShatter2.ogg
+        * glassShatter3.ogg
+        * grappleFire.ogg
+        * grappleHit.ogg
+        * grappling.ogg
+        * grenadeBounce.ogg
+        * grenadeLauncher.ogg
+        * silencedPistol.ogg
+        * sizzle.ogg
+        * smallExplode.ogg
+        * spiderBlobDie.ogg
+        * splat.ogg
+        * splatUnderwater.ogg
+        * switch1.ogg
+        * switch2.ogg
+        * switch3.ogg
+        * switchBleep.ogg
+        * teleport1.ogg
+        * teleport2.ogg
+        * teleport3.ogg
+        * throw1.ogg
+        * throw2.ogg
+        * timeWarning.ogg
+        * waterIn.ogg
+        * waterOut.ogg
+        * weaponPickup.ogg
+        * webFire.ogg
+        * webHit.ogg
+        * webWrap.ogg
+        * elecDeath3.ogg
+        * gulp.ogg
+        * shieldDestroyed.ogg
+    * gui
+        * cheatMode.ogg
+* music
+    * A Bear Called Otso.xm
+    * Advancement.xm
+    * Autumns Dawning.s3m
+    * Dark Club.s3m
+    * Dark.s3m
+    * Escape From Tower.xm
+    * Liquid Crystal.xm
+    * Longstabben.xm
+    * Neutral Zone.xm
+    * Return To Napali.s3m
+    * Scene Music.xm
+    * Sodom of Evil.xm
+    * Super Robot Fighter.xm
+    * Tales Untold.xm
+    * Temple.xm
+    * The Siege.xm
+    * Warlord Theme.s3m
+    * Zenith.s3m
+
+**Random Note**: NO! I did not manually copy all the file names. I used a Python script to generate the list automatically.
