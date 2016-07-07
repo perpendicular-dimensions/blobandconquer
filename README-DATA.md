@@ -1,10 +1,8 @@
-# *Blob Wars Episode II: Blob and Conquer* - Data Repository
+# *Blob Wars Episode II: Blob and Conquer* - Data
 
-This repository is here to collect Creative Commons and otherwise GPL-compatible music, sounds and textures to replace the proprietary files in Blob and Conquer.
+To view the original, proprietary files, see [http://snapshot.debian.org/archive/debian/20090312T211944Z/pool/main/b/blobandconquer/blobandconquer_0.99.orig.tar.gz](http://snapshot.debian.org/archive/debian/20090312T211944Z/pool/main/b/blobandconquer/blobandconquer_0.99.orig.tar.gz). This seems to be the latest version to be found anywhere that still includes the music, sounds, and textures.
 
-To view the original, proprietary files, see https://github.com/jmendeth/BlobAndConquer/.
-
-There is not much here currently, and what is here is not necessarily the best for the job, so pull requests (even for files that have already been replaced) are welcome. Just search for replacements on websites like http://opengameart.org/ and http://freesound.org/.
+There is not much here currently, and what is here is not necessarily the best for the job, so any help is welcome. Just search for replacements on websites like [http://opengameart.org/](http://opengameart.org/) and [http://freesound.org/](http://freesound.org/).
 
 If you add a file,
 
@@ -12,11 +10,7 @@ If you add a file,
     * If it does not make sense to keep the old filename (as with music), write *old_name -> new_name* when you add it to the *Files with replacements* section. This will tell other people that the code or mission files need to be modified in order for it to work.
     * If you need to add a special note (such as which code/mission file(s) is/are affected by the file), add another bullet point nested below the filename.
 2. Remove the name of the file from the *Files still needing replacements* section further below.
-3. Add the name of the file and the appropriate attribution (even if it is public domain) to **CREDITS**.
-
-**Note**: I have actually **not** played the game through completely, so I might naively replace some files with new ones that do not make sense in some cases.
-
-This means that once the files are replaced, we need testers to check if the game still seems normal.
+3. Add the name of the file and the appropriate attribution (even if it is public domain) to **CREDITS-DATA**.
 
 ###Files with replacements
 * textures
@@ -51,9 +45,9 @@ This means that once the files are replaced, we need testers to check if the gam
     * Helmet Shake.mod -> Intro.ogg
         * Line 55 of src/title.cpp needs to be changed to *audio->loadMusic("music/Intro.ogg");*
     * Dragon Cave.xm -> covert_operations.ogg
-        * Line 7 of data/missions/mission02 needs to be changed to *music = music/covert_operations.ogg;
-        * Line 7 of data/missions/mission03 needs to be changed to *music = music/covert_operations.ogg;
-        * Line 7 of data/missions/mission21 needs to be changed to *music = music/covert_operations.ogg;
+        * Line 7 of data/missions/mission02 needs to be changed to *music = music/covert_operations.ogg;*
+        * Line 7 of data/missions/mission03 needs to be changed to *music = music/covert_operations.ogg;*
+        * Line 7 of data/missions/mission21 needs to be changed to *music = music/covert_operations.ogg;*
 
 ###Files still needing replacements
 * textures
@@ -449,5 +443,3 @@ This means that once the files are replaced, we need testers to check if the gam
     * The Siege.xm
     * Warlord Theme.s3m
     * Zenith.s3m
-
-**Random Note**: NO! I did not manually copy all the file names. I used a Python script to generate the list automatically.
