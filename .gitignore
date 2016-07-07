@@ -1,0 +1,6 @@
+.*
+!.gitignore
+*.o
+core
+core.*
+/blobAndConquer
