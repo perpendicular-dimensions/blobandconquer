@@ -409,10 +409,6 @@ void initSystem()
 	graphics->calculateScreenModes();
 	graphics->queryStencilSupport();
 
-	graphics->window = SDL_CreateWindow("Blobwars: Blob And Conquer", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
-	SDL_SetWindowMinimumSize(graphics->window, 800, 600);
-
-	SDL_GL_CreateContext(graphics->window);	
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	
 	if (graphics->hasStencils)
@@ -423,11 +419,17 @@ void initSystem()
 	{
 		SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 0);
 	}
-	
+
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE, 16);
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE, 16);
+	SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE, 16);
+
+	graphics->window = SDL_CreateWindow("Blobwars: Blob And Conquer", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+	SDL_SetWindowMinimumSize(graphics->window, 800, 600);
+
+	SDL_GL_CreateContext(graphics->window);
+
 	SDL_GL_SetSwapInterval(1);
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE, 1);
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE, 1);
-	SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE, 1);
 	
 	loadConfig();
 	
