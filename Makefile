@@ -18,6 +18,7 @@ ICONDIR ?= $(PREFIX)/share/icons/
 MENUDIR ?= $(PREFIX)/share/applications/
 LOCALEDIR ?= $(PREFIX)/share/locale/
 
+CFLAGS ?= -Ofast -march=native -Wall
 CXXFLAGS += -Wformat=2 -Wformat-security -Wstrict-aliasing=2
 CXXFLAGS += -Wmissing-format-attribute -Wmissing-noreturn
 CXXFLAGS += -Wdisabled-optimization
