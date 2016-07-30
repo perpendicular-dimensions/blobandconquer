@@ -56,8 +56,6 @@ If you add a file,
         * brick30.jpg
         * crackedrock01.jpg
         * crackedrock02.jpg
-        * dirt01.jpg
-        * dirt02.jpg
         * grass.jpg
         * grass02.jpg
         * grass15.jpg
