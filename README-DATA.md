@@ -14,31 +14,31 @@ If you add a file,
 
 ###Files with replacements
 * textures
+    * arctic
+        * snow_01.png
     * grasslands
-        * drygrass.jpg
-        * gx_03_rock_01.jpg
         * american_cherry.jpg
         * dirt01.jpg
         * dirt02.jpg
+        * drygrass.jpg
         * grass03.jpg
         * grass04.jpg
         * grass5.jpg
+        * gx_03_rock_01.jpg
         * rock01.jpg
-    * mech
-        * crate.jpg
-        * metalbox.jpg
-        * box-metal01.jpg
     * liquid
         * lava01.jpg
         * lava02.jpg
-    * arctic
-        * snow_01.png
+    * mech
+        * box-metal01.jpg
+        * crate.jpg
+        * metalbox.jpg
 * sound
     * ambience
         * grasslands
             * cardinal.ogg
-    * general
-        * rain.ogg
+        * general
+            * rain.ogg
     * gui
         * buttonClick.ogg
 * music
@@ -51,31 +51,10 @@ If you add a file,
 
 ###Files still needing replacements
 * textures
-    * grasslands
-        * brick01.jpg
-        * brick30.jpg
-        * crackedrock01.jpg
-        * crackedrock02.jpg
-        * grass.jpg
-        * grass02.jpg
-        * grass15.jpg
-        * grass42.jpg
-        * grassdirt01.jpg
-        * gx_03_grass_01_patchy2.jpg
-        * gx_04_grass_01_patchy3.jpg
-        * gx_05_grass_02.jpg
-        * kbtexture6.jpg
-        * rimu_coloured.jpg
-        * rock43.jpg
-        * rock44.jpg
-        * rusticblk.jpg
-        * sapele_cross_cut.jpg
-        * stonetile4.jpg
-        * stonetile6.jpg
-        * stonetile15.jpg
-        * stonewall03.jpg
-        * transparent1.tga
-        * transparent2.tga
+    * common
+        * blank.jpg
+        * target.tga
+        * target2.tga
     * game
         * AIUnit.png
         * altSwitch1.png
@@ -94,24 +73,26 @@ If you add a file,
         * bullet.png
         * bulletMark01.tga
         * bulletMark02.tga
-        * LifeCrystal.png
-        * machineGunBlob.png
-        * machineGunDroid.png
-        * machineGunSpiderBlob.png
-        * manualTargetter.png
-        * map.png
-        * mastermindArrow.png
-        * mastermindBackground.png
-        * mastermindBall1.png
-        * mastermindBall2.png
-        * mastermindBall3.png
-        * mastermindBall4.png
-        * mastermindBall5.png
-        * mastermindBall6.png
-        * mastermindBall7.png
-        * mastermindBall8.png
-        * medicine.png
-        * medipack.png
+        * bulletMark03.tga
+        * c4.png
+        * cannonBase.png
+        * cannonTop1.png
+        * cherry.png
+        * cherryTexture.png
+        * danger.png
+        * darkBlob.png
+        * dawn.jpg
+        * day.jpg
+        * day2.jpg
+        * demolitionPlate01.png
+        * demolitionPlate02.png
+        * demolitionPlate03.png
+        * demolitionPlate04.png
+        * demolitionPlate05.png
+        * demolitionPlate06.png
+        * demolitionPlate07.png
+        * demolitionPlate08.png
+        * demolitionPlate09.png
         * demolitionPlate10.png
         * desimilator.png
         * dusk.jpg
@@ -145,6 +126,43 @@ If you add a file,
         * iceGun.png
         * keycard.png
         * laserBeam.png
+        * laserBlob.png
+        * LifeCrystal.png
+        * machineGunBlob.png
+        * machineGunDroid.png
+        * machineGunSpiderBlob.png
+        * manualTargetter.png
+        * map.png
+        * mastermindArrow.png
+        * mastermindBackground.png
+        * mastermindBall1.png
+        * mastermindBall2.png
+        * mastermindBall3.png
+        * mastermindBall4.png
+        * mastermindBall5.png
+        * mastermindBall6.png
+        * mastermindBall7.png
+        * mastermindBall8.png
+        * medicine.png
+        * medipack.png
+        * noTarget.png
+        * orangeGem.png
+        * overcast.png
+        * pistolBlob.png
+        * pistolDroid.png
+        * pistolTexture.png
+        * plasmaPistol.png
+        * plasmaRifle.png
+        * plasmaSpiderBlob.png
+        * pressurePlate1.png
+        * pressurePlate2.png
+        * purpleGem.png
+        * redGem.png
+        * rifle.png
+        * rocket.png
+        * rocketLauncher.png
+        * sentryGun1.jpg
+        * shieldBelt.png
         * shotGunDroid.png
         * shotgunSpiderBlob.png
         * spiderBlob.png
@@ -172,49 +190,31 @@ If you add a file,
         * web.png
         * white.png
         * yellowGem.png
-        * bulletMark03.tga
-        * demolitionPlate09.png
-        * laserBlob.png
-        * noTarget.png
-        * shieldBelt.png
-        * orangeGem.png
-        * overcast.png
-        * pistolBlob.png
-        * pistolDroid.png
-        * pistolTexture.png
-        * plasmaPistol.png
-        * plasmaRifle.png
-        * plasmaSpiderBlob.png
-        * pressurePlate1.png
-        * pressurePlate2.png
-        * purpleGem.png
-        * redGem.png
-        * rifle.png
-        * rocket.png
-        * rocketLauncher.png
-        * sentryGun1.jpg
-        * c4.png
-        * cannonBase.png
-        * cannonTop1.png
-        * cherry.png
-        * cherryTexture.png
-        * danger.png
-        * darkBlob.png
-        * dawn.jpg
-        * day.jpg
-        * day2.jpg
-        * demolitionPlate01.png
-        * demolitionPlate02.png
-        * demolitionPlate03.png
-        * demolitionPlate04.png
-        * demolitionPlate05.png
-        * demolitionPlate06.png
-        * demolitionPlate07.png
-        * demolitionPlate08.png
-    * common
-        * blank.jpg
-        * target.tga
-        * target2.tga
+    * grasslands
+        * brick01.jpg
+        * brick30.jpg
+        * crackedrock01.jpg
+        * crackedrock02.jpg
+        * grass.jpg
+        * grass02.jpg
+        * grass15.jpg
+        * grass42.jpg
+        * grassdirt01.jpg
+        * gx_03_grass_01_patchy2.jpg
+        * gx_04_grass_01_patchy3.jpg
+        * gx_05_grass_02.jpg
+        * kbtexture6.jpg
+        * rimu_coloured.jpg
+        * rock43.jpg
+        * rock44.jpg
+        * rusticblk.jpg
+        * sapele_cross_cut.jpg
+        * stonetile15.jpg
+        * stonetile4.jpg
+        * stonetile6.jpg
+        * stonewall03.jpg
+        * transparent1.tga
+        * transparent2.tga
     * liquid
         * cryptpool.jpg
         * mist.jpg
@@ -223,7 +223,6 @@ If you add a file,
         * water01.jpg
         * water2.jpg
     * mech
-        * energybarrier01.jpg
         * basefloor01.jpg
         * basefloor02.jpg
         * basemetal.jpg
@@ -241,6 +240,7 @@ If you add a file,
         * crackedmetal06.jpg
         * e8_jumppad02.jpg
         * e8_launchpad1.jpg
+        * energybarrier01.jpg
         * energybarrier02.jpg
         * floor-concrete06.jpg
         * glass01.jpg
@@ -351,27 +351,7 @@ If you add a file,
         * drowning.ogg
         * elecDeath1.ogg
         * elecDeath2.ogg
-        * heavyPlasma.ogg
-        * hit.ogg
-        * ice.ogg
-        * iceHit.ogg
-        * iceHowl.ogg
-        * iceShatter.ogg
-        * item.ogg
-        * largeExplosion.ogg
-        * laser.ogg
-        * machineGun.ogg
-        * pain1.ogg
-        * pistol.ogg
-        * pistolReload.ogg
-        * plantBomb.ogg
-        * plasma1.ogg
-        * plasmaHit.ogg
-        * pop.ogg
-        * rico1.ogg
-        * rico2.ogg
-        * rifle.ogg
-        * rocketLauncher.ogg
+        * elecDeath3.ogg
         * electricSparks01.ogg
         * electricSparks02.ogg
         * electricSparks03.ogg
@@ -395,6 +375,29 @@ If you add a file,
         * grappling.ogg
         * grenadeBounce.ogg
         * grenadeLauncher.ogg
+        * gulp.ogg
+        * heavyPlasma.ogg
+        * hit.ogg
+        * ice.ogg
+        * iceHit.ogg
+        * iceHowl.ogg
+        * iceShatter.ogg
+        * item.ogg
+        * largeExplosion.ogg
+        * laser.ogg
+        * machineGun.ogg
+        * pain1.ogg
+        * pistol.ogg
+        * pistolReload.ogg
+        * plantBomb.ogg
+        * plasma1.ogg
+        * plasmaHit.ogg
+        * pop.ogg
+        * rico1.ogg
+        * rico2.ogg
+        * rifle.ogg
+        * rocketLauncher.ogg
+        * shieldDestroyed.ogg
         * silencedPistol.ogg
         * sizzle.ogg
         * smallExplode.ogg
@@ -417,9 +420,6 @@ If you add a file,
         * webFire.ogg
         * webHit.ogg
         * webWrap.ogg
-        * elecDeath3.ogg
-        * gulp.ogg
-        * shieldDestroyed.ogg
     * gui
         * cheatMode.ogg
 * music
