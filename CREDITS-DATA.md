@@ -13,11 +13,119 @@
 * mech/crate.jpg - CC0 - crate2_diffuse.png by Luke.RUSTLTD from <http://opengameart.org/content/3-crate-textures-w-bump-normal>; recoded and resized in GIMP
 * mech/metalbox.jpg - CC0 - set3_example_4.png by rubberduck from <http://opengameart.org/content/free-metal-texture-creation-set-03>; recoded and resized in GIMP
 * mech/box-metal01.jpg - CC0 - metalbox_full.png by Luke.RUSTLTD from <http://opengameart.org/content/scratched-metal-crate>; recoded and resized in GIMP
+* mech/basefloor01.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* mech/plasmapipe.jpg - CC-BY-SA 3.0 - by Parallel Realities
 
 * liquid/lava01.jpg - CC0 - Fire_Texture_01.png by DragonMaster4131 <https://commons.wikimedia.org/wiki/File:Fire_Texture_01.png>; recoded and made seamless in GIMP
 * liquid/lava02.jpg - CC0 - melty_02.png by Prime_8 from <http://opengameart.org/content/molten-rock-like-thing>; recoded and modified (with color curves) in GIMP
+* liquid/cryptpool.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* liquid/mist.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* liquid/waste01.jpg - CC-BY-SA 3.0 - by Parallel Realities
 
 * arctic/snow_01.png - CC-BY 3.0, OGA-BY 3.0 - Snow.png by erxer1 from <http://opengameart.org/content/seamless-snow-texture>; recoded and resized in GIMP
+
+* game/AIUnit.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/altSwitch1.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/altSwitch2.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/aquaBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/arrow.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/black.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blackDroid.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blood01.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blood02.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blood03.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blood04.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blood05.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/blueGem.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/bullet.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/cherry.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/cherryTexture.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/danger.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/darkBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/dawn.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate01.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate02.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate03.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate04.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate05.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate06.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate07.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate08.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate09.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/demolitionPlate10.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/energyShot.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/explosion.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/flameThrower.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/goodBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/goodBlobInjured.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grad.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/greenGem.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grenade.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grenadeBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grenadeDroid.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grenadeLauncher.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grenadeTexture.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/grey.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/groundTarget.tga - CC-BY-SA 3.0 - by Parallel Realities
+* game/hackerSwitch.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/hackerSwitch1.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/hackerSwitch2.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/halo.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/hook.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/iceGun.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/keycard.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/laserBeam.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/laserBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/LifeCrystal.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/machineGunBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/machineGunDroid.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/manualTargetter.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindArrow.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBackground.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall1.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall2.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall3.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall4.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall5.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall6.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall7.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/mastermindBall8.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/medicine.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/medipack.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/noTarget.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/orangeGem.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/overcast.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/pistolBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/pistolDroid.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/plasmaPistol.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/plasmaSpiderBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/pressurePlate1.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/pressurePlate2.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/purpleGem.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/redGem.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/rifle.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/rocket.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/rocketLauncher.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/shieldBelt.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/shotgunSpiderBlob.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/spiderBlobCommander.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/spotLightMap.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/starsky.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/starsky2.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/switch1.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/switch2.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/targetter.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/teletag.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/thrownGrenade.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/weapon.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/weaponTexture.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/web.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/white.png - CC-BY-SA 3.0 - by Parallel Realities
+* game/yellowGem.png - CC-BY-SA 3.0 - by Parallel Realities
+
+* virtual/bridge.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* virtual/portal.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* virtual/virtual.jpg - CC-BY-SA 3.0 - by Parallel Realities
 
 ###Music
 
