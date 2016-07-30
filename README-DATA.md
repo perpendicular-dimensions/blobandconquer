@@ -56,140 +56,42 @@ If you add a file,
         * target.tga
         * target2.tga
     * game
-        * AIUnit.png
-        * altSwitch1.png
-        * altSwitch2.png
-        * aquaBlob.png
-        * arrow.png
         * babySpiderBlob.png
-        * black.png
-        * blackDroid.png
-        * blood01.png
-        * blood02.png
-        * blood03.png
-        * blood04.png
-        * blood05.png
-        * blueGem.png
-        * bullet.png
         * bulletMark01.tga
         * bulletMark02.tga
         * bulletMark03.tga
         * c4.png
         * cannonBase.png
         * cannonTop1.png
-        * cherry.png
-        * cherryTexture.png
-        * danger.png
-        * darkBlob.png
-        * dawn.jpg
         * day.jpg
         * day2.jpg
-        * demolitionPlate01.png
-        * demolitionPlate02.png
-        * demolitionPlate03.png
-        * demolitionPlate04.png
-        * demolitionPlate05.png
-        * demolitionPlate06.png
-        * demolitionPlate07.png
-        * demolitionPlate08.png
-        * demolitionPlate09.png
-        * demolitionPlate10.png
         * desimilator.png
         * dusk.jpg
-        * energyShot.png
-        * explosion.png
         * explosionMark01.tga
         * explosionMark02.tga
         * explosionMark03.tga
         * eyedroidcommander.png
         * fire.png
-        * flameThrower.png
         * glassImpact01.png
         * gold.png
-        * goodBlob.png
-        * goodBlobInjured.png
-        * grad.png
-        * greenGem.png
-        * grenade.png
-        * grenadeBlob.png
-        * grenadeDroid.png
-        * grenadeLauncher.png
-        * grenadeTexture.png
-        * grey.png
-        * groundTarget.tga
-        * hackerSwitch.png
-        * hackerSwitch1.png
-        * hackerSwitch2.png
-        * halo.png
-        * hook.png
         * iceBlock.jpg
-        * iceGun.png
-        * keycard.png
-        * laserBeam.png
-        * laserBlob.png
-        * LifeCrystal.png
-        * machineGunBlob.png
-        * machineGunDroid.png
         * machineGunSpiderBlob.png
-        * manualTargetter.png
         * map.png
-        * mastermindArrow.png
-        * mastermindBackground.png
-        * mastermindBall1.png
-        * mastermindBall2.png
-        * mastermindBall3.png
-        * mastermindBall4.png
-        * mastermindBall5.png
-        * mastermindBall6.png
-        * mastermindBall7.png
-        * mastermindBall8.png
-        * medicine.png
-        * medipack.png
-        * noTarget.png
-        * orangeGem.png
-        * overcast.png
-        * pistolBlob.png
-        * pistolDroid.png
         * pistolTexture.png
-        * plasmaPistol.png
         * plasmaRifle.png
-        * plasmaSpiderBlob.png
-        * pressurePlate1.png
-        * pressurePlate2.png
-        * purpleGem.png
-        * redGem.png
-        * rifle.png
-        * rocket.png
-        * rocketLauncher.png
         * sentryGun1.jpg
-        * shieldBelt.png
         * shotGunDroid.png
-        * shotgunSpiderBlob.png
         * spiderBlob.png
-        * spiderBlobCommander.png
-        * spotLightMap.png
-        * starsky.png
-        * starsky2.png
         * stickyc4.png
         * sunset.png
-        * switch1.png
-        * switch2.png
         * tankbase1.png
         * tankbase2.png
         * tankbase3.png
         * tanktop1.png
         * tanktop2.png
         * tanktop3.png
-        * targetter.png
         * teekaWeapon.png
-        * teletag.png
-        * thrownGrenade.png
         * uzi.png
-        * weapon.png
-        * weaponTexture.png
-        * web.png
-        * white.png
-        * yellowGem.png
     * grasslands
         * brick01.jpg
         * brick30.jpg
@@ -216,14 +118,10 @@ If you add a file,
         * transparent1.tga
         * transparent2.tga
     * liquid
-        * cryptpool.jpg
-        * mist.jpg
         * slime.jpg
-        * waste01.jpg
         * water01.jpg
         * water2.jpg
     * mech
-        * basefloor01.jpg
         * basefloor02.jpg
         * basemetal.jpg
         * biohazard.jpg
@@ -254,7 +152,6 @@ If you add a file,
         * metal06.jpg
         * metal07.jpg
         * pipe.jpg
-        * plasmapipe.jpg
         * rollup.jpg
         * rustedmetal07.jpg
         * taillight.jpg
@@ -282,10 +179,6 @@ If you add a file,
         * sewerbricks1.jpg
         * sewerbricks2.jpg
         * sewerwall1.jpg
-    * virtual
-        * bridge.jpg
-        * portal.jpg
-        * virtual.jpg
 * sound
     * ambiance
         * caves
