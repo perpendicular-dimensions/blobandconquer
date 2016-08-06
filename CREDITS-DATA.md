@@ -24,6 +24,9 @@
 * mech/computerscreen07.jpg - Public domain - Bioslax-SS6.jpg by Markds from <https://commons.wikimedia.org/wiki/File:Bioslax-SS6.jpg>; recoded and resized in GIMP
 * mech/computerscreen08.jpg - GFDL 1.2+ - Trisquel_7.0_LTS_screenshot.jpg by The Trisquel Project from <https://commons.wikimedia.org/wiki/File:Trisquel_7.0_LTS_screenshot.jpg>; recoded and resized in GIMP
 * mech/computerscreen09.jpg - GPL 2+ - Tilda_Screenshot.png by Jbalint from <https://commons.wikimedia.org/wiki/File:Tilda_Screenshot.png>; recoded and resized in GIMP
+* mech/energybarrier01.jpg - CC-BY 4.0 - by Xavier Mendez
+* mech/energybarrier02.jpg - CC-BY 4.0 - by Xavier Mendez
+* mech/glass01.jpg - CC-BY 4.0 - by Xavier Mendez
 
 * liquid/lava01.jpg - CC0 - Fire_Texture_01.png by DragonMaster4131 <https://commons.wikimedia.org/wiki/File:Fire_Texture_01.png>; recoded and made seamless in GIMP
 * liquid/lava02.jpg - CC0 - melty_02.png by Prime_8 from <http://opengameart.org/content/molten-rock-like-thing>; recoded and modified (with color curves) in GIMP
@@ -135,6 +138,16 @@
 * virtual/bridge.jpg - CC-BY-SA 3.0 - by Parallel Realities
 * virtual/portal.jpg - CC-BY-SA 3.0 - by Parallel Realities
 * virtual/virtual.jpg - CC-BY-SA 3.0 - by Parallel Realities
+
+* common/blank.jpg - CC-BY 4.0 - by Xavier Mendez
+* common/target.tga - CC-BY 4.0 - by Xavier Mendez
+* common/target2.tga - CC-BY 4.0 - by Xavier Mendez
+
+* radiant/notex.tga - CC-BY 4.0 - by Xavier Mendez
+* radiant/shadernotex.tga - CC-BY 4.0 - by Xavier Mendez
+
+* tools/nospawn.tga - CC-BY 4.0 - by Xavier Mendez
+* tools/trigger.jpg - CC-BY 4.0 - by Xavier Mendez
 
 ###Music
 

@@ -16,6 +16,10 @@ If you add a file,
 * textures
     * arctic
         * snow_01.png
+    * common
+        * blank.jpg
+        * target.tga
+        * target2.tga
     * grasslands
         * american_cherry.jpg
         * dirt01.jpg
@@ -41,7 +45,16 @@ If you add a file,
         * computerscreen08.jpg
         * computerscreen09.jpg
         * crate.jpg
+        * energybarrier01.jpg
+        * energybarrier02.jpg
+        * glass01.jpg
         * metalbox.jpg
+    * radiant
+        * notex.tga
+        * shadernotex.tga
+    * tools
+        * nospawn.tga
+        * trigger.jpg
 * sound
     * ambience
         * grasslands
@@ -60,10 +73,6 @@ If you add a file,
 
 ###Files still needing replacements
 * textures
-    * common
-        * blank.jpg
-        * target.tga
-        * target2.tga
     * game
         * babySpiderBlob.png
         * bulletMark01.tga
@@ -138,10 +147,7 @@ If you add a file,
         * crackedmetal06.jpg
         * e8_jumppad02.jpg
         * e8_launchpad1.jpg
-        * energybarrier01.jpg
-        * energybarrier02.jpg
         * floor-concrete06.jpg
-        * glass01.jpg
         * glass02.jpg
         * light01.jpg
         * metal01.jpg
@@ -156,15 +162,9 @@ If you add a file,
         * rustedmetal07.jpg
         * taillight.jpg
         * wallpaintgrey01.jpg
-    * radiant
-        * notex.tga
-        * shadernotex.tga
     * ruins
         * granite01.jpg
         * stone01.jpg
-    * tools
-        * nospawn.tga
-        * trigger.jpg
     * tunnels
         * crackedsewerbricks1.jpg
         * crackedsewerbricks2.jpg
