@@ -15,6 +15,15 @@
 * mech/box-metal01.jpg - CC0 - metalbox_full.png by Luke.RUSTLTD from <http://opengameart.org/content/scratched-metal-crate>; recoded and resized in GIMP
 * mech/basefloor01.jpg - CC-BY-SA 3.0 - by Parallel Realities
 * mech/plasmapipe.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* mech/computerscreen01.jpg - GPL 2+ - Fedora_24.jpg by Funkruf from <https://commons.wikimedia.org/wiki/File:Fedora_24.jpg>; recoded and resized in GIMP
+* mech/computerscreen02.jpg - CC-BY 4.0 - CentOS_7_GNOME_rus.png by The CentOS Project from <https://commons.wikimedia.org/wiki/File:CentOS_7_GNOME_rus.png>; recoded and resized in GIMP
+* mech/computerscreen03.jpg - CC-BY-SA 4.0 - Gnome_Shell_Applications_Screen.png from <https://commons.wikimedia.org/wiki/File:Gnome_Shell_Applications_Screen.png>; recoded and resized in GIMP
+* mech/computerscreen04.jpg - GFDL 1.3+ - Trisquel_GNU_Linux_5.5_screenshot_-_Desktop_settings.jpeg by The Trisquel Project from <https://commons.wikimedia.org/wiki/File:Trisquel_GNU_Linux_5.5_screenshot_-_Desktop_settings.jpeg>; recoded and resized in GIMP
+* mech/computerscreen05.jpg - CC-BY-SA 4.0 - Kde5.png by Beast from <https://commons.wikimedia.org/wiki/File:Kde5.png>
+* mech/computerscreen06.jpg - CC-BY-SA 3.0 - Fedora_15_Lovelock_Gnome3.png by Pascal Schneider from <https://commons.wikimedia.org/wiki/File:Fedora_15_Lovelock_Gnome3.png>; recoded and resized in GIMP
+* mech/computerscreen07.jpg - Public domain - Bioslax-SS6.jpg by Markds from <https://commons.wikimedia.org/wiki/File:Bioslax-SS6.jpg>; recoded and resized in GIMP
+* mech/computerscreen08.jpg - GFDL 1.2+ - Trisquel_7.0_LTS_screenshot.jpg by The Trisquel Project from <https://commons.wikimedia.org/wiki/File:Trisquel_7.0_LTS_screenshot.jpg>; recoded and resized in GIMP
+* mech/computerscreen09.jpg - GPL 2+ - Tilda_Screenshot.png by Jbalint from <https://commons.wikimedia.org/wiki/File:Tilda_Screenshot.png>; recoded and resized in GIMP
 
 * liquid/lava01.jpg - CC0 - Fire_Texture_01.png by DragonMaster4131 <https://commons.wikimedia.org/wiki/File:Fire_Texture_01.png>; recoded and made seamless in GIMP
 * liquid/lava02.jpg - CC0 - melty_02.png by Prime_8 from <http://opengameart.org/content/molten-rock-like-thing>; recoded and modified (with color curves) in GIMP

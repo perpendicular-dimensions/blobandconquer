@@ -31,6 +31,15 @@ If you add a file,
         * lava02.jpg
     * mech
         * box-metal01.jpg
+        * computerscreen01.jpg
+        * computerscreen02.jpg
+        * computerscreen03.jpg
+        * computerscreen04.jpg
+        * computerscreen05.jpg
+        * computerscreen06.jpg
+        * computerscreen07.jpg
+        * computerscreen08.jpg
+        * computerscreen09.jpg
         * crate.jpg
         * metalbox.jpg
 * sound
@@ -126,15 +135,6 @@ If you add a file,
         * basemetal.jpg
         * biohazard.jpg
         * caution01.jpg
-        * computerscreen01.jpg
-        * computerscreen02.jpg
-        * computerscreen03.jpg
-        * computerscreen04.jpg
-        * computerscreen05.jpg
-        * computerscreen06.jpg
-        * computerscreen07.jpg
-        * computerscreen08.jpg
-        * computerscreen09.jpg
         * crackedmetal06.jpg
         * e8_jumppad02.jpg
         * e8_launchpad1.jpg
