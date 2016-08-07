@@ -22,6 +22,7 @@ If you add a file,
         * target2.tga
     * grasslands
         * american_cherry.jpg
+        * brick01.jpg
         * dirt01.jpg
         * dirt02.jpg
         * drygrass.jpg
@@ -34,6 +35,7 @@ If you add a file,
         * lava01.jpg
         * lava02.jpg
     * mech
+        * biohazard.jpg
         * box-metal01.jpg
         * computerscreen01.jpg
         * computerscreen02.jpg
@@ -111,7 +113,6 @@ If you add a file,
         * teekaWeapon.png
         * uzi.png
     * grasslands
-        * brick01.jpg
         * brick30.jpg
         * crackedrock01.jpg
         * crackedrock02.jpg
@@ -142,7 +143,6 @@ If you add a file,
     * mech
         * basefloor02.jpg
         * basemetal.jpg
-        * biohazard.jpg
         * caution01.jpg
         * crackedmetal06.jpg
         * e8_jumppad02.jpg

@@ -9,6 +9,7 @@
 * grasslands/grass03.jpg - CC-BY 3.0 - IMGP1392.jpg by bart from <http://opengameart.org/content/26-high-res-ground-textures>; resized, cropped and made seamless again (because of cropping) in GIMP
 * grasslands/grass5.jpg - CC-BY 3.0 - IMGP1533.jpg by bart from <http://opengameart.org/content/26-high-res-ground-textures>; resized, cropped and made seamless again (because of cropping) in GIMP
 * grasslands/rock01.jpg - GPL 2.0 - Tileable8c.png by p0ss from <http://opengameart.org/content/117-stone-wall-tilable-textures-in-8-themes>; resized and converted to jpg in GIMP
+* grasslands/brick01.jpg - CC0 - by Nebenbei from <https://pixabay.com/es/fondo-textura-estructura-muro-1260304>; recoded, resized, cropped and edited to make tileable in GIMP
 
 * mech/crate.jpg - CC0 - crate2_diffuse.png by Luke.RUSTLTD from <http://opengameart.org/content/3-crate-textures-w-bump-normal>; recoded and resized in GIMP
 * mech/metalbox.jpg - CC0 - set3_example_4.png by rubberduck from <http://opengameart.org/content/free-metal-texture-creation-set-03>; recoded and resized in GIMP
@@ -27,6 +28,7 @@
 * mech/energybarrier01.jpg - CC-BY 4.0 - by Xavier Mendez
 * mech/energybarrier02.jpg - CC-BY 4.0 - by Xavier Mendez
 * mech/glass01.jpg - CC-BY 4.0 - by Xavier Mendez
+* mech/biohazard.jpg - public domain - Biohazard.svg (version from 2016-01-20) from <https://commons.wikimedia.org/wiki/File:Biohazard.svg>; removed frame, changed by solid background, changed foregroud colors and rastered in Inkscape
 
 * liquid/lava01.jpg - CC0 - Fire_Texture_01.png by DragonMaster4131 <https://commons.wikimedia.org/wiki/File:Fire_Texture_01.png>; recoded and made seamless in GIMP
 * liquid/lava02.jpg - CC0 - melty_02.png by Prime_8 from <http://opengameart.org/content/molten-rock-like-thing>; recoded and modified (with color curves) in GIMP
