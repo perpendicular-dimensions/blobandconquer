@@ -6,5 +6,6 @@ GenericName=Game
 Comment=Mission and Objective based 3D Action Game
 Type=Application
 Exec=blobAndConquer
+Path=/usr/share/games/blobAndConquer
 Icon=blobAndConquer
 Categories=Game;ArcadeGame;
