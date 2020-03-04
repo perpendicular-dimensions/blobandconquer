@@ -84,6 +84,7 @@ void showViolenceWarning()
 	
 	graphics->setMode(MODE_2D);
 	
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	graphics->clearScreen();
 	graphics->delay(1000, false);
 	
@@ -436,6 +437,7 @@ void initSystem()
 	debug(("User Home = %s\n", engine->userHomeDirectory.getText()));
 
 	graphics->setResolution(graphics->currentScreenResolution);
+	SDL_SetWindowFullscreen(graphics->window, graphics->fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
 
 	if (TTF_Init() < 0)
 	{

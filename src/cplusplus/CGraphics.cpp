@@ -23,6 +23,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifdef __unix__
 #include <GL/glx.h>
 #include <SDL2/SDL_syswm.h>
+#include <SDL2/SDL.h>
 #endif
 
 #ifndef __unix__
@@ -96,30 +97,57 @@ void Graphics::calculateScreenModes() {
 	SDL_GetDesktopDisplayMode(0, &mode);
 
 	fprintf(stderr, "Desktop video res: %d x %d\n", mode.w, mode.h);
-
-	screenMode[0].w = 800;
-	screenMode[0].h = 600;
-
+	
+	//Use SDL do detect available resolutions
+	int rescount=SDL_GetNumDisplayModes(0);
+	
 	int n = 1;
+	
+	//Fall back to old method if SDL one fails
+	if(rescount < 0)
+	{
+		screenMode[0].w = 800;
+		screenMode[0].h = 600;
+		for(int i = 10; i >= 1; i--) {
+			int w = mode.w / i;
+			int h = mode.h / i;
 
-	for(int i = 10; i >= 1; i--) {
-		int w = mode.w / i;
-		int h = mode.h / i;
+			// Skip anything smaller than 800 x 600
+			if(w == 800 && h == 600)
+				continue;
 
-		// Skip anything smaller than 800 x 600
-		if(w == 800 && h == 600)
-			continue;
+			if(w < 800 || h < 600)
+				continue;
 
-		if(w < 800 || h < 600)
-			continue;
+			// Skip resolutions that are not integer divisions
+			if (w * i != mode.w || h * i != mode.h)
+				continue;
 
-		// Skip resolutions that are not integer divisions
-		if (w * i != mode.w || h * i != mode.h)
-			continue;
+			screenMode[n].w = w;
+			screenMode[n].h = h;
+			n++;
+		}
+	}
+	else
+	{
+		n=0;
+		SDL_DisplayMode prevmode = { SDL_PIXELFORMAT_UNKNOWN, 0, 0, 0, 0 };
+		for(int i=rescount-1; i>=0 && n<MAX_RESOLUTIONS; --i)
+		{
+			SDL_DisplayMode mode = { SDL_PIXELFORMAT_UNKNOWN, 0, 0, 0, 0 };
 
-		screenMode[n].w = w;
-		screenMode[n].h = h;
-		n++;
+			if (SDL_GetDisplayMode(0, i, &mode) == 0)
+			{
+				//Skip resolutions lower than 800x600 and filter out duplicate resolutions (different only by refresh rate)
+				if((mode.w>=800) && (mode.h>=600) && ((!n) || (prevmode.w != mode.w) || (prevmode.h != mode.h)))
+				{
+					screenMode[n].w=mode.w;
+					screenMode[n].h=mode.h;
+					prevmode=mode;
+					++n;
+				}
+			}
+		}
 	}
 }
 
@@ -197,6 +225,8 @@ void Graphics::setMode(int mode)
 	}
 	else
 	{
+		glViewport(0, 0, screen->w, screen->h);
+		
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 	

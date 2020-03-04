@@ -11,10 +11,10 @@ USEPAK ?= 0
 DEV ?= 0
 
 PREFIX ?= /usr
-BINDIR ?= $(PREFIX)/games/
+BINDIR ?= $(PREFIX)/bin/
 DATADIR ?= $(PREFIX)/share/games/blobAndConquer/
 DOCDIR ?= $(PREFIX)/share/doc/$(PROG)/
-ICONDIR ?= $(PREFIX)/share/icons/
+ICONDIR ?= $(PREFIX)/share/icons/hicolor/
 MENUDIR ?= $(PREFIX)/share/applications/
 LOCALEDIR ?= $(PREFIX)/share/locale/
 
@@ -27,7 +27,7 @@ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANU
 CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\" -g
 CXXFLAGS += $(CFLAGS)
 LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
-LIBS = -lX11 -lGL -lGLU `sdl2-config --libs` -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lz
+LIBS = -lX11 -lGLU -lGL `sdl2-config --libs` -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lz
 PAKLIBS = -lz
 
 # Yes, it means compiling is a little slower... but it's less hassle
@@ -147,7 +147,7 @@ uninstall:
 	rm -f $(DESTDIR)$(BINDIR)/$(PROG)
 	rm -rf $(DESTDIR)$(DATADIR)
 	rm -rf $(DESTDIR)$(DOCDIR)
-	rm -f $(DESTDIR)$(ICONDIR)/blobAndConquer.png
+	rm -f $(DESTDIR)$(ICONDIR)32x32/apps/blobAndConquer.png
 	rm -f $(DESTDIR)$(MENUDIR)/blobAndConquer.desktop
 	
 	@for f in $(LOCALE_MO); do \
