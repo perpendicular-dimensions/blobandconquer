@@ -84,6 +84,7 @@ void showViolenceWarning()
 	
 	graphics->setMode(MODE_2D);
 	
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	graphics->clearScreen();
 	graphics->delay(1000, false);
 	
