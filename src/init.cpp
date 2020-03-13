@@ -435,9 +435,11 @@ void initSystem()
 	loadConfig();
 	
 	debug(("User Home = %s\n", engine->userHomeDirectory.getText()));
-
-	graphics->setResolution(graphics->currentScreenResolution);
+	
 	SDL_SetWindowFullscreen(graphics->window, graphics->fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
+	
+	graphics->setResolution(graphics->currentScreenResolution);
+	
 
 	if (TTF_Init() < 0)
 	{
