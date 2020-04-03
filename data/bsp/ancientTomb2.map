@@ -10061,31 +10061,37 @@ grasslands/rock43
 {
 "origin" "256 3736 -176"
 "classname" "WEP_PLASMA_RIFLE"
+"name" "plasmaRifle"
 }
 // entity 301
 {
 "classname" "WEP_PLASMA_RIFLE"
 "origin" "304 3736 -176"
+"name" "plasmaRifle"
 }
 // entity 302
 {
 "origin" "304 3752 -176"
 "classname" "WEP_PLASMA_RIFLE"
+"name" "plasmaRifle"
 }
 // entity 303
 {
 "classname" "WEP_PLASMA_RIFLE"
 "origin" "304 3720 -176"
+"name" "plasmaRifle"
 }
 // entity 304
 {
 "origin" "304 3704 -176"
 "classname" "WEP_PLASMA_RIFLE"
+"name" "plasmaRifle"
 }
 // entity 305
 {
 "classname" "WEP_PLASMA_RIFLE"
 "origin" "304 3768 -176"
+"name" "plasmaRifle"
 }
 // entity 306
 {
