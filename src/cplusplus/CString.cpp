@@ -121,12 +121,12 @@ void String::trim()
 	memset(newText, 0, capacity);
 	strcpy(newText, text);
 	
-	while (isspace(text[start]))
+	while (start <= end && isspace(text[start]))
 	{
 		start++;
 	}
 	
-	while (isspace(text[end]))
+	while (end >= 0 && isspace(text[end]))
 	{
 		end--;
 	}
