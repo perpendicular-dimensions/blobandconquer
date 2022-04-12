@@ -260,6 +260,9 @@ void Graphics::queryStencilAndAccumBufferSupport()
 		visuals = XGetVisualInfo(dpy, mask, &theTemplate, &numVisuals);
 		
 		hasStencils = false;
+		accumBufferRedSize = 0;
+		accumBufferGreenSize = 0;
+		accumBufferBlueSize = 0;
 		for(i = 0; i < numVisuals; i++)
 		{
 			const char *ext = glXQueryExtensionsString(dpy, visuals[i].screen);
