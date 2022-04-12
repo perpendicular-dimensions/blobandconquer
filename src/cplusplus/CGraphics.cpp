@@ -241,7 +241,7 @@ void Graphics::setMode(int mode)
 	}
 }
 
-void Graphics::queryStencilSupport()
+void Graphics::queryStencilAndAccumBufferSupport()
 {
 #ifdef __unix__
 	SDL_SysWMinfo wm_info;
@@ -252,7 +252,7 @@ void Graphics::queryStencilSupport()
 	{
 		XVisualInfo theTemplate;  
 		XVisualInfo *visuals;
-		int i, numVisuals, visualCaveat, stencilSize;
+		int i, numVisuals, visualCaveat, stencilSize, accumRed, accumGreen, accumBlue;
 		long mask = VisualScreenMask;
 		Display *dpy = wm_info.info.x11.display;
 		
@@ -275,21 +275,43 @@ void Graphics::queryStencilSupport()
 			
 			if (stencilSize && (visualCaveat == GLX_NONE_EXT)) {
 				hasStencils = true;
-				break;
 			}
+			
+			glXGetConfig(dpy, &visuals[i], GLX_ACCUM_RED_SIZE, &accumRed);
+			glXGetConfig(dpy, &visuals[i], GLX_ACCUM_GREEN_SIZE, &accumGreen);
+			glXGetConfig(dpy, &visuals[i], GLX_ACCUM_BLUE_SIZE, &accumBlue);
+			
+			if(accumRed > accumBufferRedSize)
+				accumBufferRedSize = accumRed;
+			if(accumGreen > accumBufferGreenSize)
+				accumBufferGreenSize = accumGreen;
+			if(accumBlue > accumBufferBlueSize)
+				accumBufferBlueSize = accumBlue;
 		}
+		
+		hasSufficientAccumBuffers = ((accumBufferRedSize >= 16) && (accumBufferGreenSize >= 16) && (accumBufferBlueSize >= 16));
 
 		debug(("Query stencil support: has stencils: %d\n", (int)hasStencils));
+		debug(("Accum buffers sizes (R G B), sufficient buffers: %d %d %d %d\n", accumBufferRedSize, accumBufferGreenSize, accumBufferBlueSize, (int)hasSufficientAccumBuffers));
 	}
 	else
 	{
-		printf("Warning: Couldn't determine the availability of stencil buffers (no X11 display),\n");
-		printf("  assuming they are available\n");
+		printf("Warning: Couldn't determine the availability of stencil and accum buffers (no X11 display),\n");
+		printf("  assuming stencils buffers are available and accum buffers are not\n");
 		hasStencils = true;
+		//assume no accum buffer on non-X11 platform (wayland)
+		accumBufferRedSize = 0;
+		accumBufferGreenSize = 0;
+		accumBufferBlueSize = 0;
+		hasSufficientAccumBuffers = false;
 	}
 #else
-	/* assume stencils are available on other platforms */
+	/* assume stencils and accum buffer are available on other platforms */
 	hasStencils = true;
+	accumBufferRedSize = 16;
+	accumBufferGreenSize = 16;
+	accumBufferBlueSize = 16;
+	hasSufficientAccumBuffers = true;
 #endif
 }
 
@@ -455,7 +477,7 @@ void Graphics::updateScreenMB()
 
 void Graphics::updateScreen()
 {
-	if (allowMotionBlur && motionBlur < 100)
+	if (hasSufficientAccumBuffers && allowMotionBlur && motionBlur < 100)
 	{
 		updateScreenMB();
 		return;

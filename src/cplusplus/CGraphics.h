@@ -87,12 +87,15 @@ class Graphics {
 		
 		int redPulseDir;
 		float redPulse;
+		
+		int accumBufferRedSize, accumBufferGreenSize, accumBufferBlueSize;
+		bool hasSufficientAccumBuffers;
 
 	static Graphics *getInstance();
 	~Graphics();
 	void destroy();
 	
-	void queryStencilSupport();
+	void queryStencilAndAccumBufferSupport();
 	void calculateScreenModes();
 	void setResolution(int i);
 	void resetFPSCount();
