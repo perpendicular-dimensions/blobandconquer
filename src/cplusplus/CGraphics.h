@@ -62,6 +62,7 @@ class Graphics {
 	public:
 		
 		SDL_Rect screenMode[MAX_RESOLUTIONS];
+		SDL_Rect realWindowSize;
 
 		SDL_Window *window;
 		SDL_Surface *screen, *glScreenshot, *scratchSurface;

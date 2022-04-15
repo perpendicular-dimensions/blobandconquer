@@ -240,7 +240,7 @@ void saveConfig()
 	props.setName("Config");
 	
 	String string;
-	string.setText("%d x %d", graphics->screen->w, graphics->screen->h);
+	string.setText("%d x %d", graphics->screenMode[graphics->currentScreenResolution].w, graphics->screenMode[graphics->currentScreenResolution].h);
 	
 	props.setProperty("resolution", string.getText());
 	props.setProperty("fullscreen", graphics->fullscreen);
@@ -435,9 +435,11 @@ void initSystem()
 	loadConfig();
 	
 	debug(("User Home = %s\n", engine->userHomeDirectory.getText()));
-
-	graphics->setResolution(graphics->currentScreenResolution);
+	
 	SDL_SetWindowFullscreen(graphics->window, graphics->fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
+	
+	graphics->setResolution(graphics->currentScreenResolution);
+	
 
 	if (TTF_Init() < 0)
 	{
