@@ -193,7 +193,7 @@ void Graphics::setMode(int mode)
 {
 	if (mode == MODE_3D)
 	{
-		glViewport(0, 0, screen->w, screen->h);
+		glViewport(0, realWindowSize.h-screen->h, screen->w, screen->h);
 	
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -225,7 +225,7 @@ void Graphics::setMode(int mode)
 	}
 	else
 	{
-		glViewport(0, 0, screen->w, screen->h);
+		glViewport(0, realWindowSize.h-screen->h, screen->w, screen->h);
 		
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
@@ -300,12 +300,23 @@ void Graphics::setResolution(int i)
 	debug(("Graphics::setResolution() - %d: %d x %d\n", i, screenMode[i].w, screenMode[i].h));
 
 	SDL_SetWindowSize(window, screenMode[i].w, screenMode[i].h);
+
 	screen = SDL_GetWindowSurface(window);
 
 	currentScreenResolution = i;
 
 	screenMidX = screen->w / 2;
 	screenMidY = screen->h / 2;
+
+	if(fullscreen)
+	{
+		SDL_DisplayMode dm;
+		SDL_GetDesktopDisplayMode(0, &dm);
+		realWindowSize.w = dm.w;
+		realWindowSize.h = dm.h;
+	}
+	else
+		SDL_GetWindowSize(window, &realWindowSize.w, &realWindowSize.h);
 
 	debug(("Graphics::setResolution() - Done\n"));
 }
@@ -444,6 +455,7 @@ void Graphics::updateScreenMB()
 	{
 		fullscreen = !fullscreen;
 		SDL_SetWindowFullscreen(window, fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
+		setResolution(currentScreenResolution);
 
 		engine->keyState[SDL_SCANCODE_F10] = engine->keyState[SDL_SCANCODE_LALT] = engine->keyState[SDL_SCANCODE_RETURN] = 0;
 		
@@ -468,6 +480,7 @@ void Graphics::updateScreen()
 	{
 		fullscreen = !fullscreen;
 		SDL_SetWindowFullscreen(window, fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
+		setResolution(currentScreenResolution);
 
 		engine->keyState[SDL_SCANCODE_F10] = engine->keyState[SDL_SCANCODE_LALT] = engine->keyState[SDL_SCANCODE_RETURN] = 0;
 		
@@ -686,7 +699,7 @@ Point Graphics::convertToScreenCoords(Vector position)
 	
 	gluProject(position.x, position.y, position.z, modelview, projection, viewport, &x, &y, &z);
 	
-	y = screen->h - y;
+	y = realWindowSize.h - y;
 	
 	result.set((int)x, (int)y);
 	

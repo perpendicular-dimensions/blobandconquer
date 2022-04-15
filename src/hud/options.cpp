@@ -674,6 +674,7 @@ void doConfigOptions()
 		{
 			graphics->fullscreen = !graphics->fullscreen;
 			SDL_SetWindowFullscreen(graphics->window, graphics->fullscreen ? SDL_WINDOW_FULLSCREEN : 0);
+			graphics->setResolution(graphics->currentScreenResolution);
 		}
 		
 		if (grab->wasClicked())
