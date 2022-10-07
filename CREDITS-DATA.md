@@ -35,6 +35,9 @@
 * liquid/cryptpool.jpg - CC-BY-SA 3.0 - by Parallel Realities
 * liquid/mist.jpg - CC-BY-SA 3.0 - by Parallel Realities
 * liquid/waste01.jpg - CC-BY-SA 3.0 - by Parallel Realities
+* liquid/water01.jpg - CC-BY 4.0 - by Strzegol
+* liquid/water2.jpg - CC-BY 4.0 - by Strzegol
+* liquid/slime.jpg - CC0 - by Strzegol, based on <https://commons.wikimedia.org/wiki/File:Water_boiling_in_a_pot_on_a_stove.jpg> by  Tomwsulcer;
 
 * arctic/snow_01.png - CC-BY 3.0, OGA-BY 3.0 - Snow.png by erxer1 from <http://opengameart.org/content/seamless-snow-texture>; recoded and resized in GIMP
 

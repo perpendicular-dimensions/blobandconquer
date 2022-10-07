@@ -34,6 +34,9 @@ If you add a file,
     * liquid
         * lava01.jpg
         * lava02.jpg
+        * water01.jpg
+        * water2.jpg
+        * slime.jpg
     * mech
         * biohazard.jpg
         * box-metal01.jpg
@@ -136,10 +139,6 @@ If you add a file,
         * stonewall03.jpg
         * transparent1.tga
         * transparent2.tga
-    * liquid
-        * slime.jpg
-        * water01.jpg
-        * water2.jpg
     * mech
         * basefloor02.jpg
         * basemetal.jpg
