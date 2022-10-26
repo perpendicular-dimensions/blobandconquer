@@ -31,9 +31,15 @@ If you add a file,
         * grass5.jpg
         * gx_03_rock_01.jpg
         * rock01.jpg
+        * grass.jpg
+        * grass02.jpg
+        * sapele_cross_cut.jpg
     * liquid
         * lava01.jpg
         * lava02.jpg
+        * water01.jpg
+        * water2.jpg
+        * slime.jpg
     * mech
         * biohazard.jpg
         * box-metal01.jpg
@@ -116,8 +122,6 @@ If you add a file,
         * brick30.jpg
         * crackedrock01.jpg
         * crackedrock02.jpg
-        * grass.jpg
-        * grass02.jpg
         * grass15.jpg
         * grass42.jpg
         * grassdirt01.jpg
@@ -129,17 +133,12 @@ If you add a file,
         * rock43.jpg
         * rock44.jpg
         * rusticblk.jpg
-        * sapele_cross_cut.jpg
         * stonetile15.jpg
         * stonetile4.jpg
         * stonetile6.jpg
         * stonewall03.jpg
         * transparent1.tga
         * transparent2.tga
-    * liquid
-        * slime.jpg
-        * water01.jpg
-        * water2.jpg
     * mech
         * basefloor02.jpg
         * basemetal.jpg
