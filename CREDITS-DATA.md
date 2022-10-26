@@ -10,6 +10,9 @@
 * grasslands/grass5.jpg - CC-BY 3.0 - IMGP1533.jpg by bart from <http://opengameart.org/content/26-high-res-ground-textures>; resized, cropped and made seamless again (because of cropping) in GIMP
 * grasslands/rock01.jpg - GPL 2.0 - Tileable8c.png by p0ss from <http://opengameart.org/content/117-stone-wall-tilable-textures-in-8-themes>; resized and converted to jpg in GIMP
 * grasslands/brick01.jpg - CC0 - by Nebenbei from <https://pixabay.com/es/fondo-textura-estructura-muro-1260304>; recoded, resized, cropped and edited to make tileable in GIMP
+* grassland/grass.jpg - CC0 - by Strzegol; based on Rasen.jpg by Lukas007 from <https://commons.wikimedia.org/wiki/File:Rasen.jpg>; modified in GIMP
+* grassland/grass02.jpg - CC0 - by Strzegol; based on Rasen.jpg by Lukas007 from <https://commons.wikimedia.org/wiki/File:Rasen.jpg>; modified in GIMP
+* grassland/sapele_cross_cut.jpg - Public domain - Sapele_001.jpg by Villanueva from <https://commons.wikimedia.org/wiki/File:Sapele_001.jpg>; rotated,cropped,resized and made seamess in GIMP
 
 * mech/crate.jpg - CC0 - crate2_diffuse.png by Luke.RUSTLTD from <http://opengameart.org/content/3-crate-textures-w-bump-normal>; recoded and resized in GIMP
 * mech/metalbox.jpg - CC0 - set3_example_4.png by rubberduck from <http://opengameart.org/content/free-metal-texture-creation-set-03>; recoded and resized in GIMP
