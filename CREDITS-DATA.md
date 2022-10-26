@@ -13,6 +13,8 @@
 * grassland/grass.jpg - CC0 - by Strzegol; based on Rasen.jpg by Lukas007 from <https://commons.wikimedia.org/wiki/File:Rasen.jpg>; modified in GIMP
 * grassland/grass02.jpg - CC0 - by Strzegol; based on Rasen.jpg by Lukas007 from <https://commons.wikimedia.org/wiki/File:Rasen.jpg>; modified in GIMP
 * grassland/sapele_cross_cut.jpg - Public domain - Sapele_001.jpg by Villanueva from <https://commons.wikimedia.org/wiki/File:Sapele_001.jpg>; rotated,cropped,resized and made seamess in GIMP
+* grassland/crackedrock01.jpg - CC-BY 3.0 - based on grassland/gx_03_rock_01.jpg (CliffRock.JPG by Dim from <http://opengameart.org/content/dims-enviromental-and-architectural-textures>; resized in GIMP); modified and damages added in GIMP by Strzegol
+* grassland/crackedrock02.jpg - GPL 2.0 - based on grassland/rock01.jpg (Tileable8c.png by p0ss from <http://opengameart.org/content/117-stone-wall-tilable-textures-in-8-themes>; resized and converted to jpg in GIMP); modified and danafes added in GIMP by Strzegol
 
 * mech/crate.jpg - CC0 - crate2_diffuse.png by Luke.RUSTLTD from <http://opengameart.org/content/3-crate-textures-w-bump-normal>; recoded and resized in GIMP
 * mech/metalbox.jpg - CC0 - set3_example_4.png by rubberduck from <http://opengameart.org/content/free-metal-texture-creation-set-03>; recoded and resized in GIMP
