@@ -36,6 +36,8 @@ If you add a file,
         * sapele_cross_cut.jpg
         * crackedrock01.jpg
         * crackedrock02.jpg
+        * grass15.jpg
+        * grass42.jpg
     * liquid
         * lava01.jpg
         * lava02.jpg
@@ -122,8 +124,6 @@ If you add a file,
         * uzi.png
     * grasslands
         * brick30.jpg
-        * grass15.jpg
-        * grass42.jpg
         * grassdirt01.jpg
         * gx_03_grass_01_patchy2.jpg
         * gx_04_grass_01_patchy3.jpg
