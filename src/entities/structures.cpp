@@ -90,8 +90,6 @@ void drawStructure(bool transparent)
 			continue;
 		}
 		
-		lightMap = bsp->lightmapTextures[structure->model->lightmapID[i]];
-		
 		fade = min(textureSpec->lightLevel, (structure->health / 500));
 		
 		glPushMatrix();
@@ -158,6 +156,7 @@ void drawStructure(bool transparent)
 					}
 					else if ((structure->model->lightmapID[i] >= 0) && (!textureSpec->bright))
 					{
+						lightMap = bsp->lightmapTextures[structure->model->lightmapID[i]];
 						glBindTexture(GL_TEXTURE_2D, lightMap);
 					}
 					else
