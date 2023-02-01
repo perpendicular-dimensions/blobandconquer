@@ -12,7 +12,7 @@ If you add a file,
 2. Remove the name of the file from the *Files still needing replacements* section further below.
 3. Add the name of the file and the appropriate attribution (even if it is public domain) to **CREDITS-DATA**.
 
-###Files with replacements
+### Files with replacements
 * textures
     * arctic
         * snow_01.png
@@ -31,6 +31,7 @@ If you add a file,
         * grass5.jpg
         * gx_03_rock_01.jpg
         * rock01.jpg
+        * stonetile6.jpg
     * liquid
         * lava01.jpg
         * lava02.jpg
@@ -51,6 +52,8 @@ If you add a file,
         * energybarrier02.jpg
         * glass01.jpg
         * metalbox.jpg
+        * metal01.jpg
+        * metal02.jpg
     * radiant
         * notex.tga
         * shadernotex.tga
@@ -73,7 +76,7 @@ If you add a file,
         * Line 7 of data/missions/mission03 needs to be changed to *music = music/covert_operations.ogg;*
         * Line 7 of data/missions/mission21 needs to be changed to *music = music/covert_operations.ogg;*
 
-###Files still needing replacements
+### Files still needing replacements
 * textures
     * game
         * babySpiderBlob.png
@@ -132,7 +135,6 @@ If you add a file,
         * sapele_cross_cut.jpg
         * stonetile15.jpg
         * stonetile4.jpg
-        * stonetile6.jpg
         * stonewall03.jpg
         * transparent1.tga
         * transparent2.tga
@@ -150,8 +152,6 @@ If you add a file,
         * floor-concrete06.jpg
         * glass02.jpg
         * light01.jpg
-        * metal01.jpg
-        * metal02.jpg
         * metal03.jpg
         * metal04.jpg
         * metal05.jpg
@@ -335,7 +335,7 @@ If you add a file,
     * Warlord Theme.s3m
     * Zenith.s3m
 
-###Files that are safe to use
+### Files that are safe to use
 * textures
     * game
         * AIUnit.png
