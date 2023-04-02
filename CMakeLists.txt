@@ -42,7 +42,3 @@ target_link_libraries(blobAndConquer
         SDL2_ttf::SDL2_ttf
         ZLIB::ZLIB
 )
-
-get_property(importTargets DIRECTORY "${CMAKE_SOURCE_DIR}" PROPERTY IMPORTED_TARGETS)
-
-message(${importTargets})
