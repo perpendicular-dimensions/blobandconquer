@@ -18,6 +18,9 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
 
+#include <filesystem>
+#include <string>
+
 #include "../headers.h"
 
 Pak::Pak()
@@ -51,7 +54,7 @@ Pak::~Pak()
 	{
 		delete[] input;
 	}
-	
+
 	if (file != NULL)
 	{
 		delete[] file;
@@ -113,7 +116,7 @@ void Pak::initPakFile()
 		}
 
 		file[i] = fd;
-		
+
 		debug(("initPakFile() - %.3d: %s [%ld / %ld]\n", i, fd.name, fd.cSize, fd.fSize));
 	}
 
@@ -123,16 +126,16 @@ void Pak::initPakFile()
 bool Pak::unpack(const char *filename, PAK::TYPE fileType)
 {
 	unsigned char **buffer = (fileType == PAK::TEXT) ? &dataBuffer : &binaryBuffer;
-	
+
 	if (*buffer != NULL)
 	{
 		delete[] *buffer;
 	}
-	
+
 	*buffer = NULL;
-	
+
 	FileData *fileData = NULL;
-	
+
 	for (unsigned int i = 0 ; i < numberOfFiles ; i++)
 	{
 		if (strcmp(file[i].name, filename) == 0)
@@ -141,61 +144,63 @@ bool Pak::unpack(const char *filename, PAK::TYPE fileType)
 			break;
 		}
 	}
-	
+
 	if (fileData != NULL)
 	{
 		debug(("unpack() : Unpacking %s (%ld)\n", filename, lastReadDataSize));
-	
+
 		FILE *pak = fopen(PAKFULLPATH, "rb");
-	
+
 		if (!pak)
 		{
 			showPakErrorAndExit();
 		}
-	
+
 		fseek(pak, fileData->location, SEEK_SET);
-	
+
 		if (input != NULL)
 		{
 			delete[] input;
 		}
-	
+
 		input = NULL;
-	
+
 		input = new unsigned char[(int)(fileData->cSize * 1.01) + 12];
-	
+
 		*buffer = new unsigned char[fileData->fSize];
-	
+
 		fread(input, 1, fileData->cSize, pak);
-	
+
 		fclose(pak);
-	
+
 		uncompress(*buffer, &fileData->fSize, input, fileData->cSize);
-	
+
 		if (input != NULL)
 		{
 			delete[] input;
 		}
-	
+
 		input = NULL;
-		
+
 		lastReadDataSize = fileData->fSize;
 	}
 	else
 	{
-		FILE *fp = fopen(filename, "rb");
+		const std::string fullFilepath = std::filesystem::path(filename).is_absolute()? std::string(filename) : std::string(DATADIR) + "/" + filename;
+
+		FILE *fp = fopen(fullFilepath.c_str(), "rb");
 
 		if (!fp)
 		{
-			debug(("unpack() : %s does not exist\n", filename));
+			debug(("unpack() : %s does not exist\n", fullFilepath.c_str()));
 			return false;
 		}
 
 		fseek(fp, 0, SEEK_END);
 		lastReadDataSize = ftell(fp);
-		
+
 		debug(("unpack() : Reading %s (%ld)\n", filename, lastReadDataSize));
-		
+
 		*buffer = new unsigned char[lastReadDataSize + 1];
 		rewind(fp);
 		fread(*buffer, 1, lastReadDataSize, fp);
@@ -212,10 +217,10 @@ bool Pak::unpack(const char *filename, PAK::TYPE fileType)
 			printf("Fatal Error: SDL_RWops allocation failed\n");
 			exit(1);
 		}
-		
+
 		debug(("unpack() - RWops : %p\n", (void *)sdlrw));
 	}
-	
+
 	else
 	{
 		if (strlen((char *)*buffer) > lastReadDataSize)
@@ -223,7 +228,7 @@ bool Pak::unpack(const char *filename, PAK::TYPE fileType)
 			((char *)*buffer)[lastReadDataSize - 1] = '\0';
 		}
 	}
-	
+
 	debug(("unpack() : Loaded %s (%ld)\n", filename, lastReadDataSize));
 
 	return true;
@@ -235,13 +240,13 @@ void Pak::writeToTempFile()
 	SDL_Delay(50);
 
 	FILE *fp = fopen(tmpFilename.getText(), "wb");
-	
+
 	if (!fp)
 	{
 		printf("ERROR: Pak::writeToTempFile() - Unable to write to '%s'\n", tmpFilename.getText());
 		abort();
 	}
-	
+
 	fwrite(binaryBuffer, 1, lastReadDataSize, fp);
 	fclose(fp);
 }
@@ -284,12 +289,12 @@ void Pak::freeAll()
 	{
 		delete[] binaryBuffer;
 	}
-	
+
 	if (input != NULL)
 	{
 		delete[] input;
 	}
-	
+
 	dataBuffer = NULL;
 	binaryBuffer = NULL;
 	input = NULL;
